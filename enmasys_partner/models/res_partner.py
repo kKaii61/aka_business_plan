@@ -11,6 +11,9 @@ class ResPartner(models.Model):
     x_code = fields.Char('Mã')
     x_group_id = fields.Many2one('res.partner.group', 'Nhóm liên hệ', tracking=True)
 
+    # Missing partner_group_id -> have to add!
+    partner_group_id = fields.Many2one('res.partner.group', 'Contact Group', tracking=True)
+
     @api.onchange('parent_id')
     def _onchange_parent_set_group(self):
         try:
