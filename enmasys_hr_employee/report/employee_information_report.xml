@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="employee_information_report_form_view" model="ir.ui.view">
+            <field name="name">employee.information.report.form.view</field>
+            <field name="model">employee.information.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                            <h2 style="text-align: center;">BÁO CÁO THÔNG TIN NHÂN VIÊN</h2>
+                      <br/><br/>
+                        <group>
+                            <group>
+                                <field name="x_department_ids" widget="many2many_tags"/>
+                                <field name="x_gender"/>
+                                <field name="x_marital"/>
+
+                            </group>
+                            <group>
+                                <field name="x_certificate"/>
+                                <field name="x_job_ids" widget="many2many_tags"/>
+<!--                                <field name="x_first_contract_date"/>-->
+<!--                                <field name="x_union"/>-->
+<!--                                <field name="month_greater_than"/>-->
+<!--                                <field name="month_less_than"/>-->
+                            </group>
+                        </group>
+                        <button name="get_data" type="object" string="Lấy dữ liệu" class="btn-primary m-2"/>
+                        <button name="open_report_excel" type="object" string="Xuất Excel" class="btn-primary m-2"/>
+
+                            <field name="x_employee_information_report_line_ids" nolabel="1" readonly="1">
+                                <tree>
+                                    <field name="x_employee_code"/>
+                                    <field name="x_fullname"/>
+<!--                                    <field name="x_block"/>-->
+                                    <field name="x_job_id"/>
+                                    <field name="x_gender"/>
+                                    <field name="x_department_id"/>
+                                    <field name="x_certificate"/>
+<!--                                    <field name="x_years_of_service"/>-->
+<!--                                    <field name="x_union"/>-->
+<!--                                    <field name="x_union_in"/>-->
+<!--                                    <field name="x_first_contract_date"/>-->
+                                    <field name="x_marital"/>
+                                </tree>
+                            </field>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="employee_information_report_action" model="ir.actions.act_window">
+            <field name="name">Báo cáo thông tin nhân viên</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">employee.information.report</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('employee_information_report_form_view')})]"/>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="employee_information_report_menu"
+                  action="employee_information_report_action"
+                  parent="hr.hr_menu_hr_reports"
+                  sequence="20"/>
+<!--        <record id="enmasys_hr_employee.employee_information_report_menu" model="ir.ui.menu">-->
+<!--            <field name="groups_id"-->
+<!--                   eval="[(6, 0,-->
+<!--                   [ref('enmasys_hr_employee.groups_hr_salary_manager'),-->
+<!--                   ref('enmasys_hr_employee.group_employee_hr_other')])]"/>-->
+<!--        </record>-->
+    </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_delivery_gt_root"
+                  name="Giao hàng GT"
+                  sequence="22"
+                  web_icon="enmasys_delivery_gt,static/description/icon.png"
+        />
+
+        <menuitem id="menu_stock_picking_pick_action_sub"
+                  name="Kế hoạch giao hàng"
+                  parent="menu_delivery_gt_root"
+                  action="stock_picking_pick_action"
+                  sequence="1"
+        />
+
+
+        <menuitem id="menu_stock_picking_out_sub"
+                  name="Đóng gói và xuất kho"
+                  parent="menu_delivery_gt_root"
+                  sequence="20"
+        />
+
+        <menuitem id="menu_tradition_delivery_import_action_sub"
+                  name="Phiếu giao hàng"
+                  parent="menu_delivery_gt_root"
+                  action="tradition_delivery_import_action"
+                  sequence="30"
+        />
+
+        <menuitem id="menu_stock_picking_out_action_sub"
+                  name="Kiểm tra và đóng gói"
+                  parent="menu_stock_picking_out_sub"
+                  action="stock_picking_out_action"
+                  sequence="1"
+        />
+
+        <menuitem id="menu_stock_picking_out_done_action_sub"
+                  name="Xuất kho hoàn thành"
+                  parent="menu_stock_picking_out_sub"
+                  action="stock_picking_out_done_action"
+                  sequence="20"
+        />
+
+    </data>
+</odoo>

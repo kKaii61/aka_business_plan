@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_type_view_tree" model="ir.ui.view">
+            <field name="name">product.type.view.tree</field>
+            <field name="model">product.type</field>
+            <field name="arch" type="xml">
+                <tree string="Chủng loại sản phẩm">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        <record id="product_type_view_form" model="ir.ui.view">
+            <field name="name">product.type.view.form</field>
+            <field name="model">product.type</field>
+            <field name="arch" type="xml">
+                <form string="Chủng loại sản phẩm">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="code"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="detail" string="Chi tiết">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="product_type_id" column_invisible="True"/>
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="product_type_id" invisible="True"/>
+                                            <field name="name"/>
+                                            <field name="code"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="product_type_view_search" model="ir.ui.view">
+            <field name="name">product.type.view.search</field>
+            <field name="model">product.type</field>
+            <field name="arch" type="xml">
+                <search string="Chủng loại sản phẩm">
+                    <field name="name" string="Nhóm" filter_domain="['|', ('name', 'ilike', self), ('code', 'ilike', self)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_product_type" model="ir.actions.act_window">
+            <field name="name">Chủng loại sản phẩm</field>
+            <field name="res_model">product.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="product_type_view_search"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('product_type_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('product_type_view_form')})]"/>
+        </record>
+
+        <menuitem id="menu_product_type"
+                  name="Chủng loại sản phẩm"
+                  parent="stock.menu_product_in_config_stock"
+                  action="action_product_type"
+                  sequence="103"/>
+    </data>
+</odoo>

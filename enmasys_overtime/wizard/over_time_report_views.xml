@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- SEARCH VIEWS -->
+        <record id="over_time_report_detail_line_default_search_view" model="ir.ui.view">
+            <field name="model">over.time.report.detail.line</field>
+            <field name="name">over_time_report_detail_line_default_search_view</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter name="group_by_working_type" context="{'group_by': 'x_work_entry_type_id'}"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- TREE VIEWS -->
+        <record id="over_time_report_detail_line_default_tree_view" model="ir.ui.view">
+            <field name="model">over.time.report.detail.line</field>
+            <field name="name">over_time_report_detail_line_default_tree_view</field>
+            <field name="arch" type="xml">
+                <tree expand="context.get('expand', False)" default_group_by="x_work_entry_type_id">
+                    <field name="x_employee_id"/>
+                    <field name="x_employee_position_id"/>
+                    <field name="x_employee_department_id"/>
+                    <field name="x_over_time_request_date"/>
+                    <field name="x_work_entry_type_id"/>
+                    <field name="x_over_time_duration" sum="Total"/>
+                    <field name="x_over_time_state" widget="badge" column_invisible="1"
+                           decoration-info="x_over_time_state == 'bod_approve'"
+                           decoration-warning="x_over_time_state == 'confirm'"
+                           decoration-success="x_over_time_state == 'validate'"
+                           decoration-primary="x_over_time_state == 'validate1'"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- FORM VIEWs -->
+        <record id="over_time_report_default_form_view" model="ir.ui.view">
+            <field name="name">over_time_report_default_form_view</field>
+            <field name="model">over.time.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <!-- HEADING -->
+                        <div>
+                            <h1 style="text-align: center;">REPORT: OVERTIMES</h1>
+                        </div>
+                        <!-- FILTERS -->
+                        <group>
+                            <group>
+                                <field name="x_department_ids" widget="many2many_tags"/>
+                                <field name="x_report_year" widget="integer" options="{'format': false}"/>
+                            </group>
+                            <group>
+                                <field name="x_employee_ids" widget="many2many_tags"/>
+                                <field name="x_report_month"/>
+                            </group>
+                        </group>
+
+                        <!-- BUTTONS -->
+                        <button name="generate_over_time_report_summary_line" string="Generate datas" type="object"
+                                class="oe_highlight m-2" icon="fa-table"/>
+                        <button name="generate_report_file" string="Export" type="object"
+                                invisible="not x_over_time_report_summary_line_ids"
+                                class="oe_highlight m-2" icon="fa-save"/>
+                        <button name="generate_report_file" string="Export" type="object" disabled="1"
+                                invisible="x_over_time_report_summary_line_ids"
+                                class="oe_highlight m-2" icon="fa-save"/>
+
+                        <!-- REPORT LINES -->
+                        <field name="x_over_time_report_summary_line_ids" readonly="1" force_save="1"
+                               otions="{'no_open': True}">
+                            <tree>
+                                <field name="x_employee_id"/>
+                                <field name="x_employee_position_id"/>
+                                <field name="x_employee_department_id"/>
+                                <field name="x_total_allocated_hours"
+                                       column_invisible="parent.x_report_month"/>
+                                <field name="x_total_validated_hours"/>
+                                <field name="x_total_remaining_hours"
+                                       column_invisible="parent.x_report_month"/>
+                                <field name="x_over_time_report_detail_line_ids" column_invisible="1"
+                                       widget="many2many_tags"/>
+                            </tree>
+                            <form>
+                                <sheet>
+                                    <field name="x_over_time_report_detail_line_ids" widget="one2many"
+                                           context="{'search_default_group_by_working_type': True}"/>
+
+                                    <field name="x_total_duration_group_by_working_type"
+                                           class="oe_subtotal_footer oe_right"
+                                           nolabel="1"/>
+
+                                </sheet>
+                            </form>
+                        </field>
+                        <group class="oe_subtotal_footer">
+                            <field name="x_work_entry_types_group_display_html" nolabel="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="over_time_report_detail_line_default_form_view" model="ir.ui.view">
+            <field name="model">over.time.report.detail.line</field>
+            <field name="name">over_time_report_detail_line_form_view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="x_over_time_state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="x_employee_id"/>
+                                <field name="x_employee_position_id"/>
+                                <field name="x_employee_department_id"/>
+                            </group>
+                            <group>
+                                <field name="x_over_time_request_date"/>
+                                <field name="x_work_entry_type_id"/>
+                                <field name="x_over_time_duration"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- ACTIONS -->
+        <record id="overtime_report_default_action" model="ir.actions.act_window">
+            <field name="name">REPORT: OVER-TIME</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">over.time.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+        <record id="overtime_report_detail_line_default_action" model="ir.actions.act_window">
+            <field name="name">REPORT: OVER-TIME</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">over.time.report.detail.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">new</field>
+            <field name="context">{'search_default_group_by_working_type': True}</field>
+            <field name="search_view_id" ref="enmasys_overtime.over_time_report_detail_line_default_search_view"/>
+        </record>
+
+        <!-- MENUS -->
+        <menuitem id="over_time_report_default_menu" name="Overtimes Report"
+                  action="enmasys_overtime.overtime_report_default_action"
+                  parent="hr_holidays.menu_hr_holidays_report"
+                  sequence="36"/>
+    </data>
+</odoo>

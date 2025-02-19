@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- form-views -->
+        <!-- tree-views -->
+        <record id="recruitment_request_position_default_tree_view" model="ir.ui.view">
+            <field name="model">recruitment.request.position</field>
+            <field name="name">recruitment_request_position_default_tree_view</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="x_working_position_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                    <field name="x_take_note" optional="hide"/>
+                    <field name="x_resources_requirement" optional="hide"/>
+                    <field name="x_gender_recruitment"/>
+                    <field name="x_salary_min"/>
+                    <field name="x_salary_max"/>
+                    <field name="x_applicant_exp_requirement"/>
+                    <field name="x_receivable_salary_type" column_invisible="1"/>
+                    <field name="x_currency_id" column_invisible="1"/>
+                    <field name="x_working_location" column_invisible="1"/>
+                    <field name="x_contract_type_id" column_invisible="1"/>
+                    <field name="x_contract_interval" column_invisible="1"/>
+                    <field name="x_responsible_id" column_invisible="1"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mrp_production_allocation_form_view" model="ir.ui.view">
+        <field name="name">mrp.production.allocation.form.view</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='bom_id']" position="before">
+                <field name="x_weight" force_save="1"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="x_labor" widget="many2many_tags" force_save="1"/>
+                    <field name="x_shift" force_save="1"/>
+            </xpath>
+            <xpath expr="//page[@name='miscellaneous']//field[@name='date_deadline']" position="after">
+                <field name="x_level" readonly="1" force_save="1"/>
+                <field name="x_is_allocation" readonly="1" force_save="1"/>
+            </xpath>
+            <xpath expr="//page[@name='miscellaneous']" position="before">
+                <page name="cost_price" string="Chi phí">
+                    <field name="x_price_line_ids" readonly="1" force_save="1">
+                        <tree>
+                            <field name="production_id" column_invisible="True"/>
+                            <field name="account_debt_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                            <field name="account_credit_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                            <field name="price_unit"/>
+                            <field name="amount" readonly="1" force_save="1"/>
+                        </tree>
+                        <form>
+                            <field name="production_id" invisible="1"/>
+                            <field name="account_debt_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                            <field name="account_credit_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                            <field name="price_unit"/>
+                            <field name="amount" readonly="1" force_save="1"/>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

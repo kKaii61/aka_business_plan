@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.module.category" id="module_category_purchase_order">
+        <field name="name">Purchase Order</field>
+        <field name="sequence">25</field>
+    </record>
+
+    <record id="group_purchase_order_tp" model="res.groups">
+        <field name="name">Trưởng phòng duyệt mua hàng</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="category_id" ref="module_category_purchase_order" />
+    </record>
+
+    <record id="group_purchase_order_bod" model="res.groups">
+        <field name="name">BOD duyệt mua hàng</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="category_id" ref="module_category_purchase_order" />
+    </record>
+</odoo>

@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_report_payslip,access_report_payslip,model_report_payslip,base.group_user,1,1,1,1
+access_report_payslip_line,access_report_payslip_line,model_report_payslip_line,base.group_user,1,1,1,1
+access_report_payslip_excel,access_report_payslip_excel,model_report_payslip_excel,base.group_user,1,1,1,1
+
+base_group_user_access_model_social_insurance_report,base_group_user_access_model_social_insurance_report,enmasys_hr_payroll.model_social_insurance_report,base.group_user,1,1,1,1
+base_group_user_access_model_social_insurance_salary_report,base_group_user_access_model_social_insurance_salary_report,enmasys_hr_payroll.model_social_insurance_salary_report,base.group_user,1,1,1,1
+
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- TREE VIEW -->
+        <record id="working_shift_default_tree_view" model="ir.ui.view">
+            <field name="name">working_shift_default_tree_view</field>
+            <field name="model">working.shift</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc" editable="top">
+                    <field name="x_shift_name" width="150"/>
+                    <field name="x_shift_from" widget="float_time" width="150"/>
+                    <field name="x_shift_to" widget="float_time" width="150"/>
+
+                    <field name="create_date" invisible="1" width="150"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- DEFINING TREE VIEW -->
+        <record id="working_shift_default_form_view" model="ir.ui.view">
+            <field name="name">working_shift_default_form_view</field>
+            <field name="model">working.shift</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <label for="x_shift_name" class="oe_title" style="font-weight: bold; font-size: 18px;"/>
+                        <h1>
+                            <field name="x_shift_name" placeholder="Ex: Afternoon,...." style="height:50px; width:85%"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="x_shift_from" widget="float_time"/>
+                            </group>
+                            <group>
+                                <field name="x_shift_to" widget="float_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- DEFINING ACTIONS -->
+        <record id="working_shift_default_action" model="ir.actions.act_window">
+            <field name="name">Working shift</field>
+            <field name="res_model">working.shift</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

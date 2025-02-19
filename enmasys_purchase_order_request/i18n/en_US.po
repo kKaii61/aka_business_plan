@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_purchase_order_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-17 08:26+0000\n"
+"PO-Revision-Date: 2024-12-17 08:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model.fields.selection,name:enmasys_purchase_order_request.selection__purchase_order__state__bod_approved
+#: model_terms:ir.ui.view,arch_db:enmasys_purchase_order_request.access_purchase_order_form_view_inherit
+msgid "BOD duyệt"
+msgstr "BOD Approve"
+
+#. module: enmasys_purchase_order_request
+#: model:res.groups,name:enmasys_purchase_order_request.group_purchase_order_bod
+msgid "BOD duyệt mua hàng"
+msgstr "BOD purchase approval"
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model.fields.selection,name:enmasys_purchase_order_request.selection__purchase_order__state__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model.fields.selection,name:enmasys_purchase_order_request.selection__purchase_order__state__done
+msgid "Locked"
+msgstr ""
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model,name:enmasys_purchase_order_request.model_purchase_order
+#: model:ir.model.fields.selection,name:enmasys_purchase_order_request.selection__purchase_order__state__purchase
+#: model:ir.module.category,name:enmasys_purchase_order_request.module_category_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: enmasys_purchase_order_request
+#: model_terms:ir.ui.view,arch_db:enmasys_purchase_order_request.access_purchase_order_form_view_inherit
+msgid "Quay lại"
+msgstr "Come back"
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model.fields.selection,name:enmasys_purchase_order_request.selection__purchase_order__state__sent
+msgid "RFQ Sent"
+msgstr ""
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model.fields,field_description:enmasys_purchase_order_request.field_purchase_order__state
+msgid "Status"
+msgstr ""
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model.fields.selection,name:enmasys_purchase_order_request.selection__purchase_order__state__tp_approved
+#: model_terms:ir.ui.view,arch_db:enmasys_purchase_order_request.access_purchase_order_form_view_inherit
+msgid "TP duyệt"
+msgstr "TP Approve"
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model.fields.selection,name:enmasys_purchase_order_request.selection__purchase_order__state__to_approve
+msgid "To Approve"
+msgstr ""
+
+#. module: enmasys_purchase_order_request
+#: model:res.groups,name:enmasys_purchase_order_request.group_purchase_order_tp
+msgid "Trưởng phòng duyệt mua hàng"
+msgstr ""
+
+#. module: enmasys_purchase_order_request
+#: model:ir.model.fields.selection,name:enmasys_purchase_order_request.selection__purchase_order__state__draft
+msgid "YCBG"
+msgstr ""

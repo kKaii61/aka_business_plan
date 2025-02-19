@@ -1,0 +1,1617 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_overtime
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-11 03:50+0000\n"
+"PO-Revision-Date: 2024-11-11 03:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime_interval.py:0
+#, python-format
+msgid "%s : %s"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.my_overtime_form_view
+msgid "/&gt;"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__1
+msgid "01"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__2
+msgid "02"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__3
+msgid "03"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__4
+msgid "04"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__5
+msgid "05"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__6
+msgid "06"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__7
+msgid "07"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__8
+msgid "08"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__9
+msgid "09"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__10
+msgid "10"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__10
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__10
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__10
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__10
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__10
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__10
+msgid "10:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__22
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__22
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__22
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__22
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__22
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__22
+msgid "10:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__10_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__10_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__10_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__10_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__10_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__10_5
+msgid "10:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__22_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__22_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__22_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__22_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__22_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__22_5
+msgid "10:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__11
+msgid "11"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__11
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__11
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__11
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__11
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__11
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__11
+msgid "11:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__23
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__23
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__23
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__23
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__23
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__23
+msgid "11:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__11_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__11_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__11_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__11_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__11_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__11_5
+msgid "11:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__23_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__23_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__23_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__23_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__23_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__23_5
+msgid "11:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__over_time_report__x_report_month__12
+msgid "12"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__0
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__0
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__0
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__0
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__0
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__0
+msgid "12:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__12
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__12
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__12
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__12
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__12
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__12
+msgid "12:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__0_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__0_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__0_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__0_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__0_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__0_5
+msgid "12:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__12_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__12_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__12_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__12_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__12_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__12_5
+msgid "12:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__1
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__1
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__1
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__1
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__1
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__1
+msgid "1:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__13
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__13
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__13
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__13
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__13
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__13
+msgid "1:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__1_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__1_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__1_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__1_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__1_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__1_5
+msgid "1:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__13_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__13_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__13_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__13_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__13_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__13_5
+msgid "1:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__2
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__2
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__2
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__2
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__2
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__2
+msgid "2:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__14
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__14
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__14
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__14
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__14
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__14
+msgid "2:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__2_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__2_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__2_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__2_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__2_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__2_5
+msgid "2:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__14_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__14_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__14_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__14_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__14_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__14_5
+msgid "2:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__3
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__3
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__3
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__3
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__3
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__3
+msgid "3:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__15
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__15
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__15
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__15
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__15
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__15
+msgid "3:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__3_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__3_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__3_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__3_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__3_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__3_5
+msgid "3:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__15_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__15_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__15_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__15_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__15_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__15_5
+msgid "3:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__4
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__4
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__4
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__4
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__4
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__4
+msgid "4:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__16
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__16
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__16
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__16
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__16
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__16
+msgid "4:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__4_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__4_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__4_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__4_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__4_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__4_5
+msgid "4:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__16_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__16_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__16_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__16_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__16_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__16_5
+msgid "4:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__5
+msgid "5:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__17
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__17
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__17
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__17
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__17
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__17
+msgid "5:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__5_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__5_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__5_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__5_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__5_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__5_5
+msgid "5:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__17_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__17_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__17_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__17_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__17_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__17_5
+msgid "5:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__6
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__6
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__6
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__6
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__6
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__6
+msgid "6:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__18
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__18
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__18
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__18
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__18
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__18
+msgid "6:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__6_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__6_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__6_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__6_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__6_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__6_5
+msgid "6:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__18_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__18_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__18_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__18_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__18_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__18_5
+msgid "6:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__7
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__7
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__7
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__7
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__7
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__7
+msgid "7:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__19
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__19
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__19
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__19
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__19
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__19
+msgid "7:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__7_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__7_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__7_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__7_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__7_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__7_5
+msgid "7:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__19_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__19_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__19_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__19_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__19_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__19_5
+msgid "7:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__8
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__8
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__8
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__8
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__8
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__8
+msgid "8:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__20
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__20
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__20
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__20
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__20
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__20
+msgid "8:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__8_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__8_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__8_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__8_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__8_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__8_5
+msgid "8:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__20_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__20_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__20_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__20_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__20_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__20_5
+msgid "8:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__9
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__9
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__9
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__9
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__9
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__9
+msgid "9:00 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__21
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__21
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__21
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__21
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__21
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__21
+msgid "9:00 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__9_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__9_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__9_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__9_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__9_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__9_5
+msgid "9:30 AM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_end_date__21_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_actual_start_date__21_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_end_date__21_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime_interval__x_estimated_start_date__21_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_end_time__21_5
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__res_company__x_default_estimated_ot_start_time__21_5
+msgid "9:30 PM"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_actual_end_date
+msgid "Actual end time"
+msgstr "Giờ đến (Thực tế)"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime_interval.py:0
+#, python-format
+msgid "Actual start cant be after Actual end. Please check again."
+msgstr ""
+"Giờ tăng ca từ (thực tế) không thể sau Giờ tăng ca (thực tế) đến. Vui lòng "
+"kiểm tra lại."
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_actual_start_date
+msgid "Actual start time"
+msgstr "Giờ từ (Thực tế)"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_allocated_intervals
+msgid "Allocated Intervals"
+msgstr "Phép cấp phát/năm"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.manager_overtime_form_view
+msgid "Approve"
+msgstr "Duyệt"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_approval_hours
+msgid "Approved hours"
+msgstr "Số giờ duyệt"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.manager_overtime_form_view
+msgid "BOD Approve"
+msgstr "BOD duyệt"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__state__bod_approve
+msgid "BOD Approved"
+msgstr "BOD duyệt"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__x_holiday_type__company
+msgid "By Company"
+msgstr "Công ty"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__x_holiday_type__department
+msgid "By Department"
+msgstr "Phòng ban"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__x_holiday_type__employee
+msgid "By Employee"
+msgstr "Nhân viên"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__x_holiday_type__category
+msgid "By Employee Tag"
+msgstr "Tag nhân viên"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_leave_type__leave_validation_type__hr_and_bod
+msgid "By Employee's Manager and BOD"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_leave_type__leave_validation_type__both_and_bod
+msgid "By Employee's Manager, By Time Keeping Officer and BOD"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_can_approve
+msgid "Can Approve"
+msgstr "Có thể duyệt"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_can_reset
+msgid "Can reset"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.reconfirm_overtimes_default_form_view
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime_interval.py:0
+#, python-format
+msgid ""
+"Cant create OverTime that is overlapped with other one. Please check again"
+msgstr ""
+"Không thể tạo tăng ca bị trùng lặp khoảng thời gian. Vui lòng kiểm tra lại. "
+"Xin cảm ơn."
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime.py:0
+#, python-format
+msgid "Cant create or edit the Over-Time request that not same month"
+msgstr "Không thể tạo hoặc chỉnh sửa Yêu cầu tăng ca không cùng một tháng."
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__x_category_id
+msgid "Category of Employee"
+msgstr "Danh mục nhân viên"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_leave_type__code
+msgid "Code"
+msgstr "Mã loại nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_res_company
+msgid "Companies"
+msgstr "Công ty"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_res_config_settings
+msgid "Config Settings"
+msgstr "Cài đặt cấu hình"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.manager_overtime_form_view
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__create_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__create_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__create_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__create_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_wizard__create_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__create_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__create_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__create_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__create_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__create_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__create_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_wizard__create_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__create_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__create_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__create_date
+msgid "Created on"
+msgstr "Được tạo vào lúc"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime.py:0
+#, python-format
+msgid "Current months"
+msgstr "Tháng hiện tại"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "Default Intervals for OVER-TIME."
+msgstr "Thời lượng tăng ca mặc định"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "Default Intervals:"
+msgstr "Thời lượng mặc định"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "Default Lunch-Intervals"
+msgstr "Thời lượng ăn trưa mặc định"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_res_config_settings__x_default_estimated_ot_end_time
+msgid "Default OT estimated end"
+msgstr "Tăng ca đến (dự kiến)"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_res_config_settings__x_default_estimated_ot_start_time
+msgid "Default OT estimated start"
+msgstr "Tăng ca từ (dự kiến)"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_res_company__x_default_estimated_ot_end_time
+msgid "Default Overtime estimated end"
+msgstr "Tăng ca đến (dự kiến)"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_res_company__x_default_estimated_ot_start_time
+msgid "Default Overtime estimated start"
+msgstr "Tăng ca từ (dự kiến)"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "Default-Intervals"
+msgstr "Thời lượng mặc định"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_department_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_department_id
+msgid "Department"
+msgstr "Phòng ban"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__x_department_ids
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__x_department_ids
+msgid "Departments"
+msgstr "Phòng ban"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_description
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_over_time_report_detail_line_ids
+msgid "Detail lines"
+msgstr "Chi tiết báo cáo tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__display_name
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__display_name
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_wizard__display_name
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__display_name
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__display_name
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__display_name
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__display_name
+msgid "Display name"
+msgstr "Tên hiển thị"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_over_time_duration
+msgid "Duration (hour)"
+msgstr "Thời lượng (giờ)"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_hr_employee
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_employee_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_employee_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_employee_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_employee_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_employee_id
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_employee_company_id
+msgid "Employee Company"
+msgstr "Nhân viên"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_employee_department_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_employee_department_id
+msgid "Employee's department"
+msgstr "Phòng ban"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_employee_position_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_employee_position_id
+msgid "Employee's position"
+msgstr "Chức vụ"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__x_employee_ids
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__x_employee_ids
+msgid "Employees"
+msgstr "Nhân viên"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_estimated_hours
+msgid "Estimated Hours"
+msgstr "Giờ dự kiến"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_estimated_start_date
+msgid "Estimated interval from"
+msgstr "Giờ từ (dự kiến)"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_estimated_end_date
+msgid "Estimated interval to"
+msgstr "Giờ từ (dự đến)"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime_interval.py:0
+#, python-format
+msgid "Estimated start can be after Estimated to. Please check again."
+msgstr ""
+"Giờ đến (dự kiến) không thể trước Giờ từ (dự kiến). Vui lòng kiểm tra lại"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.over_time_report_default_form_view
+msgid "Export"
+msgstr "Tải Excel"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Liên hệ)"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.over_time_report_default_form_view
+msgid "Generate datas"
+msgstr "Tính giá trị"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.hr_holiday_report_default_form_view
+msgid "HOLIDAY REPORT"
+msgstr "BÁO CÁO NGHỈ PHÉP"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_hr_work_entry
+msgid "HR Work Entry"
+msgstr "Nội dung công việc HR"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_hr_holiday_data_report
+msgid "Holiday Data Report"
+msgstr "Báo cáo nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.actions.act_window,name:enmasys_overtime.hr_holiday_report_default_action
+#: model:ir.model,name:enmasys_overtime.model_hr_holiday_report
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_report_id
+#: model:ir.ui.menu,name:enmasys_overtime.hr_holiday_report_default_menu
+msgid "Holiday Report"
+msgstr "Báo cáo nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_holiday_type
+msgid "Holiday type"
+msgstr "Chế độ"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_wizard__id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__id
+msgid "ID"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__message_has_error
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.hr_holiday_report_default_form_view
+msgid "In Excel"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_interval_duration
+msgid "Interval duration"
+msgstr "Thời lượng"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_employee_position_id
+msgid "Job Position"
+msgstr "Chức vụ"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_leave_type__time_type
+msgid "Kind of Time Off"
+msgstr "Loại hình nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__write_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__write_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__write_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__write_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_wizard__write_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__write_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__write_uid
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__write_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__write_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__write_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__write_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_wizard__write_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__write_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__write_date
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào lúc"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_ir_sequence_date_range__x_leave_type_id
+msgid "Leave type"
+msgstr "Loại nghỉ phép"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "Lunch Intervals (HH:MM to HH:MM):"
+msgstr "Thời lượng ăn trưa (Giờ:Phút đến Giờ:Phút)"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "Lunch duration for OVER-TIME."
+msgstr "Thời lượng ăn trưa"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_res_company__x_over_time_lunch_from
+#: model:ir.model.fields,field_description:enmasys_overtime.field_res_config_settings__x_over_time_lunch_from
+msgid "Lunch from (HH:MM)"
+msgstr "Giờ ăn trưa từ"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_res_company__x_over_time_lunch_to
+#: model:ir.model.fields,field_description:enmasys_overtime.field_res_config_settings__x_over_time_lunch_to
+msgid "Lunch to (HH:MM)"
+msgstr "Giờ ăn trưa đến"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_manager_id
+msgid "Manager"
+msgstr "Người quản lý"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.manager_overtime_form_view
+msgid "Mark as Draft"
+msgstr "Đưa về nháp"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_wizard__x_message
+msgid "Message"
+msgstr "Thông báo"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_mode_company_id
+msgid "Mode company"
+msgstr "Công ty"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__x_report_month
+msgid "Month"
+msgstr "Tháng"
+
+#. module: enmasys_overtime
+#: model:uom.uom,name:enmasys_overtime.product_uom_month
+msgid "Months"
+msgstr "Tháng"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.actions.act_window,name:enmasys_overtime.my_overtimes_action
+#: model:ir.ui.menu,name:enmasys_overtime.my_overtime_menu
+msgid "My Overtimes"
+msgstr "Tăng ca của tôi"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_over_time_request_date
+msgid "OVER-TIME request date"
+msgstr "Ngày làm việc"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_over_time_state
+msgid "OVER-TIME's state"
+msgstr "Trạng thái"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_overtime_id
+msgid "Origin OT"
+msgstr "Tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_over_time_line_id
+msgid "Origin OT-line"
+msgstr "Thời lượng tăng ca"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime.py:0
+#, python-format
+msgid ""
+"Over time request state must be \"Refused\" or \"To Approve\" in order to be"
+" reset to draft."
+msgstr ""
+"Yêu cầu tăng ca phải ở trạng thái \"Từ chối\" or \"Chờ duyệt\" để được đưa "
+"về trạng thai nháp."
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_hr_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_overtime_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_work_entry__x_overtime_id
+#: model:ir.model.fields,field_description:enmasys_overtime.field_resource_calendar_leaves__x_overtime_id
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_leave_type__time_type__overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "Overtime"
+msgstr "Tăng ca"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/wizard/over_time_report.py:0
+#, python-format
+msgid "Overtime Report"
+msgstr "Báo cáo tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_hr_overtime_wizard
+msgid "Overtime Wizard"
+msgstr "Tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_overtime_working_type_ids
+msgid "Overtime Working-Types"
+msgstr "Loại công việc"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_leave_type__x_overtime_working_type_ids
+msgid "Overtime's Working-Types"
+msgstr "Loại công việc (Tăng ca)"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "Overtime-Intervals"
+msgstr "Thời lượng tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_hr_overtime_interval
+msgid "Overtime: Interval"
+msgstr "Thời lượng tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_wizard__x_overtime_ids
+msgid "Overtimes"
+msgstr "Yêu cầu ăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.actions.act_window,name:enmasys_overtime.manager_overtimes_action
+#: model:ir.ui.menu,name:enmasys_overtime.overtime_management_menu
+msgid "Overtimes Management"
+msgstr "Tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.ui.menu,name:enmasys_overtime.over_time_report_default_menu
+msgid "Overtimes Report"
+msgstr "Báo cáo tăng ca"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime.py:0
+#, python-format
+msgid ""
+"Please check the approval hours before approving. If nothing wrong, click "
+"'Confirm' please."
+msgstr ""
+"Vui lòng kiểm tra lại số giờ duyệt trước khi duyệt. Nếu không có gì sai sót,"
+" vui lòng nhấn 'Xác nhận' để tiếp tục."
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime.py:0
+#, python-format
+msgid "Please create another requests, or adjust dates. Thanks"
+msgstr ""
+"Vui lòng tạo Yêu cầu khác hoặc điều chỉnh lại ngày làm việc. Xin cảm ơn."
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/models/hr_overtime.py:0
+#, python-format
+msgid "Please update %s code before creating new request OT."
+msgstr ""
+"Vui lòng cập nhật mã của loại nghỉ phép |%s| trước khi tạo mới Yêu cầu tăng "
+"ca. Xin cảm ơn."
+
+#. module: enmasys_overtime
+#: model:ir.actions.act_window,name:enmasys_overtime.overtime_report_default_action
+#: model:ir.actions.act_window,name:enmasys_overtime.overtime_report_detail_line_default_action
+#: model:ir.model,name:enmasys_overtime.model_over_time_report
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_over_time_report_id
+msgid "REPORT: OVER-TIME"
+msgstr "BÁO CÁO TĂNG CA"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_over_time_report_detail_line
+msgid "REPORT: OVER-TIME/detail"
+msgstr "BÁO CÁO TĂNG CA/Chi tiết"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.over_time_report_default_form_view
+msgid "REPORT: OVERTIMES"
+msgstr "BÁO CÁO TĂNG CA"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.actions.act_window,name:enmasys_overtime.reconfirm_overtimes_default_action
+msgid "Reconfirm Overtimes"
+msgstr "Yêu cầu tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__x_year_ref
+msgid "Ref year"
+msgstr "Năm"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_reference_no
+msgid "Reference No."
+msgstr "Mã tăng ca"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.manager_overtime_form_view
+msgid "Refuse"
+msgstr "Từ chối"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__state__refuse
+msgid "Refused"
+msgstr "Bị từ chối"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__x_user_id
+msgid "Related user name for the resource to manage its access."
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_remaining_holiday_last_year
+msgid "Remaining Leave from last year"
+msgstr "Phép chuyển qua từ năm trước"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_used_of_remaining_holiday_last_year
+msgid "Remaining Leave from last year (used)"
+msgstr "Phép đã dùng của Phép chuyển qua từ năm trước"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_remaining_leave
+msgid "Remaining Leaves"
+msgstr "Phép còn lại"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_report__x_data_ids
+msgid "Report datas"
+msgstr "Báo cáo nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_over_time_report_summary_line
+msgid "Report: OVER-TIME line (summarized)"
+msgstr "BÁO CÁO TĂNG CA"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_category_id
+msgid "Resource Category"
+msgstr "Danh mục"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_resource_calendar_leaves
+msgid "Resource Time Off Detail"
+msgstr "Chi tiết nguồn lực nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__state__validate1
+msgid "Second Approval"
+msgstr "Chấp thuận lần hai"
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_ir_sequence_date_range
+msgid "Sequence Date Range"
+msgstr "Phạm vi ngày trình tự"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__state
+msgid "State"
+msgstr "Trạng thái"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__x_over_time_report_summary_line_ids
+msgid "Summary lines"
+msgstr "Tóm tắt"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.reconfirm_overtimes_default_form_view
+msgid "Sure and Approve"
+msgstr "Xác nhận"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_leave_type__time_type
+msgid ""
+"The distinction between working time (ex. Attendance) and absence (ex. "
+"Training) will be used in the computation of Accrual's plan rate."
+msgstr ""
+"Sự khác biệt giữa thời gian làm việc (VD: Chuyên cần) và vắng mặt (VD: Đào "
+"tạo) sẽ được sử dụng để tính tỷ lệ kế hoạch tích lũy."
+
+#. module: enmasys_overtime
+#: model:ir.model,name:enmasys_overtime.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "Loại Nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_leave_type__leave_validation_type
+msgid "Time Off Validation"
+msgstr "Xác thực nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_holiday_status_id
+msgid "Time-Off type"
+msgstr "Loại nghỉ phép"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__state__confirm
+msgid "To Approve"
+msgstr "Chờ duyệt"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__state__draft
+msgid "To Submit"
+msgstr "Cần duyệt"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.over_time_report_detail_line_default_tree_view
+msgid "Total"
+msgstr "Tổng thời lượng"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/wizard/over_time_report.py:0
+#: code:addons/enmasys_overtime/wizard/over_time_report.py:0
+#: code:addons/enmasys_overtime/wizard/over_time_report_summary_line.py:0
+#, python-format
+msgid "Total Employees"
+msgstr "Số lượng nhân viên"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_total_duration_group_by_working_type
+msgid "Total Intervals"
+msgstr "Tổng thời lượng"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/wizard/over_time_report.py:0
+#: code:addons/enmasys_overtime/wizard/over_time_report.py:0
+#: code:addons/enmasys_overtime/wizard/over_time_report_summary_line.py:0
+#, python-format
+msgid "Total OVER-TIME Intervals"
+msgstr "Tổng thời lượng"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_total_allocated_hours
+msgid "Total allocated hours"
+msgstr "Tổng thời lượng được cấp phát"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_total_duration_by_group
+msgid "Total duration by group"
+msgstr "Tổng thời lượng (Theo loại công việc)"
+
+#. module: enmasys_overtime
+#. odoo-python
+#: code:addons/enmasys_overtime/wizard/over_time_report_summary_line.py:0
+#, python-format
+msgid "Total of"
+msgstr "Tổng"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_total_remaining_hours
+msgid "Total remaining hours"
+msgstr "Tổng thời lượng còn lại"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_summary_line__x_total_validated_hours
+msgid "Total validated hours"
+msgstr "Tổng thời tăng ca"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.hr_holiday_report_default_form_view
+msgid "Tính Giá Trị"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_used_leaves
+msgid "Used leaves"
+msgstr "Phép đã dùng"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_user_id
+msgid "User"
+msgstr "Người dùng"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.manager_overtime_form_view
+msgid "Validate"
+msgstr "Duyệt"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields.selection,name:enmasys_overtime.selection__hr_overtime__state__validate
+msgid "Validated"
+msgstr "Đã phê duyệt"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_holiday_data_report__x_validated_holiday_requests
+msgid "Validated Holiday-requests"
+msgstr "Đã nghỉ"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_validation_type
+msgid "Validation Type"
+msgstr "Kiểu xác thực"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_hr_work_entry_holidays_work_entry_type_leave_form_inherit
+msgid "Validity dates"
+msgstr "Ngày hiệu lực"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_leave_type__x_validity_end_date
+msgid "Validity end at"
+msgstr "Hiệu lực đến ngày"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_leave_type__x_validity_start_date
+msgid "Validity start at"
+msgstr "Hiệu lực từ ngày"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,help:enmasys_overtime.field_hr_overtime__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__x_work_entry_types_group_display_html
+msgid "Work Entry Types display"
+msgstr ""
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report_detail_line__x_work_entry_type_id
+msgid "Work-Entry-Type"
+msgstr "Loại công việc"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_overtime_end_at
+msgid "Worked end at"
+msgstr "Làm việc đến"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_overtime_start_at
+msgid "Worked start at"
+msgstr "Làm việc từ"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime__x_working_interval_ids
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.my_overtime_form_view
+msgid "Working Intervals"
+msgstr "Thời lượng"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_working_date
+msgid "Working date"
+msgstr "Ngày làm việc"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_hours_actual
+msgid "Working hours actually"
+msgstr "Số giờ thực tế"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_hr_overtime_interval__x_working_type_id
+msgid "Working type"
+msgstr "Loại công việc"
+
+#. module: enmasys_overtime
+#: model:ir.model.fields,field_description:enmasys_overtime.field_over_time_report__x_report_year
+msgid "Year"
+msgstr "Năm"
+
+#. module: enmasys_overtime
+#: model_terms:ir.ui.view,arch_db:enmasys_overtime.enmasys_overtime_inherit_base_res_config_settings_view_form
+msgid "to"
+msgstr "đến"

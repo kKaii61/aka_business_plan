@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_maintenance_block_action_sub"
+                  name="Block"
+                  parent="maintenance.menu_maintenance_title"
+                  action="maintenance_block_action"
+                  sequence="15"
+        />
+
+        <menuitem id="menu_maintenance_machine_action_sub"
+                  name="Machine"
+                  parent="maintenance.menu_maintenance_title"
+                  action="maintenance_machine_action"
+                  sequence="16"
+        />
+
+    </data>
+</odoo>

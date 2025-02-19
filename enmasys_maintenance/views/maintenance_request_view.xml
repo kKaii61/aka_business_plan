@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="enmasys_maintenance_request_view_tree_inherit" model="ir.ui.view">
+        <field name="name">enmasys.maintenance.request.view.form.inherit</field>
+        <field name="model">maintenance.request</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="block_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

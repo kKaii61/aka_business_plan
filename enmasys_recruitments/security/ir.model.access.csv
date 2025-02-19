@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+base_group_user_access_model_recruitment_request_position,base_group_user_access_model_recruitment_request_position,enmasys_recruitments.model_recruitment_request_position,base.group_user,1,1,1,1
+base_group_user_access_model_recruitment_request,base_group_user_access_model_recruitment_request,enmasys_recruitments.model_recruitment_request,base.group_user,1,1,1,1
+

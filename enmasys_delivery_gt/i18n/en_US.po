@@ -1,0 +1,242 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_delivery_gt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-10 09:57+0000\n"
+"PO-Revision-Date: 2024-12-10 09:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: enmasys_delivery_gt
+#: model_terms:ir.ui.view,arch_db:enmasys_delivery_gt.tradition_delivery_form_view
+msgid "Chi tiết"
+msgstr "Details"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_stock_picking__picking_out_id
+msgid "Chứng từ nơi xuất nguyên VL"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_stock_picking__export_stock_material_count
+msgid "Export Stock Material Count"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model_terms:ir.ui.view,arch_db:enmasys_delivery_gt.tradition_delivery_form_view
+msgid "Giao hàng"
+msgstr "Delivery"
+
+#. module: enmasys_delivery_gt
+#: model:ir.ui.menu,name:enmasys_delivery_gt.menu_delivery_gt_root
+msgid "Giao hàng GT"
+msgstr "Delivery GT"
+
+#. module: enmasys_delivery_gt
+#: model_terms:ir.ui.view,arch_db:enmasys_delivery_gt.tradition_delivery_form_view
+msgid "Hoàn thành"
+msgstr "Complete"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields.selection,name:enmasys_delivery_gt.selection__tradition_delivery__state__cancel
+#: model_terms:ir.ui.view,arch_db:enmasys_delivery_gt.tradition_delivery_form_view
+msgid "Hủy"
+msgstr "Cancel"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__id
+msgid "ID"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__partner_id
+msgid "Khách hàng"
+msgstr "Customer"
+
+#. module: enmasys_delivery_gt
+#: model:ir.actions.act_window,name:enmasys_delivery_gt.stock_picking_out_action
+#: model:ir.ui.menu,name:enmasys_delivery_gt.menu_stock_picking_out_action_sub
+msgid "Kiểm tra và đóng gói"
+msgstr "QC and Packing"
+
+#. module: enmasys_delivery_gt
+#: model:ir.actions.act_window,name:enmasys_delivery_gt.stock_picking_pick_action
+#: model:ir.ui.menu,name:enmasys_delivery_gt.menu_stock_picking_pick_action_sub
+msgid "Kế hoạch giao hàng"
+msgstr "Delivery Plan"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model_terms:ir.ui.view,arch_db:enmasys_delivery_gt.tradition_delivery_form_view
+msgid "Mã phiếu"
+msgstr "Name"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields.selection,name:enmasys_delivery_gt.selection__tradition_delivery__state__draft
+msgid "Mới"
+msgstr "New"
+
+#. module: enmasys_delivery_gt
+#. odoo-python
+#: code:addons/enmasys_delivery_gt/models/tradition_delivery.py:0
+#: code:addons/enmasys_delivery_gt/models/tradition_delivery.py:0
+#: code:addons/enmasys_delivery_gt/models/tradition_delivery.py:0
+#: code:addons/enmasys_delivery_gt/models/tradition_delivery.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__date_delivery_start
+msgid "Ngày bắt đầu giao"
+msgstr "Delivery Start Date"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__date
+msgid "Ngày chứng từ"
+msgstr "Date"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__date_delivery_end
+msgid "Ngày giao thành công"
+msgstr "Date"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__date_start
+msgid "Ngày từ"
+msgstr "Delivery Complete Date"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__date_end
+msgid "Ngày đến"
+msgstr "Date to"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__employee_delivery_id
+msgid "Nhân viên vận chuyển"
+msgstr "Delivery Staff"
+
+#. module: enmasys_delivery_gt
+#: model_terms:ir.actions.act_window,help:enmasys_delivery_gt.stock_picking_out_action
+#: model_terms:ir.actions.act_window,help:enmasys_delivery_gt.stock_picking_out_done_action
+#: model_terms:ir.actions.act_window,help:enmasys_delivery_gt.stock_picking_pick_action
+msgid "No transfer found. Let's create one!"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.actions.act_window,name:enmasys_delivery_gt.tradition_delivery_import_action
+#: model:ir.ui.menu,name:enmasys_delivery_gt.menu_tradition_delivery_import_action_sub
+#: model_terms:ir.ui.view,arch_db:enmasys_delivery_gt.stock_picking_out_tree_inherit
+msgid "Phiếu giao hàng"
+msgstr "Delivery Order"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__picking_ids
+msgid "Phiếu xuất kho"
+msgstr "Warehouse release note"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_stock_picking__is_material_out
+msgid "Phiếu xuất nguyên vật liệu"
+msgstr "Material Issue"
+
+#. module: enmasys_delivery_gt
+#: model_terms:ir.ui.view,arch_db:enmasys_delivery_gt.stock_picking_out_inherit_form
+msgid "Phiếu xuất vật liệu"
+msgstr "Material Issue"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__name
+msgid "Số chứng từ"
+msgstr "Name"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields.selection,name:enmasys_delivery_gt.selection__tradition_delivery__state__done
+msgid "Thành công"
+msgstr "Complete"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__partner_worker_id
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__partner_worker_ids
+msgid "Thợ"
+msgstr "Worker"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model,name:enmasys_delivery_gt.model_tradition_delivery
+msgid "Tradition Delivery"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model,name:enmasys_delivery_gt.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model_terms:ir.actions.act_window,help:enmasys_delivery_gt.stock_picking_out_action
+#: model_terms:ir.actions.act_window,help:enmasys_delivery_gt.stock_picking_out_done_action
+#: model_terms:ir.actions.act_window,help:enmasys_delivery_gt.stock_picking_pick_action
+msgid "Transfers allow you to move products from one location to another."
+msgstr ""
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__state
+msgid "Trạng thái"
+msgstr "State"
+
+#. module: enmasys_delivery_gt
+#: model:ir.actions.act_window,name:enmasys_delivery_gt.stock_picking_out_done_action
+#: model:ir.ui.menu,name:enmasys_delivery_gt.menu_stock_picking_out_done_action_sub
+msgid "Xuất kho hoàn thành"
+msgstr "Completed Transfer"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields.selection,name:enmasys_delivery_gt.selection__tradition_delivery__state__delivery
+msgid "Đang giao"
+msgstr "Delivering"
+
+#. module: enmasys_delivery_gt
+#: model:ir.ui.menu,name:enmasys_delivery_gt.menu_stock_picking_out_sub
+msgid "Đóng gói và xuất kho"
+msgstr "QC and Tranfer"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__unit_delivery_id
+msgid "Đơn vị vận chuyển"
+msgstr "Transport Provider"
+
+#. module: enmasys_delivery_gt
+#: model:ir.model.fields,field_description:enmasys_delivery_gt.field_tradition_delivery__partner_address_id
+msgid "Địa chỉ giao hàng"
+msgstr "Address Delivery"

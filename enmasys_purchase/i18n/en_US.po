@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-17 08:22+0000\n"
+"PO-Revision-Date: 2024-12-17 08:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: enmasys_purchase
+#: model:ir.model.fields,field_description:enmasys_purchase.field_purchase_order__is_import
+msgid "Nhập khẩu"
+msgstr "Import"
+
+#. module: enmasys_purchase
+#: model:ir.model,name:enmasys_purchase.model_purchase_order
+msgid "Purchase Order"
+msgstr ""

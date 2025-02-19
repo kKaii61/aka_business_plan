@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="enmasys_hr_employee_inherit_view_form" model="ir.ui.view">
+        <field name="name">enmasys.hr.employee.inherit.view.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page[@name='personal_information']" position="after">
+                <page name="dependent_contact_lines" string="Người phụ thuộc">
+                    <field name="x_hr_employee_dependence_contact_line_ids">
+                        <tree editable="bottom" create="1" delete="1">
+                            <field name="x_dependent_contact_name"/>
+                            <field name="x_dependent_contact_birthdate"/>
+                            <field name="x_dependent_contact_gender"/>
+                            <field name="x_dependent_contact_relationship_id" options="{'no_create': True}"/>
+                            <field name="x_tax_number"/>
+                            <field name="x_identification_id"/>
+                            <field name="x_dependent_nationality"/>
+                            <field name="x_dependent_reference_no"/>
+                            <field name="x_dependent_ward"/>
+                            <field name="x_dependent_district"/>
+                            <field name="x_dependent_state"/>
+                            <field name="x_depend_from_date"/>
+                            <field name="x_depend_to_date"/>
+                            <field name="x_dependent_contact_attachment_ids" widget="many2many_attachment_preview"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <h1>
+                                    <field name="x_dependent_contact_name"/>
+                                </h1>
+                                <div>
+                                    <b>
+                                        <field name="x_depend_from_date"/>
+                                    </b>
+                                    -
+                                    <b>
+                                        <field name="x_depend_to_date"/>
+                                    </b>
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="x_dependent_contact_birthdate"/>
+                                        <field name="x_dependent_contact_gender"/>
+                                        <field name="x_dependent_contact_relationship_id"
+                                               options="{'no_create': True}"/>
+                                        <field name="x_dependent_contact_attachment_ids"
+                                               widget="many2many_attachment_preview"/>
+                                    </group>
+                                    <group>
+                                        <field name="x_tax_number"/>
+                                        <field name="x_identification_id"/>
+                                        <field name="x_dependent_nationality"/>
+                                        <field name="x_dependent_reference_no"/>
+                                        <field name="x_dependent_ward"/>
+                                        <field name="x_dependent_district"/>
+                                        <field name="x_dependent_state"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='identification_id']" position="before">
+                <field name="x_social_insurance_no"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

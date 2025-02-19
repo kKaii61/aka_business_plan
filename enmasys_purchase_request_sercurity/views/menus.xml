@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2018-2019 ForgeFlow, S.L.
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0) -->
+<odoo>
+    <record model="ir.ui.menu" id="purchase_request.parent_menu_purchase_request">
+        <field name="groups_id" eval="[(4, ref('enmasys_purchase_request_sercurity.group_employee_purchase_request')),(4, ref('enmasys_purchase_request_sercurity.group_department_head_purchase_request')),(4, ref('enmasys_purchase_request_sercurity.group_bod_purchase_request'))]"/>
+    </record>
+
+    <record model="ir.ui.menu" id="purchase_request.menu_purchase_request">
+        <field name="groups_id" eval="[(4, ref('enmasys_purchase_request_sercurity.group_employee_purchase_request')),(4, ref('enmasys_purchase_request_sercurity.group_department_head_purchase_request')),(4, ref('enmasys_purchase_request_sercurity.group_bod_purchase_request'))]"/>
+    </record>
+
+    <record model="ir.ui.menu" id="purchase_request.menu_purchase_request">
+        <field name="groups_id" eval="[(4, ref('enmasys_purchase_request_sercurity.group_employee_purchase_request')),(4, ref('enmasys_purchase_request_sercurity.group_department_head_purchase_request')),(4, ref('enmasys_purchase_request_sercurity.group_bod_purchase_request'))]"/>
+    </record>
+</odoo>

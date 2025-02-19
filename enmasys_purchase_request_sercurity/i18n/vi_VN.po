@@ -1,0 +1,98 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_purchase_request_sercurity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-30 09:06+0000\n"
+"PO-Revision-Date: 2024-10-30 09:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__approved
+msgid "Approved"
+msgstr "Đã phê duyệt"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__bod_approved
+msgid "BOD duyệt"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:res.groups,name:enmasys_purchase_request_sercurity.group_bod_purchase_request
+msgid "BOD duyệt yêu cầu mua hàng"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__done
+msgid "Done"
+msgstr "Hoàn thành"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__draft
+msgid "Draft"
+msgstr "Bản nháp"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields,field_description:enmasys_purchase_request_sercurity.field_purchase_request__is_group_employee_purchase_request
+msgid "Is Group Employee Purchase Request"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:res.groups,name:enmasys_purchase_request_sercurity.group_employee_purchase_request
+msgid "Nhân viên đề xuất yêu cầu mua hàng"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model,name:enmasys_purchase_request_sercurity.model_purchase_request
+#: model:ir.module.category,name:enmasys_purchase_request_sercurity.module_right_category_purchase_request
+msgid "Purchase Request"
+msgstr "Yêu cầu mua hàng"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__rejected
+msgid "Rejected"
+msgstr "Đã từ chối"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields,field_description:enmasys_purchase_request_sercurity.field_purchase_request__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__to_approve
+msgid "To be approved"
+msgstr "Chờ phê duyệt"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:res.groups,name:enmasys_purchase_request_sercurity.group_department_head_purchase_request
+msgid "Trưởng phòng duyệt yêu cầu mua hàng"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__approved
+msgid "BOD Duyệt"
+msgstr "BOD Duyệt"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__to_approve
+msgid "TP Duyệt"
+msgstr "TP Duyệt"
+
+#. module: enmasys_purchase_request_sercurity
+#: model_terms:ir.ui.view,arch_db:enmasys_purchase_request_sercurity.purchase_request_form_view_inherit
+msgid "Request approval"
+msgstr "Yêu cầu phê duyệt"
+
+#. module: enmasys_purchase_request_sercurity
+#: model_terms:ir.ui.view,arch_db:enmasys_purchase_request_sercurity.purchase_request_form_view_inherit
+msgid "Approve"
+msgstr "TP Duyệt"
+

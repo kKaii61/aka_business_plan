@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+base_group_user_access_working_shift,base_group_user_access_working_shift,enmasys_time_off.model_working_shift,base.group_user,1,1,1,1
+
+group_hr_attendance_access_working_shift_register,group_hr_attendance_access_working_shift_register,enmasys_time_off.model_working_shift_register,base.group_user,1,1,1,1
+

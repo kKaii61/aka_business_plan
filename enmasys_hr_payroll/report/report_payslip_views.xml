@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="report_payslip_form" model="ir.ui.view">
+            <field name="name">report.payslip.form</field>
+            <field name="model">report.payslip</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                                <h1 style="text-align: center;">BÁO CÁO PHIẾU LƯƠNG</h1>
+
+                        <br/>
+                        <br/>
+
+
+                        <group>
+                            <group>
+                                <field name="from_month"/>
+                                <field name="year"/>
+                            </group>
+                            <group>
+                                <field name="to_month"/>
+                                <field name="department_ids" widget="many2many_tags"
+                                       options="{'no_create_edit': True, 'no_create': True}"/>
+                            </group>
+                        </group>
+
+                        <button name="open_report_view" string="Tính Giá Trị" type="object" class="oe_highlight m-2"/>
+                        <button name="open_report_excel" string="In Excel" type="object" class="oe_highlight m-2" style="margin-left:10px"/>
+
+                        <field name="line_ids" readonly="1" style="margin-top:10px">
+                            <tree create="0" delete="0">
+<!--                                <field name="employee_code"/>-->
+                                <field name="employee_id"/>
+                                <field name="job_id"/>
+                                <field name="department_id"/>
+                                <field name="payslip_code"/>
+                                <field name="payslip_name"/>
+                                <field name="basic_salary"/>
+                                <field name="total_allowance" widget="integer"/>
+                                <field name="total_salary" widget="integer"/>
+                            </tree>
+                            <form create="0" delete="0" edit="0">
+                                <group>
+<!--                                <field name="employee_code"/>-->
+                                <field name="employee_id"/>
+                                <field name="job_id"/>
+                                <field name="department_id"/>
+                                <field name="payslip_id"/>
+                                <field name="payslip_code"/>
+                                <field name="payslip_name"/>
+                                <field name="basic_salary"/>
+                                <field name="total_allowance" widget="integer"/>
+                                <field name="total_salary" widget="integer"/>
+                                </group>
+                            </form>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_report_payslip" model="ir.actions.act_window">
+            <field name="name">BÁO CÁO PHIẾU LUƠNG</field>
+            <field name="res_model">report.payslip</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="report_payslip_form"/>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="report_payslip_menu"
+                  name="Báo cáo Phiếu lương"
+                  parent="hr_payroll.menu_hr_payroll_report"
+                  action="action_report_payslip"
+                  sequence="20"
+                  groups="base.group_user"/>
+    </data>
+</odoo>

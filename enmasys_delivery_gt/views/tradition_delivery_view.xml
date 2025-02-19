@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="tradition_delivery_tree_view" model="ir.ui.view">
+            <field name="name">tradition.delivery.tree.view</field>
+            <field name="model">tradition.delivery</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="partner_address_id"/>
+                    <field name="date"/>
+                    <field name="partner_worker_ids" widget="many2many_tags"/>
+                    <field name="unit_delivery_id"/>
+                    <field name="date_delivery_start"/>
+                    <field name="date_delivery_end"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tradition_delivery_form_view" model="ir.ui.view">
+            <field name="name">tradition.delivery.form.view</field>
+            <field name="model">tradition.delivery</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <button name="button_delivery" class="oe_highlight" invisible="state != 'draft'" string="Giao hàng" type="object" />
+                        <button name="button_done" class="oe_highlight" invisible="state != 'delivery'" string="Hoàn thành" type="object" />
+                        <button name="button_cancel" class="oe_highlight" string="Hủy" type="object" invisible="state == 'cancel'"/>
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,delivery,done,cancel"/>
+                   </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+<!--                            <button class="oe_stat_button" type="object" name="view_document_export"-->
+<!--                                icon="fa-list-alt"  attrs="{'invisible': [('document_export_count', '=', 0)]}">-->
+<!--                                <field string="Chứng từ xuất bãi" name="document_export_count" widget="statinfo"/>-->
+<!--                            </button>-->
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="partner_id"/>
+                                <field name="partner_address_id"/>
+                                <field name="partner_worker_ids" widget="many2many_tags" domain="[('is_company','!=',True)]"/>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="unit_delivery_id"/>
+                                <field name="employee_delivery_id" domain="[('parent_id','=',unit_delivery_id)]"/>
+                                <field name="date_delivery_start"/>
+                                <field name="date_delivery_end"/>
+                            </group>
+                        </group>
+                        <notebook>
+                             <page string="Chi tiết">
+                                <field name="picking_ids" nolabel="1" >
+                                    <tree >
+                                        <field name="name" string="Mã phiếu"/>
+                                        <field name="state"/>
+                                    </tree>
+
+                                </field>
+                            </page>
+                    </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget = "mail_followers"/>
+                        <field name="activity_ids" widget = "mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="tradition_delivery_import_action" model="ir.actions.act_window">
+            <field name="name">Phiếu giao hàng</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tradition.delivery</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock_transfer_view_form_inherit" model="ir.ui.view">
+            <field name="name">stock.transfer.view.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location_dest_id']" position="after">
+                    <field name="x_is_transfer_incoming" invisible="1" readonly="1"/>
+                    <field name="x_warehouse_id"  options="{'no_create_edit': 1, 'no_create': 1, 'no_open': 1}"
+                           invisible="picking_type_code != 'internal' or x_is_transfer_incoming == True"
+                           readonly="x_is_transfer_incoming == True or state in ['done','cancel']"
+                           required="picking_type_code == True"/>
+<!--                           attrs="{'invisible': ['|', ('picking_type_code', '!=', 'internal'),('x_is_transfer_incoming', '=', True)],-->
+<!--                                   'readonly': ['|',('x_is_transfer_incoming', '==', True), ('state', 'in', ('done', 'cancel'))],-->
+<!--                                   'required': [('picking_type_code', '==', 'internal')]}"-->
+                    <field name="x_warehouse_id" string="Kho nguồn" options="{'no_create_edit': 1, 'no_create': 1, 'no_open': 1}"
+                           invisible="picking_type_code != 'internal' or x_is_transfer_incoming == False"
+                           readonly="x_is_transfer_incoming == True or state in ['done', 'cancel']"
+                           />
+<!--                           attrs="{'invisible': ['|', ('picking_type_code', '!=', 'internal'),('x_is_transfer_incoming', '=', False)],-->
+<!--                                   'readonly': ['|',('x_is_transfer_incoming', '==', True), ('state', 'in', ('done', 'cancel'))],-->
+<!--                                   'required': [('picking_type_code', '==', 'internal')]}"-->
+                </xpath>
+                <xpath expr="//field[@name='location_id']" position="attributes">
+                    <attribute name="invisible">picking_type_code == 'internal' or x_is_transfer_incoming == True
+
+                    </attribute>
+                    <!--                    <attribute name="attrs">{'invisible':[('picking_type_code','=','internal'), ('x_is_transfer_incoming','=',True)]}-->
+                </xpath>
+                <xpath expr="//field[@name='location_dest_id']" position="attributes">
+<!--                    <attribute name="attrs">{'invisible':[('picking_type_code','=','internal'), ('x_is_transfer_incoming','=', False)]}-->
+                    <attribute name="invisible">picking_type_code == 'internal' or x_is_transfer_incoming == False
+                    </attribute>
+                </xpath>
+<!--                <xpath expr="//page[@name='operations']" position="after">-->
+<!--                    <page string="Hoạt động chi tiết"-->
+<!--                          name="show_move_line_ids"-->
+<!--                          invisible="show_operations == False or state in ['draft', 'waiting', 'confirmed']">-->
+<!--&lt;!&ndash;                          attrs="{'invisible': ['|', ('show_operations', '=', False), ('state', 'in', ('draft', 'waiting', 'confirmed'))]}"&ndash;&gt;-->
+<!--                        <field name="move_line_ids_without_package"-->
+<!--                               readonly="show_operations == False or state == cancel or (state == 'done' and is_locked == True))"-->
+<!--                               context="{'default_picking_id': id, 'default_location_id': location_id, 'default_location_dest_id': location_dest_id, 'default_company_id': company_id}">-->
+<!--&lt;!&ndash;                            attrs="{'readonly': ['|', '|', ('show_operations', '=', False), ('state', '=', 'cancel'), '&amp;', ('state', '=', 'done'), ('is_locked', '=', True)]}"&ndash;&gt;-->
+<!--                            <tree editable="bottom" create="0" delete="0">-->
+<!--                                <field name="company_id" invisible="1" force_save="1"/>-->
+<!--                                <field name="picking_id" invisible="1" force_save="1"/>-->
+<!--                                <field name="move_id" invisible="1" force_save="1"/>-->
+<!--                                <field name="product_uom_category_id" invisible="1"/>-->
+<!--                                <field name="package_level_id" invisible="1"/>-->
+<!--                                <field name="state" invisible="1"/>-->
+<!--                                <field name="is_locked" invisible="1"/>-->
+<!--                                <field name="location_id" readonly="1"/>-->
+<!--                                <field name="location_dest_id" readonly="1"/>-->
+<!--                                <field name="product_id" readonly="1"/>-->
+<!--                                <field name="lot_id" readonly="1"-->
+<!--                                       column_invisible="parent.x_use_existing_lots == False or parent.x_group_picking_type_code in ['XPALLET','NPL', 'NTP']"-->
+<!--                                       context="{'default_location_id': location_id, 'default_location_dest_id': location_dest_id}"/>-->
+<!--&lt;!&ndash;                                attrs="{'column_invisible': ['|',('parent.x_use_existing_lots', '=', False),('parent.x_group_picking_type_code', 'in',  ('XPALLET','NPL', 'NTP'))]}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                <field name="first_production_date" readonly="1"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <field name="product_kg_number" readonly="1"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <field name="product_bin_number" readonly="1"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <field name="product_uom_qty" sum="Tổng nhu cầu" invisible="not context.get('show_reserved_quantity')" readonly="1"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <field name="qty_done" sum="Tổng"&ndash;&gt;-->
+<!--&lt;!&ndash;                                       readonly="(state == 'done' and is_locked == True) or (package_level_id != False and parent.picking_type_entire_packs == True)"&ndash;&gt;-->
+<!--&lt;!&ndash;                                       />&ndash;&gt;-->
+<!--&lt;!&ndash;                                attrs="{'readonly': ['|', '&amp;', ('state', '=', 'done'), ('is_locked', '=', True), '&amp;', ('package_level_id', '!=', False), ('parent.picking_type_entire_packs', '=', True)]}"&ndash;&gt;-->
+<!--                                <field name="product_uom_id" readonly="1" groups="uom.group_uom"/>-->
+<!--                            </tree>-->
+<!--                        </field>-->
+<!--                    </page>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

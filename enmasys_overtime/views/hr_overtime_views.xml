@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- TREE VIEWS -->
+        <record id="my_overtime_tree_view" model="ir.ui.view">
+            <field name="name">my_overtime_tree_view</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="x_reference_no"/>
+                    <field name="x_holiday_status_id" widget="badge"/>
+                    <field name="x_interval_duration"/>
+                    <field name="x_description"/>
+                    <field name="state" widget="badge"
+                           decoration-info="state == 'bod_approve'"
+                           decoration-warning="state == 'confirm'"
+                           decoration-success="state == 'validate'"
+                           decoration-primary="state == 'validate1'"/>
+                </tree>
+            </field>
+        </record>
+        <record id="manager_overtime_tree_view" model="ir.ui.view">
+            <field name="name">manager_overtime_tree_view</field>
+            <field name="model">hr.overtime</field>
+            <field name="mode">primary</field>
+            <field name="priority">16</field>
+            <field name="inherit_id" ref="enmasys_overtime.my_overtime_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='x_holiday_status_id']" position="before">
+                    <field name="x_employee_id" widget="many2one_avatar_employee"/>
+                    <field name="x_holiday_type" widget="badge"
+                           decoration-info="x_holiday_type == 'company'"
+                           decoration-success="x_holiday_type == 'employee'"
+                           decoration-primary="x_holiday_type == 'department'"
+                           decoration-warning="x_holiday_type == 'category'"/>
+                </xpath>
+                <xpath expr="//field[@name='x_holiday_status_id']" position="after">
+                    <field name="x_overtime_start_at"/>
+                    <field name="x_overtime_end_at"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- FORM VIEWS -->
+        <record id="my_overtime_form_view" model="ir.ui.view">
+            <field name="name">my_overtime_form_view</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="x_reference_no" readonly="1"/>
+                            <field name="x_holiday_status_id"
+                                   domain="[
+                                   ('time_type', '=', 'overtime'),
+                                   '|',
+                                   ('requires_allocation', '=', 'no'),
+                                   '&amp;', '&amp;',
+                                   ('virtual_remaining_leaves', '&gt;', 0), ('x_validity_start_date', '&lt;', datetime.datetime.now()), ('x_validity_end_date' , '&gt;', datetime.datetime.now()),
+                                    ]"
+                                   context="{'overtime_employee': True, 'employee_id': x_employee_id, 'department_id': x_department_id}"
+                                   readonly="state in ['bod_approve', 'validate']"/>
+                            <field name="x_holiday_type" invisible="1"/>
+                            <field name="x_department_id" invisible="1"/>
+                            <field name="x_can_approve" invisible="1"/>
+                            <field name="x_can_reset" invisible="1"/>
+                            <field name="x_employee_id" force_save="1" invisible="1"/>
+                            <field name="x_interval_duration"
+                                   readonly="state in ['bod_approve', 'validate']"/>
+                            <field name="x_description"
+                                   readonly="state in ['bod_approve', 'validate']"/>/>
+                            <field name="x_employee_company_id" invisible="1"/>
+                            <field name="x_overtime_working_type_ids" widget="many2many_tags" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page name="working_intervals_page" string="Working Intervals">
+                                <field name="x_working_interval_ids" readonly="state == 'validate'">
+                                    <tree editable="bottom">
+                                        <field name="x_working_date"/>
+                                        <field name="x_working_type_id"
+                                               domain="[('id', 'in', parent.x_overtime_working_type_ids)]"/>
+                                        <field name="x_description"/>
+                                        <field name="x_estimated_start_date"/>
+                                        <field name="x_estimated_end_date"/>
+                                        <field name="x_estimated_hours"/>
+                                        <field name="x_actual_start_date"/>
+                                        <field name="x_actual_end_date"/>
+                                        <field name="x_hours_actual"/>
+                                        <field name="x_approval_hours"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="manager_overtime_form_view" model="ir.ui.view">
+            <field name="model">hr.overtime</field>
+            <field name="name">manager_overtime_form_view</field>
+            <field name="mode">primary</field>
+            <field name="priority">16</field>
+            <field name="inherit_id" ref="enmasys_overtime.my_overtime_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='x_employee_id']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                    <attribute name="options">{'no_create': True, 'no_create_edit': True}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='x_department_id']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                    <attribute name="options">{'no_create': True, 'no_create_edit': True}</attribute>
+                </xpath>
+                <xpath expr="//header/field[@name='state']" position="before">
+                    <header>
+                        <button string="Confirm" name="action_confirm" type="object" class="oe_highlight"
+                                invisible="state != 'draft'"/>
+                        <button string="Approve" name="action_approve" type="object" class="oe_highlight"
+                                context="{'reconfirm': True}" invisible="state != 'confirm'"/>
+                        <button string="Validate" name="action_validate" invisible="state != 'validate1'"
+                                type="object" class="oe_highlight"/>
+                        <button string="BOD Approve" name="action_bod_validate" invisible="state != 'bod_approve'"
+                                type="object" class="oe_highlight"/>
+                        <button string="Refuse" name="action_refuse" type="object"
+                                invisible="state not in ['confirm','validate1', 'bod_approve', 'validate']"/>
+                        <button string="Mark as Draft" name="action_draft" type="object"
+                                invisible="state not in ['confirm', 'refuse']"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- ACTIONS -->
+        <record id="my_overtimes_action" model="ir.actions.act_window">
+            <field name="name">My Overtimes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.overtime</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('x_user_id', '=', uid)]</field>
+        </record>
+        <record id="my_overtimes_action_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="enmasys_overtime.my_overtime_tree_view"/>
+            <field name="act_window_id" ref="enmasys_overtime.my_overtimes_action"/>
+        </record>
+        <record id="my_overtimes_action_form_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="enmasys_overtime.my_overtime_form_view"/>
+            <field name="act_window_id" ref="enmasys_overtime.my_overtimes_action"/>
+        </record>
+
+        <record id="manager_overtimes_action" model="ir.actions.act_window">
+            <field name="name">Overtimes Management</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.overtime</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="manager_overtimes_action_tree_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="enmasys_overtime.manager_overtime_tree_view"/>
+            <field name="act_window_id" ref="enmasys_overtime.manager_overtimes_action"/>
+        </record>
+        <record id="manager_overtimes_action_form_view" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="enmasys_overtime.manager_overtime_form_view"/>
+            <field name="act_window_id" ref="enmasys_overtime.manager_overtimes_action"/>
+        </record>
+
+        <!-- MENUS -->
+        <menuitem id="my_overtime_menu"
+                  name="My Overtimes"
+                  parent="hr_holidays.menu_hr_holidays_my_leaves"
+                  sequence="3"
+                  action="enmasys_overtime.my_overtimes_action"/>
+        <menuitem id="overtime_management_menu" name="Overtimes Management"
+                  parent="hr_holidays.menu_hr_holidays_management"
+                  sequence="3"
+                  action="enmasys_overtime.manager_overtimes_action"/>
+    </data>
+</odoo>

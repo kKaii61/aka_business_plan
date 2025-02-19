@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Attendances/Manager/Handle WorkingShift -->
+        <menuitem id="handle_working_shift_register_menu"
+                  name="Handling Working Shift Registration"
+                  parent="hr_attendance.menu_hr_attendance_root"
+                  action="handling_working_shift_register_action"
+                  sequence="11"/>
+
+        <!-- Attendances/Working Shift Registration -->
+        <menuitem id="working_shift_register_sub_menu"
+                  name="Working Shift Registration"
+                  parent="hr_attendance.menu_hr_attendance_root"
+                  action="enmasys_time_off.working_shift_register_default_action"
+                  sequence="25"/>
+
+        <!-- Attendances/Configuration/Shifts -->
+        <menuitem id="menu_root_shifts"
+                  name="Shifts"
+                  parent="hr_attendance.menu_hr_attendance_settings"
+                  sequence="20"/>
+
+        <!-- Attendances/Configuration/Shifts/Shift -->
+        <menuitem id="menu_sub_shift"
+                  name="Shift"
+                  parent="menu_root_shifts"
+                  sequence="50"
+                  action="enmasys_time_off.working_shift_default_action"/>
+    </data>
+</odoo>

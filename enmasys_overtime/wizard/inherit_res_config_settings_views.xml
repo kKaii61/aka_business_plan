@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="enmasys_overtime_inherit_base_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">enmasys_overtime_inherit_base_res_config_settings_view_form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="Overtimes" string="Overtime" name="enmasys_overtime">
+                        <block title="Overtime-Intervals" name="intervals_setting_container">
+                            <setting string="Default-Intervals" company_dependent="1">
+                                <span class="o_form_label">
+                                    Default Intervals:
+                                    <field name="x_default_estimated_ot_start_time" style="width: 20%;"/>
+                                    to
+                                    <field name="x_default_estimated_ot_end_time" style="width: 20%;"/>
+                                </span>
+                                <div class="text-muted">
+                                    Default Intervals for OVER-TIME.
+                                </div>
+                            </setting>
+                            <setting string="Default Lunch-Intervals" company_dependent="1">
+                                <span class="o_form_label">
+                                    Lunch Intervals (HH:MM to HH:MM):
+                                    <field name="x_over_time_lunch_from" style="width: 13%;"
+                                           widget="float_time"/>
+                                    to
+                                    <field name="x_over_time_lunch_to" style="width: 13%;"
+                                           widget="float_time"/>
+                                </span>
+                                <div class="text-muted">
+                                    Lunch duration for OVER-TIME.
+                                </div>
+                            </setting>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- FORM VIEWS -->
+        <record id="hr_holiday_report_default_form_view" model="ir.ui.view">
+            <field name="name">hr_holiday_report_default_form_view</field>
+            <field name="model">hr.holiday.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1 style="text-align: center;">HOLIDAY REPORT</h1>
+                        <group>
+                            <group>
+                                <field name="x_department_ids" widget="many2many_tags"
+                                       options="{'no_create_edit': True, 'no_create': True}"/>
+                                <field name="x_year_ref" widget="char"/>
+                            </group>
+                            <group>
+                                <field name="x_employee_ids" widget="many2many_tags_avatar"
+                                       options="{'no_create_edit': True, 'no_create': True}"/>
+                            </group>
+                        </group>
+                        <button name="open_report_view" string="Tính Giá Trị" type="object" class="oe_highlight m-2"/>
+                        <button name="open_report_excel" string="In Excel" type="object" class="oe_highlight m-2"
+                                style="margin-left:10px"/>
+                        <field name="x_data_ids" readonly="1" class="mt-2">
+                            <tree>
+                                <field name="x_employee_id"/>
+                                <field name="x_employee_position_id"/>
+                                <field name="x_department_id"/>
+                                <field name="x_remaining_holiday_last_year"/>
+                                <field name="x_used_of_remaining_holiday_last_year"/>
+                                <field name="x_allocated_intervals"/>
+                                <field name="x_validated_holiday_requests"/>
+                                <field name="x_used_leaves"/>
+                                <field name="x_remaining_leave"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="x_employee_id"/>
+                                        <field name="x_employee_position_id"/>
+                                        <field name="x_department_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="x_remaining_holiday_last_year"/>
+                                        <field name="x_used_of_remaining_holiday_last_year"/>
+                                        <field name="x_allocated_intervals"/>
+                                        <field name="x_validated_holiday_requests"/>
+                                        <field name="x_used_leaves"/>
+                                        <field name="x_remaining_leave"/>
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTIONS -->
+        <record id="hr_holiday_report_default_action" model="ir.actions.act_window">
+            <field name="name">Holiday Report</field>
+            <field name="res_model">hr.holiday.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <!-- MENUS -->
+        <menuitem id="hr_holiday_report_default_menu" name="Holiday Report" sequence="30"
+                  parent="hr_holidays.menu_hr_holidays_report"
+                  action="enmasys_overtime.hr_holiday_report_default_action"/>
+    </data>
+</odoo>

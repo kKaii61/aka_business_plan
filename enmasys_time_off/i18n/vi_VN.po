@@ -1,0 +1,1336 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_time_off
+# 	* hr_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-09 07:26+0000\n"
+"PO-Revision-Date: 2024-04-09 07:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_attendance.py:0
+#, python-format
+msgid "\"Check Out\" time cannot be earlier than \"Check In\" time."
+msgstr "Giờ \"Đăng nhập\" không thể trước giờ \"Đăng xuất\"."
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_attendance.py:0
+#, python-format
+msgid "%(empl_name)s from %(check_in)s"
+msgstr "%(empl_name)s từ %(check_in)s"
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_attendance.py:0
+#, python-format
+msgid "%(empl_name)s from %(check_in)s to %(check_out)s"
+msgstr "%(empl_name)s từ %(check_in)s đến %(check_out)s"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid ""
+"<b>Warning! Last check in was over 12 hours ago.</b><br/>If this isn't "
+"right, please contact Human Resource staff"
+msgstr ""
+"<b>Cảnh báo! Lần kiểm tra cuối cùng đã hơn 12 giờ trước.</b><br/>Nếu điều "
+"này không đúng, xin vui lòng liên hệ với nhân viên phòng nhân sự"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_hr_attendance_kanban
+msgid "<i class=\"fa fa-calendar\" aria-label=\"Period\" role=\"img\" title=\"Period\"/>"
+msgstr ""
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Employee PIN</span>"
+msgstr "<span class=\"o_form_label\">Mã PIN nhân viên</span>"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_user_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
+msgid ""
+"<span class=\"o_stat_text\">\n"
+"                            Last Month\n"
+"                        </span>"
+msgstr "<span class=\"o_stat_text\">Tháng gần nhất</span>"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_user_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
+msgid "<span class=\"o_stat_text\">Attendance</span>"
+msgstr "<span class=\"o_stat_text\">Có mặt</span>"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_user_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
+msgid "<span class=\"o_stat_text\">Attended Since</span>"
+msgstr "<span class=\"o_stat_text\">Điểm danh từ</span>"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_user_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
+msgid "<span class=\"o_stat_text\">Not Attended Since</span>"
+msgstr "<span class=\"o_stat_text\">Chưa điểm danh từ</span>"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_employees_view_kanban
+msgid ""
+"<span id=\"oe_hr_attendance_status\" class=\"fa fa-circle "
+"oe_hr_attendance_status_green\" role=\"img\" aria-label=\"Available\" "
+"title=\"Available\"/>"
+msgstr ""
+"<span id=\"oe_hr_attendance_status\" class=\"fa fa-circle "
+"oe_hr_attendance_status_green\" role=\"img\" aria-label=\"Available\" "
+"title=\"Sẵn sàng\"/>"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_employees_view_kanban
+msgid ""
+"<span id=\"oe_hr_attendance_status\" class=\"fa fa-circle oe_hr_attendance_status_orange\" role=\"img\" aria-label=\"Not available\" title=\"Not available\">\n"
+"                                    </span>"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_needaction
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_ids
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_exception_decoration
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_state
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_type_icon
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hr_attendance
+#: model_terms:ir.actions.act_window,help:hr_attendance.hr_employee_attendance_action_kanban
+msgid ""
+"Add a few employees to be able to select an employee here and perform his check in / check out.\n"
+"                To create employees go to the Employees menu."
+msgstr ""
+"Thêm một vài nhân viên để có thể chọn một nhân viên ở đây và thực hiện đăng nhập / đăng xuất.\n"
+"Để tạo nhân viên, hãy vào menu Nhân viên."
+
+#. module: hr_attendance
+#: model:res.groups,name:hr_attendance.group_hr_attendance_manager
+msgid "Administrator"
+msgstr "Quản lý"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.enmasys_time_off_inherit_view_employee_form
+msgid "All subordinate"
+msgstr "Nhân viên cấp dưới"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_hr_employee__x_all_subordinated_employee_ids
+msgid "All subordinated employees"
+msgstr "Nhân viên cấp dưới (Trực tiếp và gián tiếp)"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "An apple a day keeps the doctor away"
+msgstr "Mỗi ngày một trái táo để tránh xa bác sỹ"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Another good day's work! See you soon!"
+msgstr "Hoàn thành một ngày làm việc tốt nữa! Hẹn gặp lại bạn!"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_attachment_count
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hr_attendance
+#: model:ir.actions.client,name:hr_attendance.hr_attendance_action_my_attendances
+#: model:ir.model,name:hr_attendance.model_hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__attendance_ids
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__attendance_ids
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__attendance_ids
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_graph
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_pivot
+msgid "Attendance"
+msgstr "Chấm công"
+
+#. module: hr_attendance
+#: model:ir.actions.act_window,name:hr_attendance.hr_attendance_action_graph
+#: model:ir.actions.act_window,name:hr_attendance.hr_attendance_action_graph_filtered
+msgid "Attendance Analysis"
+msgstr "Phân tích Điểm danh"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__attendance_state
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__attendance_state
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__attendance_state
+#: model:ir.model.fields,field_description:hr_attendance.field_res_users__attendance_state
+msgid "Attendance Status"
+msgstr "Trạng thái chấm công"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_working_type__complete_attendance
+msgid "Attendance completely"
+msgstr "Đi làm đủ"
+
+#. module: hr_attendance
+#: model:ir.actions.act_window,name:hr_attendance.hr_attendance_action
+#: model:ir.actions.act_window,name:hr_attendance.hr_attendance_action_employee
+#: model:ir.actions.client,name:hr_attendance.hr_attendance_action_kiosk_mode
+#: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_root
+#: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_view_attendances
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_department_view_kanban
+#: model_terms:ir.ui.view,arch_db:hr_attendance.res_config_settings_view_form
+msgid "Attendances"
+msgstr "Chấm công"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_user_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
+#, python-format
+msgid "Available"
+msgstr "Khả dụng"
+
+#. module: hr_attendance
+#: model:ir.model,name:hr_attendance.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "Người dùng cơ bản"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_tree_view
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_attendance.py:0
+#, python-format
+msgid ""
+"Cannot create new attendance record for %(empl_name)s, the employee hasn't "
+"checked out since %(datetime)s"
+msgstr ""
+"Không thể tạo ghi nhận có mặt cho nhân viên %(empl_name)s. Nhân viên này vẫn"
+" chưa checkout kể từ %(datetime)s"
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_attendance.py:0
+#: code:addons/hr_attendance/models/hr_attendance.py:0
+#, python-format
+msgid ""
+"Cannot create new attendance record for %(empl_name)s, the employee was "
+"already checked in on %(datetime)s"
+msgstr ""
+"Không thể tạo mới đăng nhập/đăng xuất cho %(empl_name)s, người mà đã đăng "
+"nhập vào %(datetime)s"
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_employee.py:0
+#, python-format
+msgid ""
+"Cannot perform check out on %(empl_name)s, could not find corresponding "
+"check in. Your attendances have probably been modified manually by human "
+"resources."
+msgstr ""
+"Không thể thực hiện việc đăng xuất cho nhân viên %(empl_name)s, do không tìm"
+" thấy lần đăng nhập tương ứng. Dữ liệu Điểm danh của bạn có thể đã được điều"
+" chỉnh bởi bộ phận nhân sự."
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__check_in
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__last_check_in
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__last_check_in
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__last_check_in
+#: model:ir.model.fields,field_description:hr_attendance.field_res_users__last_check_in
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
+msgid "Check In"
+msgstr "Đăng nhập"
+
+#. module: hr_attendance
+#: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_my_attendances
+msgid "Check In / Check Out"
+msgstr "Đăng nhập / Đăng xuất"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_check_in_time
+msgid "Check In time"
+msgstr "Giờ chấm công vào"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__check_out
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__last_check_out
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__last_check_out
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__last_check_out
+#: model:ir.model.fields,field_description:hr_attendance.field_res_users__last_check_out
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
+msgid "Check Out"
+msgstr "Đăng xuất"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_check_out_time
+msgid "Check Out time"
+msgstr "Giờ chấm công ra"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+msgid "Check-In"
+msgstr "Chấm công vào"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+msgid "Check-In at"
+msgstr "Chấm công vào lúc"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.res_config_settings_view_form
+msgid "Check-In/Out"
+msgstr "Đănh Nhập/Xuất"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+msgid "Check-Out at"
+msgstr "Chấm công ra vào lúc"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+msgid "Check-out"
+msgstr "Chấm công ra"
+
+#. module: hr_attendance
+#: model:ir.model.fields.selection,name:hr_attendance.selection__hr_employee__attendance_state__checked_in
+#: model:ir.model.fields.selection,name:hr_attendance.selection__hr_employee_base__attendance_state__checked_in
+#: model:ir.model.fields.selection,name:hr_attendance.selection__hr_employee_public__attendance_state__checked_in
+msgid "Checked in"
+msgstr "Đăng nhập"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Checked in at"
+msgstr "Đăng nhập vào"
+
+#. module: hr_attendance
+#: model:ir.model.fields.selection,name:hr_attendance.selection__hr_employee__attendance_state__checked_out
+#: model:ir.model.fields.selection,name:hr_attendance.selection__hr_employee_base__attendance_state__checked_out
+#: model:ir.model.fields.selection,name:hr_attendance.selection__hr_employee_public__attendance_state__checked_out
+msgid "Checked out"
+msgstr "Đăng xuất"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Checked out at"
+msgstr "Đăng xuất vào"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_check_in_type__checkin_late_with_permission
+msgid "Checkin late with permission"
+msgstr "Trễ có phép"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_check_in_type__checkin_late_without_permission
+msgid "Checkin late without permission"
+msgstr "Trễ không phép"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_check_in_type
+msgid "Checkin type"
+msgstr "Loại chấm công vào"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_check_out_type
+msgid "Checkout type"
+msgstr "Loại chấm công ra"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Click to"
+msgstr "Bấm vào"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Company Logo"
+msgstr "Logo Công ty"
+
+#. module: hr_attendance
+#: model:ir.model,name:hr_attendance.model_res_config_settings
+msgid "Config Settings"
+msgstr "Thiết lập cấu hình"
+
+#. module: hr_attendance
+#: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_settings
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_tree_view
+msgid "Configure"
+msgstr "Thiết lập"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_tree_view
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: hr_attendance
+#: model_terms:ir.actions.act_window,help:hr_attendance.hr_employee_attendance_action_kanban
+msgid "Create a new employee"
+msgstr "Tạo một nhân viên mới"
+
+#. modules: enmasys_time_off, hr_attendance
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__create_uid
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__create_uid
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. modules: enmasys_time_off, hr_attendance
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__create_date
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__create_date
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__create_date
+msgid "Created on"
+msgstr "Tạo vào lúc"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_day_of_week
+msgid "Day of week"
+msgstr "Thứ"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__department_id
+msgid "Department"
+msgstr "Phòng/Ban"
+
+#. modules: enmasys_time_off, hr_attendance
+#: model:ir.model.fields,field_description:enmasys_time_off.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__display_name
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__display_name
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__display_name
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__display_name
+#: model:ir.model.fields,field_description:hr_attendance.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:hr_attendance.field_res_users__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Early to bed and early to rise, makes a man healthy, wealthy and wise"
+msgstr ""
+"Ngủ sớm và dậy sớm sẽ khiến con người khỏe mạnh, giàu có và khôn ngoan"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Eat breakfast as a king, lunch as a merchant and supper as a beggar"
+msgstr "Sáng ăn cho ta, trưa ăn cho bạn, tối ăn cho kẻ thù"
+
+#. modules: enmasys_time_off, hr_attendance
+#: model:ir.model,name:enmasys_time_off.model_hr_employee
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__employee_id
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_employees_view_kanban
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_res_config_settings__group_attendance_use_pin
+msgid "Employee PIN"
+msgstr "Mã PIN nhân viên"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_attendance_tree
+msgid "Employee attendances"
+msgstr "Điểm danh của nhân viên"
+
+#. module: hr_attendance
+#: model:ir.actions.act_window,name:hr_attendance.hr_employee_attendance_action_kanban
+#: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_view_employees_kanban
+msgid "Employees"
+msgstr "Nhân viên"
+
+#. module: hr_attendance
+#: model:res.groups,name:hr_attendance.group_hr_attendance_use_pin
+msgid "Enable PIN use"
+msgstr "Sử dụng PIN"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Error: could not find corresponding employee."
+msgstr "Lỗi: Không tìm thấy nhân viên tương ứng."
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_default_form_view
+msgid "Ex: Afternoon,...."
+msgstr "Ví dụ: Ca chiều...."
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "First come, first served"
+msgstr "Đến trước, phục vụ trước"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_follower_ids
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_channel_ids
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Kênh theo dõi"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_partner_ids
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__activity_type_icon
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Glad to have you back, it's been a while!"
+msgstr "Thật vui vì bạn đã quay lai, đã lâu rồi!"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Go back"
+msgstr "Trở lại"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Good afternoon"
+msgstr "Chào buổi chiều"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Good evening"
+msgstr "Chào buổi tối"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Good morning"
+msgstr "Chào buổi sáng"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Good night"
+msgstr "Chúc ngủ ngon"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Goodbye"
+msgstr "Tạm biệt"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_tree_view
+msgid "Had timekeeping"
+msgstr "Đã chấm công"
+
+#. module: enmasys_time_off
+#: model:ir.ui.menu,name:enmasys_time_off.handle_working_shift_register_menu
+msgid "Handling Working Shift Registration"
+msgstr "Xử lý ca làm việc"
+
+#. module: enmasys_time_off
+#: model:ir.actions.act_window,name:enmasys_time_off.handling_working_shift_register_action
+msgid "Handling Working shift Register"
+msgstr "Xử lý ca làm việc"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Have a good afternoon"
+msgstr "Chúc một buổi chiều tốt lành!"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Have a good day!"
+msgstr "Chúc một ngày tốt lành!"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Have a good evening"
+msgstr "Chúc một buổi tối tốt lành"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "Have a nice lunch!"
+msgstr "Ăn trưa ngon miệng!"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_user_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
+msgid "Hours"
+msgstr "Giờ"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__hours_last_month
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__hours_last_month
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__hours_last_month
+#: model:ir.model.fields,field_description:hr_attendance.field_res_users__hours_last_month
+msgid "Hours Last Month"
+msgstr "Giờ làm tháng gần nhất"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__hours_last_month_display
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__hours_last_month_display
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__hours_last_month_display
+#: model:ir.model.fields,field_description:hr_attendance.field_res_users__hours_last_month_display
+msgid "Hours Last Month Display"
+msgstr "Hiển thị giờ làm tháng gần nhất"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__hours_today
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__hours_today
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__hours_today
+msgid "Hours Today"
+msgstr "Giờ làm hôm nay"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
+msgid "Hr Attendance Search"
+msgstr "Tìm kiếm Điểm danh"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__state__cancel
+msgid "Hủy"
+msgstr ""
+
+#. modules: enmasys_time_off, hr_attendance
+#: model:ir.model.fields,field_description:enmasys_time_off.field_hr_employee__id
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__id
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__id
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__id
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__id
+#: model:ir.model.fields,field_description:hr_attendance.field_res_config_settings__id
+#: model:ir.model.fields,field_description:hr_attendance.field_res_users__id
+msgid "ID"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_exception_icon
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__activity_exception_icon
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Identify Manually"
+msgstr ""
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "If a job is worth doing, it is worth doing well!"
+msgstr "Làm gì thì phải làm đến nơi đến chốn! "
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__message_needaction
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__message_unread
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__message_needaction
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__message_has_error
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__message_has_sms_error
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__message_has_error
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Invalid request, please return to the main menu."
+msgstr "Yêu cầu không hợp lệ, vui lòng quay về trình đơn chính."
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_is_follower
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hr_attendance
+#: model:res.groups,name:hr_attendance.group_hr_attendance_kiosk
+msgid "Kiosk Attendance"
+msgstr ""
+
+#. module: hr_attendance
+#: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_kiosk_no_user_mode
+msgid "Kiosk Mode"
+msgstr "Chế độ Ki-ốt"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee__last_attendance_id
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base__last_attendance_id
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_public__last_attendance_id
+msgid "Last Attendance"
+msgstr "Có mặt lần cuối"
+
+#. modules: enmasys_time_off, hr_attendance
+#: model:ir.model.fields,field_description:enmasys_time_off.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift____last_update
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register____last_update
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance____last_update
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_employee_base____last_update
+#: model:ir.model.fields,field_description:hr_attendance.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:hr_attendance.field_res_users____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. modules: enmasys_time_off, hr_attendance
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__write_uid
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__write_uid
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__write_uid
+msgid "Last Updated by"
+msgstr "Chỉnh sửa bởi"
+
+#. modules: enmasys_time_off, hr_attendance
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__write_date
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__write_date
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__write_date
+msgid "Last Updated on"
+msgstr "Chỉnh sửa vào lúc"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_check_in_type__late_in_early_out
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_check_out_type__late_in_early_out
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_working_type__late_in_early_out
+msgid "Late Checkin/Early Check-Out"
+msgstr "Đi trễ về sớm"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_main_attachment_id
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hr_attendance
+#: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_manage_attendances
+msgid "Manager"
+msgstr "Người quản lý"
+
+#. module: hr_attendance
+#: model:res.groups,name:hr_attendance.group_hr_attendance
+msgid "Manual Attendance"
+msgstr "Nhân viên"
+
+#. module: hr_attendance
+#: model:ir.actions.client,name:hr_attendance.hr_attendance_action_greeting_message
+msgid "Message"
+msgstr "Thông báo"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_has_error
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_ids
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__my_activity_date_deadline
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
+msgid "My Attendances"
+msgstr "Điểm danh của tôi"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_date_deadline
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_summary
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_type_id
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_attendance_view_filter
+msgid "No Check Out"
+msgstr "Không đăng xuất"
+
+#. module: hr_attendance
+#: model_terms:ir.actions.act_window,help:hr_attendance.hr_attendance_action
+msgid "No attendance records found"
+msgstr "Không tìm thấy dữ liệu chấm công"
+
+#. module: hr_attendance
+#: model_terms:ir.actions.act_window,help:hr_attendance.hr_attendance_action_employee
+msgid "No attendance records to display"
+msgstr "Không có dữ liệu chấm công để hiển thị"
+
+#. module: hr_attendance
+#: model_terms:ir.actions.act_window,help:hr_attendance.hr_attendance_action_graph
+#: model_terms:ir.actions.act_window,help:hr_attendance.hr_attendance_action_graph_filtered
+msgid "No data yet!"
+msgstr "Chưa có dữ liệu nào!"
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_employee.py:0
+#, python-format
+msgid "No employee corresponding to Badge ID '%(barcode)s.'"
+msgstr ""
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_user_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
+msgid "Not available"
+msgstr "Không sẵn sàng"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_working_type__not_checkin
+msgid "Not checkin"
+msgstr "Quên chấm công"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_needaction_counter
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_has_error_counter
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__message_needaction_counter
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__message_has_error_counter
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__message_unread_counter
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "OK"
+msgstr ""
+
+#. module: hr_attendance
+#: model:res.groups,name:hr_attendance.group_hr_attendance_user
+msgid "Officer"
+msgstr "Cán bộ"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Please enter your PIN to"
+msgstr "Vui lòng nhập mã PIN của bạn vào"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Please return to the main menu."
+msgstr "Vui lòng qua về trình đơn chính."
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+msgid "Register"
+msgstr "Người đăng ký"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_registered_employee_id
+msgid "Registered Employee"
+msgstr "Nhân viên"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_registered_employee_department_id
+msgid "Registered Employee's department"
+msgstr "Phòng ban"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_registered_date
+msgid "Registered date"
+msgstr "Ngày"
+
+#. module: hr_attendance
+#: model:ir.ui.menu,name:hr_attendance.menu_hr_attendance_report
+msgid "Reporting"
+msgstr "Báo cáo"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__activity_user_id
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__activity_user_id
+msgid "Responsible User"
+msgstr "Người chịu trách nhiệm"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_has_sms_error
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Scan your badge"
+msgstr "Quét thẻ"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.res_config_settings_view_form
+msgid "Set PIN codes in the employee detail form (in HR Settings tab)."
+msgstr "Thiết lập mã PIN ở form Nhân viên (trong tab Thiết lập Nhân lực)."
+
+#. module: hr_attendance
+#: model:ir.actions.act_window,name:hr_attendance.action_hr_attendance_settings
+msgid "Settings"
+msgstr "Thiết lập"
+
+#. module: enmasys_time_off
+#: model:ir.ui.menu,name:enmasys_time_off.menu_sub_shift
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+msgid "Shift"
+msgstr "Ca làm việc"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__x_shift_from
+msgid "Shift from"
+msgstr "Giờ từ"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__x_shift_name
+msgid "Shift name"
+msgstr "Tên ca"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__x_shift_to
+msgid "Shift to"
+msgstr "Giờ đến"
+
+#. module: enmasys_time_off
+#: model:ir.ui.menu,name:enmasys_time_off.menu_root_shifts
+msgid "Shifts"
+msgstr "Ca"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Sign in"
+msgstr "Đăng nhập"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Sign out"
+msgstr "Đăng xuất"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__state
+msgid "Status"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__activity_state
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_employee.py:0
+#, python-format
+msgid "Such grouping is not allowed."
+msgstr "Nhóm như vậy là không được phép."
+
+#. module: hr_attendance
+#: model_terms:ir.actions.act_window,help:hr_attendance.hr_attendance_action
+#: model_terms:ir.actions.act_window,help:hr_attendance.hr_attendance_action_employee
+msgid "The attendance records of your employees will be displayed here."
+msgstr "Dữ liệu đăng nhập/ đăng xuất của nhân viên sẽ được hiển thị ở đây."
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/js/greeting_message.js:0
+#, python-format
+msgid "The early bird catches the worm"
+msgstr "Thành công sẽ đến với ai biết nắm bắt cơ hội trước tiên"
+
+#. module: hr_attendance
+#: model:res.groups,comment:hr_attendance.group_hr_attendance_kiosk
+msgid ""
+"The user will be able to open the kiosk mode and validate the employee PIN."
+msgstr ""
+
+#. module: hr_attendance
+#: model:res.groups,comment:hr_attendance.group_hr_attendance
+msgid ""
+"The user will gain access to the human resources attendance menu, enabling "
+"him to manage his own attendance."
+msgstr ""
+"Người dùng sẽ có quyền truy cập vào trình đơn Quản lý Điểm danh, cho phép họ"
+" quản lý vào ra của chính mình."
+
+#. module: hr_attendance
+#: model:res.groups,comment:hr_attendance.group_hr_attendance_use_pin
+msgid ""
+"The user will have to enter his PIN to check in and out manually at the "
+"company screen."
+msgstr ""
+"Người dùng sẽ phải nhập mã PIN của anh ta để check in và out một cách thủ "
+"công ở giao diện công ty."
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Today's work hours:"
+msgstr "Giờ làm việc hôm nay:"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__activity_exception_decoration
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_working_type__unexcused_absence
+msgid "Unexcused Absence"
+msgstr "Nghỉ không phép"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_unread
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__message_unread_counter
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.res_config_settings_view_form
+msgid "Use PIN codes to check in in Kiosk Mode"
+msgstr "Sử dụng mã PIN để đăng nhập trong chế độ Ki-ốt"
+
+#. module: hr_attendance
+#: model:ir.model,name:hr_attendance.model_res_users
+msgid "Users"
+msgstr "Người dùng"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Want to check out?"
+msgstr "Bạn muốn đăng xuất?"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid ""
+"Warning : Your user should be linked to an employee to use attendance. "
+"Please contact your administrator."
+msgstr ""
+"Cảnh báo: Người dùng của bạn nên được liên kết với một nhân viên để sử dụng "
+"điểm danh.Hãy liên hệ với quản trị viên của bạn."
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift__website_message_ids
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift__website_message_ids
+#: model:ir.model.fields,help:enmasys_time_off.field_working_shift_register__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Welcome"
+msgstr "Chào mừng"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Welcome to"
+msgstr "Chào mừng bạn đến"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "Welcome!"
+msgstr "Xin chào!"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_check_out_type__checkin_late_with_permission
+msgid "With permission"
+msgstr "Trễ có phép"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__x_check_out_type__checkin_late_without_permission
+msgid "Without permission"
+msgstr "Trễ không phép"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_attendance_tree
+msgid "Work Hours"
+msgstr "Giờ làm việc"
+
+#. module: hr_attendance
+#: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance__worked_hours
+msgid "Worked Hours"
+msgstr "Giờ đã làm việc"
+
+#. module: hr_attendance
+#: model_terms:ir.ui.view,arch_db:hr_attendance.hr_user_view_form
+#: model_terms:ir.ui.view,arch_db:hr_attendance.view_employee_form_inherit_hr_attendance
+msgid "Worked hours last month"
+msgstr "Giờ đã làm tháng gần nhất"
+
+#. module: enmasys_time_off
+#: model:ir.ui.menu,name:enmasys_time_off.working_shift_register_sub_menu
+msgid "Working Shift Registration"
+msgstr "Đăng ký ca làm việc"
+
+#. module: enmasys_time_off
+#: model_terms:ir.ui.view,arch_db:enmasys_time_off.working_shift_register_default_form_view
+msgid "Working from"
+msgstr "Giờ làm từ"
+
+#. module: enmasys_time_off
+#: model:ir.actions.act_window,name:enmasys_time_off.working_shift_default_action
+#: model:ir.model,name:enmasys_time_off.model_working_shift
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_working_shift_id
+msgid "Working shift"
+msgstr "Ca làm việc"
+
+#. module: enmasys_time_off
+#: model:ir.actions.act_window,name:enmasys_time_off.working_shift_register_default_action
+msgid "Working shift Register"
+msgstr "Đăng ký ca"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_working_shift_from
+msgid "Working shift from"
+msgstr "Giờ vào ca"
+
+#. module: enmasys_time_off
+#: model:ir.model,name:enmasys_time_off.model_working_shift_register
+msgid "Working shift register"
+msgstr "Đăng ký ca"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_working_shift_to
+msgid "Working shift to"
+msgstr "Giờ ra ca"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields,field_description:enmasys_time_off.field_working_shift_register__x_working_type
+msgid "Working type"
+msgstr "Loại làm việc"
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_employee.py:0
+#, python-format
+msgid "Wrong PIN"
+msgstr "Sai PIN"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__state__confirm
+msgid "Xác nhận"
+msgstr ""
+
+#. module: hr_attendance
+#: code:addons/hr_attendance/models/hr_attendance.py:0
+#, python-format
+msgid "You cannot duplicate an attendance."
+msgstr "Bạn không thể nhân bản dữ liệu chấm công"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__state__request
+msgid "Yêu cầu"
+msgstr ""
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "check in"
+msgstr "đăng nhập"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "check out"
+msgstr "đăng xuất"
+
+#. module: hr_attendance
+#: model:ir.model.fields,help:hr_attendance.field_hr_employee__attendance_ids
+#: model:ir.model.fields,help:hr_attendance.field_hr_employee_base__attendance_ids
+#: model:ir.model.fields,help:hr_attendance.field_hr_employee_public__attendance_ids
+msgid "list of attendances for the employee"
+msgstr "danh sách có mặt đối với nhân viên"
+
+#. module: hr_attendance
+#. openerp-web
+#: code:addons/hr_attendance/static/src/xml/attendance.xml:0
+#, python-format
+msgid "or"
+msgstr "hoặc"
+
+#. module: enmasys_time_off
+#: model:ir.model.fields.selection,name:enmasys_time_off.selection__working_shift_register__state__timekeeping
+msgid "Đã chấm công"
+msgstr ""

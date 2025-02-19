@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="vpick_plan_delivery_tree" model="ir.ui.view">
+            <field name="name">stock.picking.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="arch" type="xml">
+                <tree string="Picking list" multi_edit="1" sample="1">
+                    <header>
+                        <button name="do_unreserve" type="object" string="Unreserve"/>
+                        <button name="action_assign" type="object" string="Check Availability"/>
+                        <button name="button_validate"  string="Validate" type="object"  />
+
+                    </header>
+                    <field name="company_id" column_invisible="True"/>
+                    <field name="priority" optional="show" widget="priority" nolabel="1"/>
+                    <field name="name" decoration-bf="1"/>
+                    <field name="location_id" options="{'no_create': True}" string="From" groups="stock.group_stock_multi_locations" optional="show" readonly="state == 'done'"/>
+                    <field name="location_dest_id" options="{'no_create': True}" string="To" groups="stock.group_stock_multi_locations" optional="show" readonly="state == 'done'"/>
+                    <field name="partner_id" optional="show" readonly="state in ['cancel', 'done']"/>
+                    <field name="is_signed" string="Signed" optional="hide" groups="stock.group_stock_sign_delivery"/>
+                    <field name="user_id" optional="hide" widget="many2one_avatar_user" readonly="state in ['cancel', 'done']"/>
+                    <field name="scheduled_date" optional="show" widget="remaining_days" invisible="state in ('done', 'cancel')" readonly="state in ['cancel', 'done']"/>
+                    <field name="commitment_date"/>
+                    <field name="picking_type_code" column_invisible="True"/>
+                    <field name="products_availability_state" column_invisible="True" options='{"lazy": true}'/>
+                    <field name="products_availability" options='{"lazy": true}'
+                        optional="hide"
+                        invisible="picking_type_code != 'outgoing' or state not in ['confirmed', 'waiting', 'assigned']"
+                        decoration-success="state == 'assigned' or products_availability_state == 'available'"
+                        decoration-warning="state != 'assigned' and products_availability_state in ('expected', 'available')"
+                        decoration-danger="state != 'assigned' and products_availability_state == 'late'"/>
+                    <field name="date_deadline" optional="hide" widget="remaining_days" invisible="state in ('done', 'cancel')"/>
+
+                    <field name="date_done" string="Effective Date" optional="hide"/>
+                    <field name="origin" optional="show" readonly="state in ['cancel', 'done']"/>
+                    <field name="backorder_id" optional="hide"/>
+                    <field name="picking_type_id" optional="hide"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="show"/>
+                    <field name="state" optional="show" widget="badge"
+                           decoration-danger="state=='cancel'"
+                           decoration-info="state== 'assigned'"
+                           decoration-muted="state == 'draft'"
+                           decoration-success="state == 'done'"
+                           decoration-warning="state not in ('draft','cancel','done','assigned')"/>
+                    <field name="activity_exception_decoration" widget="activity_exception"/>
+                    <field name="json_popover" widget="stock_rescheduling_popover" nolabel="1" invisible="not json_popover"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="vpick_plan_out_delivery_tree" model="ir.ui.view">
+            <field name="name">stock.picking.out.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="arch" type="xml">
+                <tree string="Picking list" multi_edit="1" sample="1">
+                    <header>
+                        <button name="do_unreserve" type="object" string="Unreserve"/>
+                        <button name="action_assign" type="object" string="Check Availability"/>
+                        <button name="button_validate"  string="Validate" type="object"  />
+                        <button name="action_create_tradition_delivery" type="object"
+                            string="Phiếu giao hàng"
+                            class="oe_highlight"/>
+                    </header>
+                    <field name="company_id" column_invisible="True"/>
+                    <field name="priority" optional="show" widget="priority" nolabel="1"/>
+                    <field name="name" decoration-bf="1"/>
+                    <field name="location_id" options="{'no_create': True}" string="From" groups="stock.group_stock_multi_locations" optional="show" readonly="state == 'done'"/>
+                    <field name="location_dest_id" options="{'no_create': True}" string="To" groups="stock.group_stock_multi_locations" optional="show" readonly="state == 'done'"/>
+                    <field name="partner_id" optional="show" readonly="state in ['cancel', 'done']"/>
+                    <field name="is_signed" string="Signed" optional="hide" groups="stock.group_stock_sign_delivery"/>
+                    <field name="user_id" optional="hide" widget="many2one_avatar_user" readonly="state in ['cancel', 'done']"/>
+                    <field name="scheduled_date" optional="show" widget="remaining_days" invisible="state in ('done', 'cancel')" readonly="state in ['cancel', 'done']"/>
+                    <field name="commitment_date"/>
+                    <field name="picking_type_code" column_invisible="True"/>
+                    <field name="products_availability_state" column_invisible="True" options='{"lazy": true}'/>
+                    <field name="products_availability" options='{"lazy": true}'
+                        optional="hide"
+                        invisible="picking_type_code != 'outgoing' or state not in ['confirmed', 'waiting', 'assigned']"
+                        decoration-success="state == 'assigned' or products_availability_state == 'available'"
+                        decoration-warning="state != 'assigned' and products_availability_state in ('expected', 'available')"
+                        decoration-danger="state != 'assigned' and products_availability_state == 'late'"/>
+                    <field name="date_deadline" optional="hide" widget="remaining_days" invisible="state in ('done', 'cancel')"/>
+
+                    <field name="date_done" string="Effective Date" optional="hide"/>
+                    <field name="origin" optional="show" readonly="state in ['cancel', 'done']"/>
+                    <field name="backorder_id" optional="hide"/>
+                    <field name="picking_type_id" optional="hide"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="show"/>
+                    <field name="state" optional="show" widget="badge"
+                           decoration-danger="state=='cancel'"
+                           decoration-info="state== 'assigned'"
+                           decoration-muted="state == 'draft'"
+                           decoration-success="state == 'done'"
+                           decoration-warning="state not in ('draft','cancel','done','assigned')"/>
+                    <field name="activity_exception_decoration" widget="activity_exception"/>
+                    <field name="json_popover" widget="stock_rescheduling_popover" nolabel="1" invisible="not json_popover"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="view_picking_internal_search_out_inherit" model="ir.ui.view">
+        <field name="name">stock picking</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='status']" position="after">
+                 <separator/>
+                    <filter name="group_commitment_date" string="Ngày giao hàng" domain="[]"
+                           context="{'group_by': 'commitment_date'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_picking_out_inherit_form" model="ir.ui.view">
+        <field name="name">stock.picking.out.inherit.form.view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//button[@name='action_confirm']" position="after">
+                 <button name="action_create_export_stock_material" type="object"
+                            string="Phiếu xuất vật liệu"
+                            class="oe_highlight" invisible="picking_type_code != 'outgoing'"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/div[@name='button_box']" position="inside">
+                <button name="view_export_stock_material" type="object" class="oe_stat_button" icon="fa-pencil-square-o" invisible="export_stock_material_count == 0">
+                    <field name="export_stock_material_count" widget="statinfo" string="Phiếu xuất vật liệu"/>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='date_deadline']" position="after">
+                 <field name="commitment_date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_picking_pick_action" model="ir.actions.act_window">
+        <field name="name">Kế hoạch giao hàng</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('picking_type_id.sequence_code', '=', 'PICK'),('state','not in',('done','cancel'))]</field>
+        <field name="view_id" ref="enmasys_delivery_gt.vpick_plan_delivery_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No transfer found. Let's create one!
+            </p><p>
+                Transfers allow you to move products from one location to another.
+            </p>
+        </field>
+    </record>
+    <record id="stock_picking_out_action" model="ir.actions.act_window">
+        <field name="name">Kiểm tra và đóng gói</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('picking_type_id.sequence_code', '=', 'OUT'),('state','not in',('done','cancel'))]</field>
+        <field name="view_id" ref="enmasys_delivery_gt.vpick_plan_out_delivery_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No transfer found. Let's create one!
+            </p><p>
+                Transfers allow you to move products from one location to another.
+            </p>
+        </field>
+    </record>
+    <record id="stock_picking_out_done_action" model="ir.actions.act_window">
+        <field name="name">Xuất kho hoàn thành</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('picking_type_id.sequence_code', '=', 'OUT'),('state','=','done')]</field>
+        <field name="view_id" ref="enmasys_delivery_gt.vpick_plan_out_delivery_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No transfer found. Let's create one!
+            </p><p>
+                Transfers allow you to move products from one location to another.
+            </p>
+        </field>
+    </record>
+
+</odoo>
+

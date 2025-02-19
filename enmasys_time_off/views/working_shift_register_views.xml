@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="working_shift_register_gantt_view" model="ir.ui.view">
+            <field name="name">working.shift.register.gantt.view</field>
+            <field name="model">working.shift.register</field>
+            <field name="arch" type="xml">
+                <gantt js_class="working_shift_register_gantt"
+                    string="Work Shift Register"
+                    date_start="date_start"
+                    date_stop="date_stop"
+                    default_group_by='x_registered_employee_id'
+                    color="color"
+                    decoration-warning="state == 'request'"
+                    decoration-success="state == 'confirm'"
+                    decoration-info="state == 'timekeeping'"
+                    decoration-danger="state == 'cancel'"
+                    scales="day,week,month"
+                    precision="{'day': 'hour:quarter', 'week': 'day:half', 'month': 'day:half'}"
+                    plan="0"
+                    sample="1">
+                <field name="x_registered_employee_id" />
+                <field name="state" />
+                <field name="color" />
+                </gantt>
+            </field>
+        </record>
+
+        <!-- TREE VIEWS -->
+        <record id="working_shift_register_default_tree_view" model="ir.ui.view">
+            <field name="name">working_shift_register_default_tree_view</field>
+            <field name="model">working.shift.register</field>
+            <field name="arch" type="xml">
+                <tree editable="top" default_order="create_date desc">
+                    <field name="x_registered_employee_id"
+                           widget="many2one_avatar_employee"
+                           options="{'no_create': True, 'no_create_edit': True}"/>
+                    <field name="x_registered_employee_department_id"/>
+                    <field name="x_registered_date"/>
+                    <field name="x_day_of_week"/>
+                    <field name="x_working_shift_id"/>
+
+                    <field name="x_working_type" readonly="0"/>
+
+                    <field name="x_working_shift_from" widget="float_time"/>
+                    <field name="x_check_in_time"/>
+                    <field name="x_check_in_type" readonly="0"/>
+
+                    <field name="x_working_shift_to" widget="float_time"/>
+                    <field name="x_check_out_time"/>
+                    <field name="x_check_out_type" readonly="0"/>
+
+                    <field name="state" widget="badge"
+                           decoration-muted="state == 'cancel'"
+                           decoration-success="state == 'timekeeping'"
+                           decoration-info="state == 'confirm'"
+                           decoration-warning="state == 'request'"/>
+
+                    <field name="create_uid" widget="many2one_avatar_user" optional="hide"/>
+                    <field name="create_date" optional="hide"/>
+
+                    <button name="confirm_this_registration" type="object" string="Confirm" icon="fa-check-circle-o"
+                            invisible="state != 'request'"/>
+<!--                    attrs="{'invisible': [('state', '!=', 'request')]}"-->
+                    <button name="make_this_registration_had_timekeeping" type="object" string="Had timekeeping"
+                            groups="hr_attendance.group_hr_attendance_manager"
+
+                            invisible="state != 'confirm'"
+                            icon="fa-sign-in"/>
+<!--                    attrs="{'invisible': [('state', '!=', 'confirm')]}"-->
+                    <button name="cancel_this_registration" type="object" string="Cancel" icon="fa-times-circle-o"
+                            groups="hr_attendance.group_hr_attendance_user"
+                            invisible="state not in [False,'confirm']"/>
+<!--                    attrs="{'invisible': [('state', 'not in', (False, 'request'))]}"-->
+
+                    <button name="nude_this_registration" type="object" string="Configure" icon="fa-search"
+                           invisible="1"/>
+<!--                     attrs="{'invisible': [(1, '=', 1)]}"-->
+                    <field name="create_date" invisible="1"/>
+                    <field name="date_start" invisible="1"/>
+                    <field name="date_stop" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- FORM VIEWS -->
+        <record id="working_shift_register_default_form_view" model="ir.ui.view">
+            <field name="name">working_shift_register_default_form_view</field>
+            <field name="model">working.shift.register</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="confirm_this_registration" type="object" string="Confirm"
+                                icon="fa-check-circle-o"/>
+                        <button name="make_this_registration_had_timekeeping" type="object" string="Had timekeeping"
+                                icon="fa-sign-in"/>
+                        <button name="cancel_this_registration" type="object" string="Cancel" icon="fa-times-circle-o"/>
+                        <field name="state" widget="statusbar" clickable="1"/>
+                    </header>
+                    <sheet>
+                        <label for="x_registered_employee_id" class="oe_title"
+                               style="font-weight: bold; font-size: 18px;"/>
+                        <h1>
+                            <field name="x_registered_employee_id" style="height:50px; width:85%"/>
+                        </h1>
+                        <group>
+                            <group string="Shift">
+                                <field name="x_registered_date"/>
+                                <field name="x_day_of_week"/>
+                                <field name="x_working_shift_id"/>
+                                <label for="x_working_shift_from" string="Working from"/>
+                                <div>
+                                    <field name="x_working_shift_from" widget="float_time" class="oe_inline"/>
+                                    ~
+                                    <field name="x_working_shift_to" widget="float_time" class="oe_inline"/>
+                                </div>
+                            </group>
+                            <group string="Register">
+                                <field name="x_registered_employee_id"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="x_registered_employee_department_id"/>
+                            </group>
+                            <group string="Check-In">
+                                <div>
+                                    Check-In at
+                                    <field name="x_check_in_time" class="oe_inline"/>
+                                    :
+                                    <field name="x_check_in_type" class="oe_inline" widget="badge"/>
+                                </div>
+                            </group>
+                            <group string="Check-out">
+                                <div>
+                                    Check-Out at
+                                    <field name="x_check_out_time" class="oe_inline"/>
+                                    :
+                                    <field name="x_check_out_type" class="oe_inline" widget="badge"/>
+                                </div>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="working_shift_register_view_search" model="ir.ui.view">
+            <field name="name">working.shift.register.view.search</field>
+            <field name="model">working.shift.register</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="x_registered_employee_id" />
+                    <filter string="Nhân viên" name="group_employee" context="{'group_by':'x_registered_employee_id'}"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- ACTIONS -->
+        <record id="working_shift_register_default_action" model="ir.actions.act_window">
+            <field name="name">Working shift Register</field>
+            <field name="res_model">working.shift.register</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">gantt,tree,form</field>
+        </record>
+
+        <record id="handling_working_shift_register_action" model="ir.actions.act_window">
+            <field name="name">Handling Working shift Register</field>
+            <field name="res_model">working.shift.register</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="domain">
+                [('state', 'in', ('confirm', 'timekeeping'))]
+            </field>
+            <field name="context">{'create': False}</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

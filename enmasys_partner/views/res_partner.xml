@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="res_partner_group_view_form_inehrit" model="ir.ui.view">
+        <field name="name">res.partner.group.view.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@id='individual']" position="after">
+                <div class="o_row" name="code">
+                    <label name="code_label" for="x_code" string="Mã" class="o_form_label"/>
+                    <h5>
+
+                        <field name="x_code" readonly="True"/>
+                    </h5>
+                </div>
+            </xpath>
+            <xpath expr="//span[@name='address_name']" position="before">
+                <field name="x_group_id" options="{'no_create': True, 'no_edit': True}"/>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']//form//field[@name='title']" position="after">
+                <field name="x_group_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="res_partner_group_view_search_inehrit" model="ir.ui.view">
+        <field name="name">res.partner.group.view.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="replace">
+                <field name="name"
+                       filter_domain="['|', '|', '|', '|', '|', ('x_code', 'ilike', self), ('complete_name', 'ilike', self), ('ref', 'ilike', self), ('email', 'ilike', self), ('vat', 'ilike', self), ('company_registry', 'ilike', self)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,129 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_purchase_request_sercurity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-17 08:31+0000\n"
+"PO-Revision-Date: 2024-12-17 08:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__approved
+msgid "BOD Duyệt"
+msgstr "BOD Approved"
+
+#. module: enmasys_purchase_request_sercurity
+#: model_terms:ir.ui.view,arch_db:enmasys_purchase_request_sercurity.purchase_request_form_view_inherit
+msgid "BOD duyệt"
+msgstr "BOD Approved"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:res.groups,name:enmasys_purchase_request_sercurity.group_bod_purchase_request
+msgid "BOD duyệt yêu cầu mua hàng"
+msgstr "BOD Approves Purchase Request"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__done
+msgid "Done"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields,field_description:enmasys_purchase_request_sercurity.field_purchase_request__is_group_employee_purchase_request
+msgid "Is Group Employee Purchase Request"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields,field_description:enmasys_purchase_request_sercurity.field_purchase_request_line__partner_id
+msgid "Nhà cung cấp"
+msgstr "Supplier"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:res.groups,name:enmasys_purchase_request_sercurity.group_employee_purchase_request
+msgid "Nhân viên đề xuất yêu cầu mua hàng"
+msgstr "Employee Proposing Purchase Request"
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model,name:enmasys_purchase_request_sercurity.model_purchase_request
+#: model:ir.module.category,name:enmasys_purchase_request_sercurity.module_right_category_purchase_request
+msgid "Purchase Request"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#. odoo-python
+#: code:addons/enmasys_purchase_request_sercurity/wizard/purchase_request_line_make_purchase_order.py:0
+#, python-format
+msgid "Purchase Request %s is not approved"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model,name:enmasys_purchase_request_sercurity.model_purchase_request_line
+msgid "Purchase Request Line"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields,field_description:enmasys_purchase_request_sercurity.field_purchase_request__state
+msgid "Status"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:ir.model.fields.selection,name:enmasys_purchase_request_sercurity.selection__purchase_request__state__to_approve
+#: model_terms:ir.ui.view,arch_db:enmasys_purchase_request_sercurity.purchase_request_form_view_inherit
+msgid "TP Duyệt"
+msgstr "TP Approve"
+
+#. module: enmasys_purchase_request_sercurity
+#. odoo-python
+#: code:addons/enmasys_purchase_request_sercurity/wizard/purchase_request_line_make_purchase_order.py:0
+#: code:addons/enmasys_purchase_request_sercurity/wizard/purchase_request_line_make_purchase_order.py:0
+#, python-format
+msgid "The purchase has already been completed."
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model:res.groups,name:enmasys_purchase_request_sercurity.group_department_head_purchase_request
+msgid "Trưởng phòng duyệt yêu cầu mua hàng"
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#. odoo-python
+#: code:addons/enmasys_purchase_request_sercurity/wizard/purchase_request_line_make_purchase_order.py:0
+#, python-format
+msgid "You have to enter a Picking Type."
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#. odoo-python
+#: code:addons/enmasys_purchase_request_sercurity/wizard/purchase_request_line_make_purchase_order.py:0
+#, python-format
+msgid "You have to select lines from the same Picking Type."
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#. odoo-python
+#: code:addons/enmasys_purchase_request_sercurity/wizard/purchase_request_line_make_purchase_order.py:0
+#, python-format
+msgid "You have to select lines from the same company."
+msgstr ""
+
+#. module: enmasys_purchase_request_sercurity
+#: model_terms:ir.ui.view,arch_db:enmasys_purchase_request_sercurity.purchase_request_form_view_inherit
+msgid "Yêu cầu phê duyệt"
+msgstr ""

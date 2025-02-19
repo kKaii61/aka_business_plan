@@ -1,0 +1,412 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_hr_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-08 07:35+0000\n"
+"PO-Revision-Date: 2024-11-08 07:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__1
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__1
+msgid "01"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__2
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__2
+msgid "02"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__3
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__3
+msgid "03"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__4
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__4
+msgid "04"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__5
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__5
+msgid "05"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__6
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__6
+msgid "06"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__7
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__7
+msgid "07"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__8
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__8
+msgid "08"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__9
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__9
+msgid "09"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__report_payslip__from_month__10
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__report_payslip__to_month__10
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__10
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__10
+msgid "10"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__report_payslip__from_month__11
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__report_payslip__to_month__11
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__11
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__11
+msgid "11"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__report_payslip__from_month__12
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__report_payslip__to_month__12
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_from__12
+#: model:ir.model.fields.selection,name:enmasys_hr_payroll.selection__social_insurance_report__x_month_to__12
+msgid "12"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.actions.act_window,name:enmasys_hr_payroll.action_report_payslip
+msgid "BÁO CÁO PHIẾU LUƠNG"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model_terms:ir.ui.view,arch_db:enmasys_hr_payroll.report_payslip_form
+msgid "BÁO CÁO PHIẾU LƯƠNG"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.ui.menu,name:enmasys_hr_payroll.report_payslip_menu
+msgid "Báo cáo Phiếu lương"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_contract_id
+msgid "Contract"
+msgstr "Hợp đồng"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_medical_insurance_by_company_wage
+msgid "Contributed Medical-Insurance wage by Company"
+msgstr "Mức đóng BHYT của người sử dụng LĐ"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_medical_insurance_by_employee_wage
+msgid "Contributed Medical-Insurance wage by employee"
+msgstr "Mức đóng BHYT của người LĐ"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_social_insurance_by_company_wage
+msgid "Contributed Social-Insurance wage by Company"
+msgstr "Mức đóng BHXH của người sử dụng LĐ"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_social_insurance_by_employee_wage
+msgid "Contributed Social-Insurance wage by employee"
+msgstr "Mức đóng BHXH của người LĐ"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_unemployment_insurance_by_company_wage
+msgid "Contributed Unemployment-Insurance wage by Company"
+msgstr "Mức đóng BHTN của người sử dụng LĐ"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_unemployment_insurance_by_employee_wage
+msgid "Contributed Unemployment-Insurance wage by employee"
+msgstr "Mức đóng BHTN của người LĐ"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__create_uid
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_excel__create_uid
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__create_uid
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__create_uid
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__create_date
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_excel__create_date
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__create_date
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__create_date
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_currency_id
+msgid "Currency"
+msgstr "Đơn vị"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__display_name
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_excel__display_name
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__display_name
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__display_name
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_employee_id
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model,name:enmasys_hr_payroll.model_hr_contract
+msgid "Employee Contract"
+msgstr "Hợp đồng nhân viên"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_excel__file_name
+msgid "Excel file"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_first_contract_date
+msgid "First contract date"
+msgstr "Ngày vào công ty"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__x_month_from
+msgid "From month"
+msgstr "Từ tháng"
+
+#. module: enmasys_hr_payroll
+#: model_terms:ir.ui.view,arch_db:enmasys_hr_payroll.social_insurance_report_default_form_view
+msgid "Generate datas"
+msgstr "Tính giá trị"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__employee_id
+msgid "Họ và tên"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__id
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_excel__id
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__id
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__id
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__id
+msgid "ID"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model_terms:ir.ui.view,arch_db:enmasys_hr_payroll.report_payslip_form
+msgid "In Excel"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__write_uid
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_excel__write_uid
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__write_uid
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__write_uid
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__write_date
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_excel__write_date
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__write_date
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__write_date
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__basic_salary
+msgid "Lương cơ bản"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_medical_insurance_wage
+msgid "Medical Insurance wage"
+msgstr "Lương, phụ cấp căn cứ đóng BHYT"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__employee_code
+msgid "Mã nhân viên"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__payslip_code
+msgid "Mã phiếu"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__year
+msgid "Năm"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__payslip_id
+msgid "Phiếu lương"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__department_ids
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__department_id
+msgid "Phòng ban"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__report_id
+msgid "Report"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_excel__excel_file
+msgid "Report file"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model_terms:ir.ui.view,arch_db:enmasys_hr_payroll.social_insurance_report_default_form_view
+msgid "SOCIAL INSURANCE REPORT"
+msgstr "BÁO CÁO CHI TIẾT BHXH"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__x_salary_report_ids
+msgid "Salaries Report"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_seniority_wage
+msgid "Seniority wage"
+msgstr "Phụ cấp thâm niên"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_social_insurance_no
+msgid "Social Insurance No."
+msgstr "Số BHXH"
+
+#. module: enmasys_hr_payroll
+#. odoo-python
+#: code:addons/enmasys_hr_payroll/report/social_insurance_report.py:0
+#: model:ir.actions.act_window,name:enmasys_hr_payroll.social_insurance_report_default_action
+#: model:ir.model,name:enmasys_hr_payroll.model_social_insurance_report
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_report_id
+#: model:ir.ui.menu,name:enmasys_hr_payroll.social_insurance_report_default_menu
+#, python-format
+msgid "Social Insurance Report"
+msgstr "Báo cáo chi tiết BHXH"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model,name:enmasys_hr_payroll.model_social_insurance_salary_report
+msgid "Social Insurance Report: Salary"
+msgstr "Báo cáo chi tiết BHXH"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_social_insurance_wage
+msgid "Social Insurance wage"
+msgstr "Lương, phụ cấp căn cứ đóng BHXH"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__x_month_to
+msgid "To month"
+msgstr "Đến tháng"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__payslip_name
+msgid "Tên phiếu lương"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model_terms:ir.ui.view,arch_db:enmasys_hr_payroll.report_payslip_form
+msgid "Tính Giá Trị"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__total_salary
+msgid "Tổng lương"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__total_allowance
+msgid "Tổng phụ cấp"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__from_month
+msgid "Từ tháng"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#. odoo-python
+#: code:addons/enmasys_hr_payroll/report/report_payslip.py:0
+#, python-format
+msgid "Từ tháng phải nhỏ hơn hoặc bằng Đến tháng"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_unemployment_insurance_wage
+msgid "Unemployment Insurance wage"
+msgstr "Lương, phụ cấp căn cứ đóng BHTN"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip_line__job_id
+msgid "Vị trí"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_salary_report__x_contract_wage
+msgid "Wage"
+msgstr "Lương hợp đồng"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_social_insurance_report__x_year
+msgid "Year"
+msgstr "Trong năm"
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__line_ids
+msgid "report line"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model,name:enmasys_hr_payroll.model_report_payslip
+msgid "report.payslip"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model,name:enmasys_hr_payroll.model_report_payslip_excel
+msgid "report.payslip.excel"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model,name:enmasys_hr_payroll.model_report_payslip_line
+msgid "report.payslip.line"
+msgstr ""
+
+#. module: enmasys_hr_payroll
+#: model:ir.model.fields,field_description:enmasys_hr_payroll.field_report_payslip__to_month
+msgid "Đến tháng"
+msgstr ""

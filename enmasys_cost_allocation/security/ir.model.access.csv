@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_allocation_mrp,access_res_allocation_mrp_name,model_res_allocation,mrp.group_mrp_user,1,1,1,1
+access_res_allocation_account,access_res_allocation_account_name,model_res_allocation,account.group_account_user,1,1,1,1
+access_bom_cost_price,access_bom_cost_price_name,model_bom_cost_price,mrp.group_mrp_user,1,1,1,1
+access_production_cost_price,access_production_cost_price_name,model_production_cost_price,mrp.group_mrp_user,1,1,1,1

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="enmasys_overtime_inherit_hr_holidays_edit_holiday_status_form" model="ir.ui.view">
+            <field name="model">hr.leave.type</field>
+            <field name="name">enmasys_overtime_inherit_hr_holidays_edit_holiday_status_form</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_title']" position="inside">
+                    <h2>
+                        <field name="code"/>
+                    </h2>
+                </xpath>
+            </field>
+        </record>
+        <record id="enmasys_overtime_inherit_hr_work_entry_holidays_work_entry_type_leave_form_inherit"
+                model="ir.ui.view">
+            <field name="model">hr.leave.type</field>
+            <field name="name">
+                enmasys_overtime_inherit_hr_work_entry_holidays_work_entry_type_leave_form_inherit
+            </field>
+            <field name="inherit_id" ref="hr_work_entry_holidays.work_entry_type_leave_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_entry_type_id']" position="after">
+                    <field name="x_overtime_working_type_ids" invisible="time_type != 'overtime'"
+                           required="time_type == 'overtime'"
+                           widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//field[@name='work_entry_type_id']" position="attributes">
+                    <attribute name="invisible">time_type == 'overtime'</attribute>
+                </xpath>
+                <xpath expr="//group[@name='payroll']" position="after">
+                    <group name="validity_dates" string="Validity dates">
+                        <field name="x_validity_start_date"/>
+                        <field name="x_validity_end_date"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="enmasys_equipment_form_inherit" model="ir.ui.view">
+        <field name="name">enmasys.equipment.form.inherit</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='maintenance']" position="after">
+                <page name="info_mrp" string="Production Capacity Information">
+                    <group>
+                        <group string="Mold">
+                            <field name="product_ids" widget="many2many_tags"/>
+                            <field name="state_block"/>
+                            <field name="weight"/>
+                            <field name="time_used"/>
+                        </group>
+                        <group string="Machine">
+                            <field name="type"/>
+                            <field name="state_machine"/>
+                            <field name="cycle"/>
+                            <field name="workcenter_id"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

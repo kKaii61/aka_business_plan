@@ -1,0 +1,103 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* enmasys_stock_transfer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-18 02:46+0000\n"
+"PO-Revision-Date: 2024-12-18 02:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: enmasys_stock_transfer
+#. odoo-python
+#: code:addons/enmasys_stock_transfer/models/stock_warehouse.py:0
+#, python-format
+msgid "DC"
+msgstr ""
+
+#. module: enmasys_stock_transfer
+#: model:ir.model,name:enmasys_stock_transfer.model_stock_location
+msgid "Inventory Locations"
+msgstr ""
+
+#. module: enmasys_stock_transfer
+#. odoo-python
+#: code:addons/enmasys_stock_transfer/models/stock_picking.py:0
+#, python-format
+msgid "Kho %s chưa có điều chuyển nhận hàng! Vui lòng liên hệ quản trị viên"
+msgstr "Warehouse %s does not have a transfer receipt! Please contact the administrator"
+
+#. module: enmasys_stock_transfer
+#: model_terms:ir.ui.view,arch_db:enmasys_stock_transfer.stock_transfer_view_form_inherit
+msgid "Kho nguồn"
+msgstr "Source Warehouse"
+
+#. module: enmasys_stock_transfer
+#: model_terms:ir.ui.view,arch_db:enmasys_stock_transfer.stock_transfer_view_form_inherit
+msgid "Kho đích"
+msgstr "Destination Warehouse"
+
+#. module: enmasys_stock_transfer
+#: model:ir.model.fields,field_description:enmasys_stock_transfer.field_stock_picking__x_is_transfer_incoming
+msgid "Là phiếu nhận điều chuyển"
+msgstr "Is Transfer Receipt"
+
+#. module: enmasys_stock_transfer
+#: model:ir.model,name:enmasys_stock_transfer.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: enmasys_stock_transfer
+#: model:ir.model,name:enmasys_stock_transfer.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: enmasys_stock_transfer
+#: model:ir.model,name:enmasys_stock_transfer.model_stock_warehouse
+msgid "Warehouse"
+msgstr ""
+
+#. module: enmasys_stock_transfer
+#: model:ir.model.fields,field_description:enmasys_stock_transfer.field_stock_picking__x_warehouse_id
+msgid "Warehouse destination"
+msgstr ""
+
+#. module: enmasys_stock_transfer
+#: model:ir.model.fields,field_description:enmasys_stock_transfer.field_stock_warehouse__x_location_transfer_id
+msgid "Điểm trung chuyển"
+msgstr "Transfer Point"
+
+#. module: enmasys_stock_transfer
+#. odoo-python
+#: code:addons/enmasys_stock_transfer/models/stock_picking.py:0
+#, python-format
+msgid "Đây là phiếu nhận điều chuyển. Bạn không thể hủy"
+msgstr "This is a transfer receipt. You cannot cancel it"
+
+#. module: enmasys_stock_transfer
+#. odoo-python
+#: code:addons/enmasys_stock_transfer/models/stock_picking.py:0
+#, python-format
+msgid "Đây là phiếu nhận điều chuyển. Bạn không thể hủy giữ hàng"
+msgstr "This is a transfer receipt. You cannot cancel the hold"
+
+#. module: enmasys_stock_transfer
+#. odoo-python
+#: code:addons/enmasys_stock_transfer/models/stock_picking.py:0
+#, python-format
+msgid "Đây là phiếu nhận điều chuyển. Bạn không thể nhân bản"
+msgstr "This is a transfer receipt. You cannot duplicate it"
+
+#. module: enmasys_stock_transfer
+#. odoo-python
+#: code:addons/enmasys_stock_transfer/models/stock_picking.py:0
+#, python-format
+msgid "Đây là phiếu nhận điều chuyển. Bạn không thể xóa"
+msgstr "This is a transfer receipt. You cannot delete it"

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="create_work_contact_action" model="ir.actions.server">
+            <field name="name">Generate Work-Contact</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="binding_model_id" ref="hr.model_hr_employee"/>
+            <field name="binding_view_types">form</field>
+            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.create_work_contact()
+            </field>
+        </record>
+    </data>
+</odoo>

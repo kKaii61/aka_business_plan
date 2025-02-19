@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- SEARCH VIEWS -->
+        <!-- TREE VIEWS -->
+        <record id="recruitment_request_default_tree_view" model="ir.ui.view">
+            <field name="name">recruitment_request_default_tree_view</field>
+            <field name="model">recruitment.request</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="x_reference_no"/>
+                    <field name="x_reference_date"/>
+                    <field name="x_recruit_department_id"/>
+                    <field name="x_request_position_ids" widget="many2many_tags"/>
+                    <field name="x_working_location"/>
+                    <field name="state" widget="badge"
+                           decoration-success="state == 'done'"
+                           decoration-info="state == 'in_recruit'"
+                           decoration-primary="state == 'in_request'"
+                           decoration-danger="state == 'cancelled'"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- FORM VIEWS -->
+        <record id="recruitment_request_default_form_view" model="ir.ui.view">
+            <field name="name">recruitment_request_default_form_view</field>
+            <field name="model">recruitment.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="start_recruitments" string="Start recruitments" type="object"
+                                class="oe_highlight" icon="fa-play" invisible="state != 'in_request'"/>
+                        <button name="done_recruitments" string="Done recruitments" type="object"
+                                class="oe_highlight" icon="fa-check" invisible="state != 'in_recruit'"/>
+                        <button name="cancel_recruitments" string="Cancel" type="object" icon="fa-times"
+                                invisible="state in ['cancelled', 'done']"/>
+                        <field name="state" widget="statusbar" statusbar_visible="in_request,in_recruit,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="teleport_to_working_positions" class="oe_stat_button"
+                                    icon="fa-suitcase" type="object" style="width: auto;"
+                                    invisible="x_working_positions_quantity == 0 or state in ['in_request']">
+                                <field name="x_working_positions_quantity" widget="statinfo"/>
+                            </button>
+                            <button name="teleport_to_recruit_applicants" class="oe_stat_button"
+                                    icon="fa-users" type="object" style="width: auto;"
+                                    invisible="x_applicants_in_recruitment_qty == 0 or state in ['in_request']">
+                                <field name="x_applicants_in_recruitment_qty" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <label for="x_reference_no" class="oe_title"/>
+                        <h1>
+                            <field name="x_reference_no" style="font-weight: bold;"/>
+                        </h1>
+                        <group>
+                            <field name="x_reference_date" readonly="state in ['done', 'cancelled'] or id"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="x_recruit_department_id" readonly="state in ['done', 'cancelled']"/>
+                            </group>
+                            <group>
+                                <field name="x_working_location" readonly="state in ['done', 'cancelled']"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="request_positions" string="Request Positions">
+                                <field name="x_request_position_ids" readonly="state in ['done', 'cancelled']"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTIONS -->
+        <record model="ir.actions.act_window" id="recruitment_request_default_action">
+            <field name="name">Recruitment Request</field>
+            <field name="res_model">recruitment.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- MENUS -->
+        <menuitem id="recruitment_request_default_menu"
+                  action="enmasys_recruitments.recruitment_request_default_action"
+                  parent="hr_recruitment.menu_crm_case_categ0_act_job"
+                  sequence="4"/>
+    </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_attendance_view_form_hr_attendance" model="ir.ui.view">
+        <field name="name">hr.attendance.view.form.hr.attendance</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="before">
+                <header>
+                    <button name="action_confirm" type="object" string="Xác nhận" class="oe_highlight"
+                           invisible="x_state == 'confirmed' or not check_out"/>
+                    <field name="x_state" widget="statusbar" clickalbe="0"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
