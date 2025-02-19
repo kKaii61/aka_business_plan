@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="sale_target_view_tree" model="ir.ui.view">
         <field name="name">sale.target.view.tree</field>
         <field name="model">sale.target</field>
@@ -14,7 +13,6 @@
             </tree>
         </field>
     </record>
-
     <record id="sale_target_view_form" model="ir.ui.view">
         <field name="name">sale.target.view.form</field>
         <field name="model">sale.target</field>
@@ -22,25 +20,40 @@
             <form string="">
                 <sheet>
                     <group>
-                        <field name="day" />
-                        <field name="wday" />
-                        <field name="partner_group_id" />
-                        <field name="partner_id" />
-                        <field name="user_id" />
-                        <field name="target_revenue" />
-                        <field name="actual_revenue" />
-                        <field name="year" invisible="1"/>
-                        <field name="rate_achieved" widget="percentage" />
+                        <group name="inform_target" string="basic">
+                            <field name="target_profit" />
+                            <field name="day" />
+                            <field name="wday" />
+                        </group>
+                        <group name="profit_by_year" string="Mục tiêu theo năm" invisible="target_profit != 'by_year'">
+                            <field string="Năm thứ" name="index_year" invisible="target_profit != 'by_year'" required="target_profit == 'by_year'"></field>
+                            <field string="Từ tháng" name="month_from" invisible="target_profit != 'by_year'" required="target_profit == 'by_year'"/>
+                            <field string="Đến tháng" name="month_to" invisible="target_profit != 'by_year'" required="target_profit == 'by_year'"/>
+                        </group>
+                        <group name="profit_by_month" string="Mục tiêu theo tháng" invisible="target_profit != 'by_month'">
+                            <field name="month" invisible="target_profit != 'by_month'" required="target_profit == 'by_month'" />
+                            <field name="date_from" invisible="target_profit != 'by_month'" required="target_profit == 'by_month'"/>
+                            <field name="date_to" invisible="target_profit != 'by_month'" required="target_profit == 'by_month'"/>
+                        </group>
+                        <group name="details_target" string="Chi tiet">
+                            <field name="partner_id" />
+                            <field name="partner_group_id" />
+                            <field name="target_revenue" />
+                            <field name="actual_revenue" />
+                            <field name="year" invisible="1"/>
+                            <field name="rate_achieved" widget="percentage" />
+                        </group>
+                        <group name="details_target" string="Nhan Vien">
+                            <field name="user_id" />
+                        </group>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-
     <record id="sale_target_action" model="ir.actions.act_window">
         <field name="name">Mục tiêu doanh số</field>
         <field name="res_model">sale.target</field>
         <field name="view_mode">tree,form</field>
     </record>
-
 </odoo>
