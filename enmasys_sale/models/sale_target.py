@@ -72,9 +72,8 @@ class SaleTarget(models.Model):
     )
 
     showroom_id = fields.Many2one("hr.department", string="Showroom")
-    member_ids = fields.One2many(
+    member_ids = fields.Many2one(
         "hr.employee",
-        "department_id",
         string="Showroom members",
         compute="_compute_member_ids",
         store=True,
@@ -90,7 +89,7 @@ class SaleTarget(models.Model):
         [("by_month", "Profit By Month"), ("by_year", "Profit By Year")],
         string="Profit Target",
         required=True,
-        default="by_year",
+        default="by_month",
     )
 
     # chọn index năm (năm thứ 1, năm thứ 2, ...)
@@ -145,17 +144,41 @@ class SaleTarget(models.Model):
                 record.user_id = first_employee.id if first_employee else False
             else:
                 record.user_id = None
+
     @api.depends("showroom_id")
     def _compute_member_ids(self):
-        for record in self:
-            if record.showroom_id:
+        for rc in self:
+            if rc.showroom_id:
                 # Get all employees in the selected showroom
-                record.member_ids = self.env["hr.employee"].search(
-                    [("department_id", "=", record.showroom_id.id)]
+                rc.member_ids = self.env["hr.employee"].search(
+                    [("department_id", "=", rc.showroom_id.id)]
                 )
             else:
-                record.member_ids = None
+                rc.member_ids = None
 
+    @api.onchange("member_ids")
+    def _onchange_member_ids(self):
+        for rc in self:
+            if rc.member_ids:
+                rc.showroom_id = rc.member_ids.department_id
+            else:
+                rc.showroom_id = None
+
+    @api.onchange("target_profit")
+    def _onchange_target_profit(self):
+        for rc in self:
+            if rc.target_profit == "by_year":
+                rc.month = None
+                rc.date_from = None
+                rc.date_to = None
+            elif rc.target_profit == "by_month":
+                rc.index_year = None
+                rc.month_from = None
+                rc.month_to = None
+    @api.depends('target_revenue', 'actual_revenue')
+
+
+    ######################################################################
     @api.onchange("month")
     def onchange_month(self):
         if self.month and self.year:
@@ -186,7 +209,6 @@ class SaleTarget(models.Model):
                 record.user_id = record.partner_id.user_id
             else:
                 record.user_id = None
-    
 
     @api.depends("day", "partner_id", "business_plan_id.status", "month")
     def _compute_actual_revenue(self):
@@ -303,7 +325,7 @@ class SaleTarget(models.Model):
     def _compute_rate_achieved(self):
         for record in self:
             record.rate_achieved = (
-                record.actual_revenue / record.target_revenue
+                record.actual_revenue / record.target_revenue * 100
                 if record.target_revenue != 0
                 else 0
             )

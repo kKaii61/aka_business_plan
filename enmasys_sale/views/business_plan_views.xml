@@ -53,7 +53,6 @@
                                     <field name="month_from" invisible="target_profit != 'by_year'"/>
                                     <field name="month_to" invisible="target_profit != 'by_year'"/>
                                     <field name="showroom_id"/>
-                                    <!-- <field name="member_ids" /> -->
                                     <!-- <field name="user_id" /> -->
                                     <field name="user_id" domain="[('employee_id.department_id', '=', showroom_id)]"/>
 
@@ -64,6 +63,7 @@
                                     <field name="target_revenue" force_save="1" widget="float_no_decimal"/>
                                     <field name="actual_revenue" widget="float_no_decimal"/>
                                     <field name="rate_achieved" widget="percentage"/>
+                                    <!-- <field name="member_ids" readonly="0" /> -->
                                     <!-- <field name="year" invisible="1" /> -->
                                 </tree>
                             </field>

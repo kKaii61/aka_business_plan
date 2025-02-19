@@ -36,12 +36,12 @@
                         <group style="width:100%" name="details_target" string="Chi Tiết">
                             <!-- <field name="partner_id" /> -->
                             <!-- <field name="partner_group_id" /> -->
-                            <field name="showroom_id"/>
-                            <field name="member_ids">
+                            <field name="showroom_id"></field>
+                            <!-- <field name="member_ids" readonly="0">
                                 <tree editable="bottom">
                                 </tree>
-                            </field>
-                            <!-- <field name="user_id" /> -->
+                            </field> -->
+                            <field name="user_id" />
                             <field name="brand_id" string="Thương hiệu"></field>
                             <field name="category_id" string="Nhóm sản phẩm"></field>
                             <field name="quantity_base_on_cat" string="Số lượng"></field>
