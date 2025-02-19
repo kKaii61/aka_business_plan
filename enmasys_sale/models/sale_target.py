@@ -133,6 +133,8 @@ class SaleTarget(models.Model):
     #
     #
     # =============================================================
+
+    # compute
     @api.depends("showroom_id")
     def _compute_user_id(self):
         for record in self:
@@ -156,6 +158,7 @@ class SaleTarget(models.Model):
             else:
                 rc.member_ids = None
 
+    # onchange
     @api.onchange("member_ids")
     def _onchange_member_ids(self):
         for rc in self:
@@ -175,8 +178,6 @@ class SaleTarget(models.Model):
                 rc.index_year = None
                 rc.month_from = None
                 rc.month_to = None
-    @api.depends('target_revenue', 'actual_revenue')
-
 
     ######################################################################
     @api.onchange("month")

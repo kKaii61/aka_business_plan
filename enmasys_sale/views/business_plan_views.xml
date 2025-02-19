@@ -53,8 +53,8 @@
                                     <field name="month_from" invisible="target_profit != 'by_year'"/>
                                     <field name="month_to" invisible="target_profit != 'by_year'"/>
                                     <field name="showroom_id"/>
-                                    <!-- <field name="user_id" /> -->
-                                    <field name="user_id" domain="[('employee_id.department_id', '=', showroom_id)]"/>
+                                    <field name="user_id" readonly="0" />
+                                    <!-- <field name="user_id" readonly="0" domain="[('employee_id.department_id', '=', showroom_id)]"/> -->
 
                                     <field name="brand_id" string="Thương hiệu"></field>
                                     <field name="category_id" string="Nhóm sản phẩm"></field>
