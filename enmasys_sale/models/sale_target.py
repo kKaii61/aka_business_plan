@@ -32,9 +32,7 @@ class SaleTarget(models.Model):
         store=True,
     )
     partner_id = fields.Many2one("res.partner", string="Customer", required=True)
-    user_id = fields.Many2one(
-        "res.users", string="Employees", compute="_compute_user_id", store=True
-    )
+
     target_revenue = fields.Float(string="Target")
     actual_revenue = fields.Float(
         string="Actual", compute="_compute_actual_revenue", store=True
@@ -43,8 +41,6 @@ class SaleTarget(models.Model):
     rate_achieved = fields.Float(
         string="Rate Achieved", compute="_compute_rate_achieved", store=True
     )
-    # từ store_id sang showroom_id
-    showroom_id = fields.Many2one("hr.department", string="Showroom")
 
     month = fields.Selection(
         [
@@ -69,6 +65,25 @@ class SaleTarget(models.Model):
     # =================== Added =========================================
     #
     #
+
+    # từ store_id sang showroom_id
+    user_id = fields.Many2one(
+        "res.users", string="Employees", compute="_compute_user_id", store=True
+    )
+
+    showroom_id = fields.Many2one("hr.department", string="Showroom")
+    member_ids = fields.One2many(
+        "hr.employee",
+        "department_id",
+        string="Showroom members",
+        compute="_compute_member_ids",
+        store=True,
+    )
+
+    # Inventory
+    brand_id = fields.Many2one("product.brand", string="brand")
+    category_id = fields.Many2one("product.category", string="category")
+    quantity_base_on_cat = fields.Float(string="Số lượng")
 
     # mục tiêu chọn theo năm/tháng
     target_profit = fields.Selection(
@@ -119,6 +134,27 @@ class SaleTarget(models.Model):
     #
     #
     # =============================================================
+    @api.depends("showroom_id")
+    def _compute_user_id(self):
+        for record in self:
+            if record.showroom_id:
+                # Get the first employee in the showroom
+                first_employee = self.env["hr.employee"].search(
+                    [("department_id", "=", record.showroom_id.id)], limit=1
+                )
+                record.user_id = first_employee.id if first_employee else False
+            else:
+                record.user_id = None
+    @api.depends("showroom_id")
+    def _compute_member_ids(self):
+        for record in self:
+            if record.showroom_id:
+                # Get all employees in the selected showroom
+                record.member_ids = self.env["hr.employee"].search(
+                    [("department_id", "=", record.showroom_id.id)]
+                )
+            else:
+                record.member_ids = None
 
     @api.onchange("month")
     def onchange_month(self):
@@ -150,6 +186,7 @@ class SaleTarget(models.Model):
                 record.user_id = record.partner_id.user_id
             else:
                 record.user_id = None
+    
 
     @api.depends("day", "partner_id", "business_plan_id.status", "month")
     def _compute_actual_revenue(self):
