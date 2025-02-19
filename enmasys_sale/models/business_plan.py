@@ -29,21 +29,6 @@ class BusinessPlan(models.Model):
         string="Total annual revenue", compute="_compute_total_annual_revenue"
     )
 
-    # =========== Added =========================================
-    #
-    #
-
-    show_month = fields.Boolean(string="show by_month", compute="_compute_show_month", store=True)
-
-    @api.depends("sale_target_ids.target_profit")
-    def _compute_show_month(self):
-        for record in self:
-            record.show_month = (target.target_profit == "by_month" for target in record.sale_target_ids)
-
-    #
-    #
-    # =============================================================
-
     # def action_import(self):
     #     vals = {
     #         'business_plan_id': self.id
