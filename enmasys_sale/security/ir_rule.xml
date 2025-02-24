@@ -12,8 +12,8 @@
             <field name="model_id" ref='model_business_plan' />
             <field name="domain_force">[
                     "|",
-                    ("company_id", "=", user.company_id.id),
-                    ("company_id", "in", user.company_ids.ids)
+                    ("company_id", "=", company_id),
+                    ("company_id", "in", company_ids)
             ]</field>
             <field name="global" eval="True"/>
             <field name="perm_read" eval="True"/>

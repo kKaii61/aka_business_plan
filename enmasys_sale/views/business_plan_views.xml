@@ -42,14 +42,15 @@
                     <notebook>
                         <page name="sale_target" string="Sales target">
                             <!-- <button string="Cập nhật thực tế" name="action_update_actual_revenue_sale_target" type="object" class="oe_highlight"/> -->
-                            <field name="sale_target_ids">
+                            <field name="sale_target_ids"
+                                            context="{'default_index_year': year}">
                                 <tree editable="bottom">
-                                    <field name="month" column_invisible="parent.target_profit != 'by_month'" />
-                                    <field name="date_from" column_invisible="parent.target_profit != 'by_month'"/>
-                                    <field name="date_to" column_invisible="parent.target_profit != 'by_month'"/>
-                                    <field name="index_year" column_invisible="parent.target_profit != 'by_year'" options="{'format': false}" widget="char"/>
-                                    <field name="month_from" column_invisible="parent.target_profit != 'by_year'"/>
-                                    <field name="month_to" column_invisible="parent.target_profit != 'by_year'"/>
+                                    <field name="month" required="parent.target_profit != 'by_month'" column_invisible="parent.target_profit != 'by_month'" />
+                                    <field name="date_from" required="parent.target_profit != 'by_month'" column_invisible="parent.target_profit != 'by_month'"/>
+                                    <field name="date_to" required="parent.target_profit != 'by_month'" column_invisible="parent.target_profit != 'by_month'"/>
+                                    <field name="index_year" required="parent.target_profit != 'by_year'" column_invisible="parent.target_profit != 'by_year'" options="{'format': false}" widget="char"/>
+                                    <field name="month_from" required="parent.target_profit != 'by_year'" column_invisible="parent.target_profit != 'by_year'"/>
+                                    <field name="month_to" required="parent.target_profit != 'by_year'" column_invisible="parent.target_profit != 'by_year'"/>
                                     <field name="showroom_id"/>
                                     <field name="user_id" readonly="0" domain="[('employee_id.department_id', '=', showroom_id)]"/>
                                     <field name="brand_id" string="Thương hiệu"></field>
@@ -78,11 +79,6 @@
         id="business_plan_sub_menu"
         name="Business plan"
         parent="sale.sale_menu_root"
-        sequence="10"/>
-    <menuitem
-        id="business_plan_menu"
-        name="Business plan"
-        parent="business_plan_sub_menu"
         action="business_plan_action"
-        sequence="1"/>
+        sequence="10"/>
 </odoo>

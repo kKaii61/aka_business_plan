@@ -1,4 +1,5 @@
 from odoo import fields, models, api, _
+from odoo.exceptions import UserError
 from datetime import datetime
 from lxml import etree
 from datetime import datetime, time
@@ -24,8 +25,8 @@ class BusinessPlan(models.Model):
     )
     ##
     is_user = fields.Boolean(compute="compute_is_user")
-    name = fields.Char(string="Name")
-    year = fields.Integer(string="Year")
+    name = fields.Char(string="Name", required=True)
+    year = fields.Integer(string="Year", required=True, default=fields.Date.today().year)
     actual_revenue = fields.Float(
         string="Actual", compute="_compute_actual_revenue", store=True
     )
@@ -45,23 +46,31 @@ class BusinessPlan(models.Model):
 
     
 
-    # def action_import(self):
-    #     vals = {
-    #         'business_plan_id': self.id
-    #     }
-    #     res = self.env['sale.target.import'].create(vals)
-    #     return {
-    #         'name': 'Record Form View',
-    #         'type': 'ir.actions.act_window',
-    #         'res_model': 'sale.target.import',
-    #         'view_mode': 'form',
-    #         'res_id': res.id,
-    #         'target': 'current',
-    #     }
+    def action_import(self):
+        vals = {
+            'business_plan_id': self.id
+        }
+        res = self.env['sale.target.import'].create(vals)
+        return {
+            'name': 'Record Form View',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sale.target.import',
+            'view_mode': 'form',
+            'res_id': res.id,
+            'target': 'current',
+        }
 
     # ========================= API =========================
     #
     #
+
+    @api.constrains('year')
+    def _constrains_year(self):
+        """Ensure that year are inputed"""
+        for record in self:
+            if record.year == False:
+                raise UserError("Nhập năm của dự án kinh doanh")
+
     @api.depends("sale_target_ids.actual_revenue")
     def _compute_actual_revenue(self):
         for record in self:

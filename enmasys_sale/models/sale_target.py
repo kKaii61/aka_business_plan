@@ -31,7 +31,7 @@ class SaleTarget(models.Model):
         compute="_compute_partner_group_id",
         store=True,
     )
-    partner_id = fields.Many2one("res.partner", string="Customer", required=True)
+    partner_id = fields.Many2one("res.partner", string="Customer")
 
     target_revenue = fields.Float(string="Target")
     actual_revenue = fields.Float(
@@ -116,7 +116,7 @@ class SaleTarget(models.Model):
         string="Đến tháng",
     )
 
-    so_invoiced = fields.One2many("sale.order.line", compute="_compute_so_invoiced")
+    # so_invoiced = fields.One2many()
 
     target_profit = fields.Selection(
         related="business_plan_id.target_profit", string="Profit Target", readonly=True
@@ -217,6 +217,7 @@ class SaleTarget(models.Model):
                         print("\n=================================================\n")
                     else:
                         month = int(self.month_from)
+                        self.month_to = self.month_from
                         year = self.index_year
                         first_day = datetime(year, month, 1)
                         last_day = (
@@ -290,9 +291,9 @@ class SaleTarget(models.Model):
                 and rc.business_plan_id.target_profit == "by_month"
             ):
                 # reset search and actual revenue
-                rc.so_invoiced = None
+                so_invoiced = None
                 rc.actual_revenue = 0
-                rc.so_invoiced = self.env["sale.order.line"].search(
+                so_invoiced = self.env["sale.order.line"].search(
                     [
                         ("order_id.date_order", ">", rc.date_from),
                         ("order_id.date_order", "<", rc.date_to),
@@ -302,8 +303,8 @@ class SaleTarget(models.Model):
                         ("order_id.invoice_status", "=", "invoiced"),
                     ]
                 )
-                if rc.so_invoiced:
-                    for order in rc.so_invoiced:
+                if so_invoiced:
+                    for order in so_invoiced:
                         for line in order:
                             # rc.actual_revenue = 0
                             product = line.product_id
@@ -321,7 +322,7 @@ class SaleTarget(models.Model):
                             rc.actual_revenue += so_product_quantity * unit_price
                 else:
                     rc.actual_revenue = 0
-                    rc.so_invoiced = None
+                    so_invoiced = None
             elif (rc.date_from
                 and rc.date_to
                 and rc.category_id
@@ -329,9 +330,9 @@ class SaleTarget(models.Model):
                 and rc.user_id
                 and rc.business_plan_id.target_profit == "by_year"):
                 # reset search and actual revenue
-                rc.so_invoiced = None
+                so_invoiced = None
                 rc.actual_revenue = 0
-                rc.so_invoiced = self.env["sale.order.line"].search(
+                so_invoiced = self.env["sale.order.line"].search(
                     [
                         ("order_id.date_order", ">", rc.date_from),
                         ("order_id.date_order", "<", rc.date_to),
@@ -341,130 +342,39 @@ class SaleTarget(models.Model):
                         ("order_id.invoice_status", "=", "invoiced"),
                     ]
                 )
-                if rc.so_invoiced:
-                    for order in rc.so_invoiced:
+                if so_invoiced:
+                    for order in so_invoiced:
                         for line in order:
-                            # rc.actual_revenue = 0
-                            product = line.product_id
-                            product_id = product.id
-                            product_name = product.name
                             so_product_quantity = line.product_uom_qty
                             unit_price = line.price_unit
-                            categ = product.categ_id
-                            status = line.invoice_status
-                            brand_name = (
-                                product.product_tmpl_id.x_brand_id.name
-                                if product.product_tmpl_id.x_brand_id
-                                else "No Brand"
-                            )
                             rc.actual_revenue += so_product_quantity * unit_price
                 else:
                     rc.actual_revenue = 0
-                    rc.so_invoiced = None
+                    so_invoiced = None
             else:
                 rc.actual_revenue = 0
 
-    # @api.onchange("so_invoiced", "user_id", "brand_id", "category_id")
-    # def onchange_actual_revenue(self):
+    # @api.constrains("date_from", "date_to", "category_id")
+    # def _constrains_target_so(self):
     #     for rc in self:
-    #         if rc.so_invoiced:
-    #             for order in rc.so_invoiced:
-    #                 for line in order:
-    #                     rc.actual_revenue = 0
-    #                     product = line.product_id
-    #                     product_id = product.id
-    #                     product_name = product.name
-    #                     so_product_quantity = line.product_uom_qty
-    #                     unit_price = line.price_unit
-    #                     categ = product.categ_id
-    #                     status = line.invoice_status
-    #                     brand_name = (
-    #                         product.product_tmpl_id.x_brand_id.name
-    #                         if product.product_tmpl_id.x_brand_id
-    #                         else "No Brand"
-    #                     )
-    #                     rc.actual_revenue += so_product_quantity * unit_price
-    #                     print(product_id)
-    #                     print(product_name)
-    #                     print(so_product_quantity)
-    #                     print(unit_price)
-    #                     print(categ)
-    #                     print(status)
-    #                     print(brand_name)
+    #         if so_invoiced:
+    #                 for order in so_invoiced:
+    #                     for line in order:
 
-    ##################################
+    @api.constrains("date_from")
+    def _constrains_date_from(self):
+        """Ensure Date_from are inputed"""
+        for record in self:
+            if record.date_from == False:
+                raise UserError("Nhập Từ tháng!")
 
-    # @api.depends("day", "partner_id", "business_plan_id.status", "month")
-    # def _compute_actual_revenue(self):
-    #     for record in self:
-    #         if record.day:
-    #             if record.business_plan_id.status == "confirm":
-    #                 domain = [
-    #                     ("invoice_date", ">=", datetime.combine(record.day, time.min)),
-    #                     ("invoice_date", "<=", datetime.combine(record.day, time.max)),
-    #                     ("state", "=", "posted"),
-    #                 ]
-    #                 if record.partner_id:
-    #                     domain.append(("partner_id", "=", record.partner_id.id))
-    #                     domain_invoice = domain + [("move_type", "=", "out_invoice")]
-    #                     domain_refund = domain + [("move_type", "=", "out_refund")]
-    #                     invoice_total = sum(
-    #                         self.env["account.move"]
-    #                         .search(domain_invoice)
-    #                         .mapped("amount_untaxed")
-    #                     )
-    #                     refund_total = sum(
-    #                         self.env["account.move"]
-    #                         .search(domain_refund)
-    #                         .mapped("amount_untaxed")
-    #                     )
-    #                     record.actual_revenue = invoice_total - refund_total
-    #             elif record.month and record.year:
-    #                 if record.business_plan_id.status == "confirm":
-    #                     current_date = record.date_from
-    #                     actual_revenue = 0
-    #                     while current_date <= record.date_to:
-    #                         if record.business_plan_id.status == "confirm":
-    #                             domain = [
-    #                                 (
-    #                                     "invoice_date",
-    #                                     ">=",
-    #                                     datetime.combine(current_date, time.min),
-    #                                 ),
-    #                                 (
-    #                                     "invoice_date",
-    #                                     "<=",
-    #                                     datetime.combine(current_date, time.max),
-    #                                 ),
-    #                                 ("state", "=", "posted"),
-    #                             ]
-    #                             if record.partner_id:
-    #                                 domain.append(
-    #                                     ("partner_id", "=", record.partner_id.id)
-    #                                 )
-    #                             domain_invoice = domain + [
-    #                                 ("move_type", "=", "out_invoice")
-    #                             ]
-    #                             domain_refund = domain + [
-    #                                 ("move_type", "=", "out_refund")
-    #                             ]
-    #                             invoice_total = sum(
-    #                                 self.env["account.move"]
-    #                                 .search(domain_invoice)
-    #                                 .mapped("amount_untaxed")
-    #                             )
-    #                             refund_total = sum(
-    #                                 self.env["account.move"]
-    #                                 .search(domain_refund)
-    #                                 .mapped("amount_untaxed")
-    #                             )
-    #                             actual_revenue += invoice_total - refund_total
-    #                         current_date += timedelta(days=1)
-    #                     record.actual_revenue = actual_revenue
-    #             else:
-    #                 record.actual_revenue = 0
-    #         else:
-    #             record.actual_revenue = 0
+    @api.constrains("date_to")
+    def _constrains_date_to(self):
+        """Ensure Date_to are inputed"""
+        for record in self:
+            if record.date_to == False:
+                raise UserError("Nhập Đến tháng!")
+
 
     @api.constrains("month_from", "month_to")
     def _check_month_range(self):
