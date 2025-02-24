@@ -25,13 +25,13 @@
             <!-- Thêm nhóm 'architect_commission' -->
             <xpath expr="//group[@name='order_details']" position="after">
                 <group name="architect_commission">
-                    <field name="x_architect_introduction" string="Kiến trúc sư giới thiệu"/>
-                    <field name="x_architect_commission_percentage" modifiers="{'readonly': True}"/>
+                    <field name="x_architect_introduction" string="Kiến trúc sư giới thiệu" readonly="id"/>
+                    <field name="x_architect_commission_percentage" invisible = "not x_architect_introduction"/>
+                    <field name="x_architect_name" string="Kiến trúc sư"/>
                 </group>
             </xpath>
-            <!-- Cập nhật trạng thái trên statusbar -->
-            <xpath expr="//field[@name='state']" position="attributes">
-                <attribute name="statusbar_visible">draft,sent,sm_approved,bm_approved,sale</attribute>
+            <xpath expr="//header" position="attributes">
+                <button name="action_confirm" id="action_confirm" invisible="1"></button>
             </xpath>
             <!-- Thay nút 'Xác nhận' bằng SM và BM duyệt -->
             <xpath expr="//button[@name='action_confirm']" position="replace">
@@ -63,7 +63,7 @@
                     type="object"
                     invisible="state != 'bm_approved'"/>
             </xpath>
-<xpath expr="//field[@name='payment_term_id']" position="after">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="analytic_account_id" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" readonly="invoice_count != 0 and state == 'sale'" groups="analytic.group_analytic_accounting" force_save="1"/>
             </xpath>
         </field>

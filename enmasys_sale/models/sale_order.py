@@ -7,12 +7,13 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     x_architect_introduction = fields.Boolean(string="Kiến trúc sư giới thiệu")
-    x_architect_id = fields.Many2one('hr.employee', string="Kiến trúc sư")
+    x_architect_name = fields.Many2one('hr.employee', string="Kiến trúc sư",required=True)
     discount_percentage = fields.Float(string="Chiết khấu", compute="_compute_discount_percentage", store=True)
     x_architect_commission_percentage = fields.Float(string="Phần trăm hoa hồng KTS", compute="_get_commission_percentage", store=True)
     
     x_sm_requested = fields.Boolean(string="SM đã nhận yêu cầu", default=False)
-    x_show_buttons = fields.Boolean(string="Hiển thị nút phê duyệt", default=False)
+
+
     state = fields.Selection([
         ('draft', "Quotation"),
         ('sent', "Quotation Sent"),
@@ -23,11 +24,6 @@ class SaleOrder(models.Model):
         ('cancel', "Cancelled")
     ], string="Status", tracking=True, default='draft')
 
-    @api.depends('state')
-    def _compute_show_buttons(self):
-        """ Cập nhật hiển thị nút dựa trên trạng thái """
-        for order in self:
-            order.x_show_buttons = order.state in ['sent', 'sm_approved', 'bm_approved']
 
     def action_send_mail(self):
         """ Gửi email và chuyển trạng thái sang 'sent' nếu có kiến trúc sư giới thiệu """
@@ -76,7 +72,7 @@ class SaleOrder(models.Model):
 
     def _can_be_confirmed(self):
         self.ensure_one()
-        return self.state in {'bm_approved'}
+        return self.state in {'sent,bm_approved'}
     #####################################################################################
     @api.depends('order_line.discount')
     def _compute_discount_percentage(self):
