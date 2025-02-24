@@ -15,7 +15,9 @@
     'data': [
         'data/ir_cron.xml',
         'security/ir_rule.xml',
+	'security/security.xml',
         'security/ir.model.access.csv',
+	
 
         # views
         'views/sale_order_view.xml',
@@ -25,6 +27,9 @@
         'views/crm_team_inherit_views.xml',
         'views/inherit_res_partner_views.xml',
         'views/inherit_hr_employee_views.xml',
+        'views/customer_history_views.xml',
+        'views/request_type_view.xml',
+        'views/architect_commission_percentage_view.xml',
 
         # report
         'report/report_quotation.xml',

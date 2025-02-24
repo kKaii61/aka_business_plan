@@ -5,26 +5,65 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <!-- Thêm nút trong button_box -->
             <xpath expr="//form[1]/sheet[1]/div[@name='button_box']" position="inside">
-                <button name="action_view_purchase_request" type="object" class="oe_stat_button"  icon="fa-pencil-square-o" invisible="purchase_request_count == 0">
+                <button name="action_view_purchase_request" type="object" class="oe_stat_button" icon="fa-pencil-square-o"
+                        modifiers="{'invisible': [('purchase_request_count', '=', 0)]}">
                     <field name="purchase_request_count" widget="statinfo" string="Yêu cầu mua hàng"/>
                 </button>
             </xpath>
+            <!-- Cập nhật ngày giao hàng -->
             <xpath expr="//field[@name='show_update_pricelist']" position="before">
-                    <label for="commitment_date" string="Delivery Date"/>
-                    <div name="commitment_date_div" class="o_row">
-                        <field name="commitment_date" readonly="state == 'cancel' or locked"/>
-                        <span name="expected_date_span" class="text-muted">Expected: <field name="expected_date" class="oe_inline" widget="date"/></span>
-                    </div>
+                <label for="commitment_date" string="Delivery Date"/>
+                <div name="commitment_date_div" class="o_row">
+                    <field name="commitment_date" modifiers="{'readonly': [('state', '=', 'cancel'), ('locked', '=', True)]}"/>
+                    <span name="expected_date_span" class="text-muted">Expected:
+                        <field name="expected_date" class="oe_inline" widget="date"/>
+                    </span>
+                </div>
             </xpath>
-            <xpath expr="//page[@name='other_information']//group[@name='sale_shipping']" position="attributes">
-                <attribute name="invisible">1</attribute>
+            <!-- Thêm nhóm 'architect_commission' -->
+            <xpath expr="//group[@name='order_details']" position="after">
+                <group name="architect_commission">
+                    <field name="x_architect_introduction" string="Kiến trúc sư giới thiệu"/>
+                    <field name="x_architect_commission_percentage" modifiers="{'readonly': True}"/>
+                </group>
             </xpath>
-            <xpath expr="//field[@name='analytic_account_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
+            <!-- Cập nhật trạng thái trên statusbar -->
+            <xpath expr="//field[@name='state']" position="attributes">
+                <attribute name="statusbar_visible">draft,sent,sm_approved,bm_approved,sale</attribute>
             </xpath>
-
-             <xpath expr="//field[@name='payment_term_id']" position="after">
+            <!-- Thay nút 'Xác nhận' bằng SM và BM duyệt -->
+            <xpath expr="//button[@name='action_confirm']" position="replace">
+                <button name="action_sm_approve" string="SM Duyệt"
+                        class="btn-primary" type="object"
+                        groups="enmasys_sale.group_sm_approved"
+                        sequence="20"
+                        invisible="state != 'sent_sm_approved'"/>
+                <button name="action_bm_approve" string="BM Duyệt"
+                        class="btn-primary" type="object"
+                        groups="enmasys_sale.group_bm_approved"
+                        invisible="state != 'sm_approved'"/>
+                <button name="action_request_sm" string="Gửi yêu cầu SM"
+                    class="btn-info" type="object"
+                    invisible="state != 'sent' or x_sm_requested"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="action_revert_to_sm_approved" string="Quay lại"
+                    type="object"
+                    sequence="10"
+                    invisible="state != 'sm_approved' and state != 'sent_sm_approved'"/>
+                <button name="action_cancel_order" string="Hủy"
+                    class="btn-danger" type="object" sequence="30"
+                    invisible="state != 'sm_approved' and state != 'sent_sm_approved'"/>
+                <field name="x_sm_requested" invisible='1'></field>
+                <!-- Nút hiển thị khi đã BM duyệt -->
+                <button name="action_confirm" string="Xác nhận"
+                    context="{'validate_analytic': True}"
+                    type="object"
+                    invisible="state != 'bm_approved'"/>
+            </xpath>
+<xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="analytic_account_id" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" readonly="invoice_count != 0 and state == 'sale'" groups="analytic.group_analytic_accounting" force_save="1"/>
             </xpath>
         </field>

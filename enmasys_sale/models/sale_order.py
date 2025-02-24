@@ -6,6 +6,78 @@ import dateutil.parser
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
+    x_architect_introduction = fields.Boolean(string="Kiến trúc sư giới thiệu")
+    x_architect_id = fields.Many2one('hr.employee', string="Kiến trúc sư")
+    discount_percentage = fields.Float(string="Chiết khấu", compute="_compute_discount_percentage", store=True)
+    x_architect_commission_percentage = fields.Float(string="Phần trăm hoa hồng KTS", compute="_get_commission_percentage", store=True)
+
+    x_sm_requested = fields.Boolean(string="SM đã nhận yêu cầu", default=False)
+    x_show_buttons = fields.Boolean(string="Hiển thị nút phê duyệt", default=False)
+    state = fields.Selection([
+        ('draft', "Quotation"),
+        ('sent', "Quotation Sent"),
+        ('sent_sm_approved', "SM Sent"),
+        ('sm_approved', "SM Approved"),
+        ('bm_approved', "BM Approved"),
+        ('sale', "Sales Order"),
+        ('cancel', "Cancelled")
+    ], string="Status", tracking=True, default='draft')
+
+    @api.depends('state')
+    def _compute_show_buttons(self):
+        """ Cập nhật hiển thị nút dựa trên trạng thái """
+        for order in self:
+            order.x_show_buttons = order.state in ['sent', 'sm_approved', 'bm_approved']
+
+    def action_send_mail(self):
+        """ Gửi email và chuyển trạng thái sang 'sent' nếu có kiến trúc sư giới thiệu """
+        res = super(SaleOrder, self).action_quotation_send()
+        for order in self:
+            if order.x_architect_introduction:
+                order.state = 'sent'
+        return res
+    def action_request_sm(self):
+        """ chuyển từ trạng thái báo giá sang sm_approved"""
+        for order in self:
+            if order.state == "sent":
+                order.state = 'sent_sm_approved'
+
+    def action_sm_approve(self):
+        """ Chuyển trạng thái từ 'sm_approved' sang 'bm_approved' """
+        for order in self:
+            if order.state == 'sent_sm_approved':
+                order.state = 'sm_approved'
+
+    def action_bm_approve(self):
+        """ Chuyển trạng thái từ 'bm_approved' sang 'báo giá đã gửi' """
+        for order in self:
+            if order.state == 'sm_approved':
+                order.state = 'bm_approved'
+
+    def action_revert_to_sent(self):
+        """ Quay lại trạng thái 'sent' """
+        for order in self:
+            if order.state == 'sm_approved':
+                order.state = 'sent'
+
+    def action_revert_to_sm_approved(self):
+        """ Quay lại trạng thái 'sm_approved' """
+        for order in self:
+            if order.state == 'bm_approved':
+                order.state = 'sm_approved'
+            elif order.state == 'sm_approved':
+                order.state = 'sent_sm_approved'
+            elif order.state=='sent_sm_approved':
+                order.state = 'sent'
+
+    def action_cancel_order(self):
+        """ Chuyển trạng thái sang 'cancel' """
+        self.write({'state': 'cancel'})
+
+    def _can_be_confirmed(self):
+        self.ensure_one()
+        return self.state in {'bm_approved'}
+
     @api.model
     def default_get(self, fields):
         defaults = super(SaleOrder, self).default_get(fields)

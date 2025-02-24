@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Tạo danh mục phân quyền -->
+        <record model="ir.module.category" id="module_category_approved_group">
+            <field name="parent_id" ref="base.module_category_sales" />
+            <field name="name">Approval SO</field>
+        </record>
+        <record id="group_sm_approved" model="res.groups">
+            <field name="name">SM approved</field>
+            <field name="category_id" ref="enmasys_sale.module_category_approved_group"/>
+        </record>
+        <record id="group_bm_approved" model="res.groups">
+            <field name="name">BM approved</field>
+            <field name="implied_ids" eval="[(4,ref('enmasys_sale.group_sm_approved'))]"></field>
+            <field name="category_id" ref="enmasys_sale.module_category_approved_group"/>
+        </record>
+        <record id="SM_rule_own_records" model="ir.rule">
+            <field name="name">SM approved</field>
+            <field name="model_id" ref="enmasys_sale.model_sale_order"/>
+            <field name="groups" eval="[(4, ref('enmasys_sale.group_sm_approved'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        <record id="BM_rule_own_records" model="ir.rule">
+            <field name="name">BM approved</field>
+            <field name="model_id" ref="enmasys_sale.model_sale_order"/>
+            <field name="groups" eval="[(4, ref('enmasys_sale.group_bm_approved'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+    </data>
+</odoo>
