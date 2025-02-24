@@ -10,7 +10,7 @@ class SaleOrder(models.Model):
     x_architect_id = fields.Many2one('hr.employee', string="Kiến trúc sư")
     discount_percentage = fields.Float(string="Chiết khấu", compute="_compute_discount_percentage", store=True)
     x_architect_commission_percentage = fields.Float(string="Phần trăm hoa hồng KTS", compute="_get_commission_percentage", store=True)
-
+    
     x_sm_requested = fields.Boolean(string="SM đã nhận yêu cầu", default=False)
     x_show_buttons = fields.Boolean(string="Hiển thị nút phê duyệt", default=False)
     state = fields.Selection([
@@ -77,6 +77,34 @@ class SaleOrder(models.Model):
     def _can_be_confirmed(self):
         self.ensure_one()
         return self.state in {'bm_approved'}
+    #####################################################################################
+    @api.depends('order_line.discount')
+    def _compute_discount_percentage(self):
+        """ Lấy giá trị %CK từ dòng sản phẩm đầu tiên """
+        for order in self:
+            discount_value = order.order_line[:1].discount if order.order_line else 0.0
+            order.discount_percentage = discount_value
+    #####################################################################caculator architect commission percentage
+    
+    @api.depends('discount_percentage')
+    def _get_commission_percentage(self):
+        for order in self:
+            conmission = self.env['architect.commission.percentage'].search([
+                ('x_discount_from','<',order.discount_percentage),
+                ('x_discount_to','>=',order.discount_percentage)
+            ], limit=1)
+            order.x_architect_commission_percentage = conmission.x_commission or 0
+            
+    #Tính chiết khấu
+    def compute_kts_commission(self):
+        for order in self:
+            if order.x_architect_introduction and order.x_architect_commission_percentage:
+                commission_rate = order.x_architect_commission_percentage.percentage / 100
+                order.amount_kts_commission = order.amount_total * commission_rate
+    amount_kts_commission = fields.Monetary(
+        string="Hoa hồng KTS", compute="compute_kts_commission", store=True
+    )
+    #
 
     @api.model
     def default_get(self, fields):

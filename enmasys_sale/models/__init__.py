@@ -4,3 +4,6 @@ from . import sale_target
 from . import year_difference_days
 from . import inherit_crm_team
 from . import inherit_hr_employee, inherit_res_partner
+from . import architect_commission_percentage
+from . import customer_history
+from . import request_type
