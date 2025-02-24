@@ -6,7 +6,8 @@
         <field name="arch" type="xml">
             <tree string="" editable="bottom">
                 <field name="business_plan_id" />
-                <field name="day" />
+                <!-- <field name="from" string="từ"></field>
+                <field name="to" string="đến"></field> -->
                 <field name="user_id" />
                 <field name="target_revenue" />
                 <!-- <field name="partner_id" /> -->
@@ -20,30 +21,28 @@
             <form string="">
                 <sheet>
                     <group>
-                        <group name="inform_target" string="Mục tiêu">
-                            <field name="target_profit" />
+                        <group name="profit_by_year" string="Mục tiêu theo năm">
+                            <field string="Năm thứ" name="index_year" ></field>
+                            <field string="Từ tháng" name="month_from" />
+                            <field string="Đến tháng" name="month_to" />
                         </group>
-                        <group name="profit_by_year" string="Mục tiêu theo năm" invisible="target_profit != 'by_year'">
-                            <field string="Năm thứ" name="index_year" invisible="target_profit != 'by_year'" required="target_profit == 'by_year'"></field>
-                            <field string="Từ tháng" name="month_from" invisible="target_profit != 'by_year'" required="target_profit == 'by_year'"/>
-                            <field string="Đến tháng" name="month_to" invisible="target_profit != 'by_year'" required="target_profit == 'by_year'"/>
-                        </group>
-                        <group name="profit_by_month" string="Mục tiêu theo tháng" invisible="target_profit != 'by_month'">
-                            <field name="month" invisible="target_profit != 'by_month'" required="target_profit == 'by_month'" />
-                            <field name="date_from" invisible="target_profit != 'by_month'" required="target_profit == 'by_month'"/>
-                            <field name="date_to" invisible="target_profit != 'by_month'" required="target_profit == 'by_month'"/>
+                        <group name="profit_by_month" string="Mục tiêu theo tháng" >
+                            <field name="month"   />
+                            <field name="date_from"  />
+                            <field name="date_to"  />
                         </group>
                         <group style="width:100%" name="details_target" string="Chi Tiết">
                             <!-- <field name="partner_id" /> -->
                             <!-- <field name="partner_group_id" /> -->
                             <field name="showroom_id"></field>
-                            <!-- <field name="member_ids" readonly="0">
+                            <field name="user_id" readonly="0">
                                 <tree editable="bottom">
                                 </tree>
-                            </field> -->
-                            <field name="user_id" />
+                            </field>
+                            <!-- <field name="user_id" /> -->
                             <field name="brand_id" string="Thương hiệu"></field>
-                            <field name="category_id" string="Nhóm sản phẩm"></field>
+                            <!-- <field name="category_ids"></field> -->
+                            <field name="category_id" string="Nhóm sản phẩm" ></field>
                             <field name="quantity_base_on_cat" string="Số lượng"></field>
                             <field name="target_revenue" />
                             <field name="actual_revenue" />

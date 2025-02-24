@@ -14,6 +14,7 @@
     'depends': ['base', 'sale','purchase_request',],
     'data': [
         'data/ir_cron.xml',
+        'security/ir_rule.xml',
         'security/ir.model.access.csv',
 
         # views

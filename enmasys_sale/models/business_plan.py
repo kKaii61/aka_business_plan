@@ -9,6 +9,20 @@ class BusinessPlan(models.Model):
     _description = "Kế hoạch kinh doanh"
     _rec_name = "name"
 
+    target_profit = fields.Selection(
+        [("by_month", "Profit By Month"), ("by_year", "Profit By Year")],
+        string="Profit Target",
+        required=True,
+        default="by_month",
+    )
+    ##
+    company_id = fields.Many2one(
+        "res.company",
+        string="Company",
+        required=True,
+        default=lambda self: self.env.company,  # Default to current company
+    )
+    ##
     is_user = fields.Boolean(compute="compute_is_user")
     name = fields.Char(string="Name")
     year = fields.Integer(string="Year")
@@ -28,6 +42,8 @@ class BusinessPlan(models.Model):
     total_annual_revenue = fields.Float(
         string="Total annual revenue", compute="_compute_total_annual_revenue"
     )
+
+    
 
     # def action_import(self):
     #     vals = {
@@ -62,9 +78,24 @@ class BusinessPlan(models.Model):
                     record.sale_target_ids.mapped("target_revenue")
                 )
 
+    @api.onchange('target_profit')
+    def _onchange_target_profit(self):
+        for rc in self:
+            if rc.sale_target_ids and rc.target_profit:
+                if rc.target_profit == "by_year":
+                    rc.sale_target_ids.month = False
+                    rc.sale_target_ids.date_from = False
+                    rc.sale_target_ids.date_to = False
+                    print("From onchange: target_profit")
+                elif rc.target_profit == "by_month":
+                    rc.sale_target_ids.index_year = False
+                    rc.sale_target_ids.month_from = False
+                    rc.sale_target_ids.month_to = False
+                    print("From onchange: target_profit")
+
     #
     #
-    #  ==================================================
+    #  ==========================================================
 
     # ========================= COMPUTE =========================
     #
