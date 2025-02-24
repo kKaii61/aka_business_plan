@@ -5,7 +5,7 @@
         <field name="model">architect.commission.percentage</field>
         <field name="arch" type="xml">
             <tree string="Phần trăm hoa hồng KTS">
-                <field name="x_code_id" />
+                <field name="x_code_name" />
                 <field name="x_name" />
                 <field name="x_discount_from" />
                 <field name="x_discount_to"/>
@@ -21,7 +21,7 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="x_code_id" />
+                            <field name="x_code_name" />
                             <field name="x_name" />
                             <field name="x_discount_from" />
                             <field name="x_discount_to"/>
