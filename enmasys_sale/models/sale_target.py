@@ -67,9 +67,7 @@ class SaleTarget(models.Model):
     #
 
     # từ store_id sang showroom_id
-    user_id = fields.Many2one(
-        "res.users", string="Employees", store=True
-    )
+    user_id = fields.Many2one("res.users", string="Employees", store=True)
 
     showroom_id = fields.Many2one("hr.department", string="Showroom")
 
@@ -139,7 +137,8 @@ class SaleTarget(models.Model):
                         "message": "Từ tháng phải nhỏ hơn Đến tháng.",
                     }
                 }
-    @api.constrains('month','date_from', "date_to")
+
+    @api.constrains("month", "date_from", "date_to")
     def _constrains_date_from_to_month(self):
         for rc in self:
             month_date_from = rc.date_from.month
@@ -147,6 +146,7 @@ class SaleTarget(models.Model):
             i_month = int(rc.month)
             if (month_date_from != i_month) or (month_date_to != i_month):
                 raise UserError(f"Không nhập quá ngày trong tháng: {i_month}")
+
     # onchange
     @api.onchange("user_id")
     def _onchange_user_id(self):
@@ -252,7 +252,6 @@ class SaleTarget(models.Model):
                 and rc.category_id
                 and rc.brand_id
                 and rc.user_id
-                and rc.business_plan_id.target_profit == "by_month"
             ):
                 # reset search and actual revenue
                 so_invoiced = None
@@ -283,41 +282,6 @@ class SaleTarget(models.Model):
                 else:
                     rc.actual_revenue = 0
                     so_invoiced = None
-            elif (
-                rc.date_from
-                and rc.date_to
-                and rc.category_id
-                and rc.brand_id
-                and rc.user_id
-                and rc.business_plan_id.target_profit == "by_year"
-            ):
-                # reset search and actual revenue
-                so_invoiced = None
-                rc.actual_revenue = 0
-                so_invoiced = self.env["sale.order.line"].search(
-                    [
-                        ("order_id.date_order", ">", rc.date_from),
-                        ("order_id.date_order", "<", rc.date_to),
-                        ("order_id.user_id", "=", rc.user_id.id),
-                        ("product_id.product_tmpl_id.x_brand_id", "=", rc.brand_id.id),
-                        (
-                            "product_id.product_tmpl_id.categ_id",
-                            "child_of",
-                            rc.category_id.id,
-                        ),
-                        ("order_id.invoice_status", "=", "invoiced"),
-                    ]
-                )
-                if so_invoiced:
-                    for order in so_invoiced:
-                        for line in order:
-                            so_product_quantity = line.product_uom_qty
-                            unit_price = line.price_unit
-                            if rc.be_included:
-                                rc.actual_revenue += so_product_quantity * unit_price
-                else:
-                    rc.actual_revenue = 0
-                    so_invoiced = None
             else:
                 rc.actual_revenue = 0
 
@@ -327,13 +291,13 @@ class SaleTarget(models.Model):
             # Get all child_categories
             child_categories = self.env["product.category"].search(
                 [("id", "child_of", record.category_id.id)]
-            )
-
+                )
             # Check if category_id equal than date must not =
             same_category_records = self.env["sale.target"].search(
                 [
                     ("id", "!=", record.id),
                     ("category_id", "in", child_categories.ids),
+                    ('business_plan_id', '=', record.business_plan_id.id)
                 ]
             )
             if same_category_records and any(
@@ -342,10 +306,6 @@ class SaleTarget(models.Model):
                 for r in same_category_records
             ):
                 record.be_included = False
-                for r in same_category_records:
-                    print(
-                        f"{r.date_from} - {r.date_to} with {record.date_from} - {record.date_to}"
-                    )
                 raise UserError(
                     "Nếu danh mục (bao gồm danh mục con) giống nhau, ngày bắt đầu và kết thúc không được giống nhau!"
                 )
