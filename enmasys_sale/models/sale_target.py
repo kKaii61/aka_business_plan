@@ -68,7 +68,7 @@ class SaleTarget(models.Model):
 
     # từ store_id sang showroom_id
     user_id = fields.Many2one(
-        "res.users", string="Employees", compute="_compute_user_id", store=True
+        "res.users", string="Employees", store=True
     )
 
     showroom_id = fields.Many2one("hr.department", string="Showroom")
@@ -139,9 +139,14 @@ class SaleTarget(models.Model):
                         "message": "Từ tháng phải nhỏ hơn Đến tháng.",
                     }
                 }
-
-    # compute
-
+    @api.constrains('month','date_from', "date_to")
+    def _constrains_date_from_to_month(self):
+        for rc in self:
+            month_date_from = rc.date_from.month
+            month_date_to = rc.date_to.month
+            i_month = int(rc.month)
+            if (month_date_from != i_month) or (month_date_to != i_month):
+                raise UserError(f"Không nhập quá ngày trong tháng: {i_month}")
     # onchange
     @api.onchange("user_id")
     def _onchange_user_id(self):
@@ -324,25 +329,6 @@ class SaleTarget(models.Model):
                 [("id", "child_of", record.category_id.id)]
             )
 
-            # Check if date equal then category must not =
-            same_date_records = self.env["sale.target"].search(
-                [
-                    ("id", "!=", record.id),
-                    ("date_from", "=", record.date_from),
-                    ("date_to", "=", record.date_to),
-                    (
-                        "category_id",
-                        "in",
-                        child_categories.ids,
-                    ),
-                ]
-            )
-            if same_date_records:
-                record.be_included = False
-                raise UserError(
-                    "Nếu ngày bắt đầu và kết thúc giống nhau, danh mục (bao gồm danh mục con) phải khác!"
-                )
-
             # Check if category_id equal than date must not =
             same_category_records = self.env["sale.target"].search(
                 [
@@ -351,21 +337,18 @@ class SaleTarget(models.Model):
                 ]
             )
             if same_category_records and any(
-                r.date_from == record.date_from and r.date_to == record.date_to
+                (r.date_from == record.date_from and r.date_to == record.date_to)
+                or (r.date_from <= record.date_to and r.date_to >= record.date_from)
                 for r in same_category_records
             ):
                 record.be_included = False
+                for r in same_category_records:
+                    print(
+                        f"{r.date_from} - {r.date_to} with {record.date_from} - {record.date_to}"
+                    )
                 raise UserError(
                     "Nếu danh mục (bao gồm danh mục con) giống nhau, ngày bắt đầu và kết thúc không được giống nhau!"
                 )
-            overlapping_target = self.env['sale.target'].search([
-                ('id', '!=', record.id),
-                ('category_id', '!=', child_categories),
-                ('date_from', '<=', record.date_from)
-                ('date_to', '<=', record.date_to)
-            ])
-            if overlapping_target:
-                raise UserError("Vùng chọn ngày (từ ngày - tới ngày) bị trùng nhau hoặc xung đột, vui lòng kiểm tra lại ngày tháng đã nhập!")
 
     @api.constrains("date_from")
     def _constrains_date_from(self):
