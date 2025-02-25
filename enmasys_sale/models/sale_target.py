@@ -277,7 +277,6 @@ class SaleTarget(models.Model):
                             unit_price = line.price_unit
                             subtotal = line.price_subtotal
                             if rc.be_included:
-                                # rc.actual_revenue += so_product_quantity * subtotal
                                 rc.actual_revenue += subtotal
                 else:
                     rc.actual_revenue = 0
@@ -289,15 +288,24 @@ class SaleTarget(models.Model):
     def _check_date_and_category(self):
         for record in self:
             # Get all child_categories
-            child_categories = self.env["product.category"].search(
-                [("id", "child_of", record.category_id.id)]
-                )
+            child_categories = (
+                self.env["product.category"]
+                .search([("id", "child_of", record.category_id.id)])
+                .ids
+            )
+            parent_categories = (
+                self.env["product.category"]
+                .search([("id", "parent_of", record.category_id.id)])
+                .ids
+            )
             # Check if category_id equal than date must not =
             same_category_records = self.env["sale.target"].search(
                 [
                     ("id", "!=", record.id),
-                    ("category_id", "in", child_categories.ids),
-                    ('business_plan_id', '=', record.business_plan_id.id)
+                    ("business_plan_id", "=", record.business_plan_id.id),
+                    "|", # or between child and parent
+                    ("category_id", "in", child_categories),
+                    ("category_id", "in", parent_categories),
                 ]
             )
             if same_category_records and any(
@@ -307,7 +315,7 @@ class SaleTarget(models.Model):
             ):
                 record.be_included = False
                 raise UserError(
-                    "Nếu danh mục (bao gồm danh mục con) giống nhau, ngày bắt đầu và kết thúc không được giống nhau!"
+                    f"Nếu danh mục giống nhau, ngày bắt đầu và kết thúc không được giống nhau! hoặc danh mục hiện tại {record.category_id.name} là con hoặc cha của danh mục trước đó!"
                 )
 
     @api.constrains("date_from")
