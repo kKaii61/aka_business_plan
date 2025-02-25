@@ -271,8 +271,10 @@ class SaleTarget(models.Model):
                         for line in order:
                             so_product_quantity = line.product_uom_qty
                             unit_price = line.price_unit
+                            subtotal = line.price_subtotal
                             if rc.be_included:
-                                rc.actual_revenue += so_product_quantity * unit_price
+                                # rc.actual_revenue += so_product_quantity * subtotal
+                                rc.actual_revenue += subtotal
                 else:
                     rc.actual_revenue = 0
                     so_invoiced = None
@@ -345,12 +347,6 @@ class SaleTarget(models.Model):
             same_category_records = self.env["sale.target"].search(
                 [
                     ("id", "!=", record.id),
-                    ("category_id", "=", record.category_id.id),
-                ]
-            )
-            same_category_records = self.env["sale.target"].search(
-                [
-                    ("id", "!=", record.id),
                     ("category_id", "in", child_categories.ids),
                 ]
             )
@@ -362,6 +358,14 @@ class SaleTarget(models.Model):
                 raise UserError(
                     "Nếu danh mục (bao gồm danh mục con) giống nhau, ngày bắt đầu và kết thúc không được giống nhau!"
                 )
+            overlapping_target = self.env['sale.target'].search([
+                ('id', '!=', record.id),
+                ('category_id', '!=', child_categories),
+                ('date_from', '<=', record.date_from)
+                ('date_to', '<=', record.date_to)
+            ])
+            if overlapping_target:
+                raise UserError("Vùng chọn ngày (từ ngày - tới ngày) bị trùng nhau hoặc xung đột, vui lòng kiểm tra lại ngày tháng đã nhập!")
 
     @api.constrains("date_from")
     def _constrains_date_from(self):
