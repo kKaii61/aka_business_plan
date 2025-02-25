@@ -72,7 +72,7 @@ class SaleOrder(models.Model):
 
     def _can_be_confirmed(self):
         self.ensure_one()
-        return self.state in {'sent,bm_approved'}
+        return self.state in {'draft', 'sent','bm_approved'}
     #####################################################################################
     @api.depends('order_line.discount')
     def _compute_discount_percentage(self):

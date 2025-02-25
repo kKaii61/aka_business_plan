@@ -30,23 +30,26 @@
                     <field name="x_architect_name" string="Kiến trúc sư"/>
                 </group>
             </xpath>
-            <xpath expr="//header" position="attributes">
-                <button name="action_confirm" id="action_confirm" invisible="1"></button>
+            <xpath expr="//button[@name='action_confirm'][1]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
+                <attribute name="invisible">1</attribute>
             </xpath>
             <!-- Thay nút 'Xác nhận' bằng SM và BM duyệt -->
             <xpath expr="//button[@name='action_confirm']" position="replace">
                 <button name="action_sm_approve" string="SM Duyệt"
-                        class="btn-primary" type="object"
-                        groups="enmasys_sale.group_sm_approved"
-                        sequence="20"
-                        invisible="state != 'sent_sm_approved'"/>
+                    class="btn-primary" type="object"
+                    groups="enmasys_sale.group_sm_approved"
+                    sequence="20"
+                    invisible="state != 'sent_sm_approved'"/>
                 <button name="action_bm_approve" string="BM Duyệt"
-                        class="btn-primary" type="object"
-                        groups="enmasys_sale.group_bm_approved"
-                        invisible="state != 'sm_approved'"/>
-                <button name="action_request_sm" string="Gửi yêu cầu SM"
+                    class="btn-primary" type="object"
+                    groups="enmasys_sale.group_bm_approved"
+                    invisible="state != 'sm_approved'"/>
+                <button name="action_request_sm" string="Gửi yêu cầu SM" 
                     class="btn-info" type="object"
-                    invisible="state != 'sent' or x_sm_requested"/>
+                    invisible="state != 'sent' or not x_architect_introduction"/>
             </xpath>
             <xpath expr="//header" position="inside">
                 <button name="action_revert_to_sm_approved" string="Quay lại"
@@ -61,7 +64,7 @@
                 <button name="action_confirm" string="Xác nhận"
                     context="{'validate_analytic': True}"
                     type="object"
-                    invisible="state != 'bm_approved'"/>
+                    invisible="(state != 'bm_approved' and state != 'sent') or x_architect_introduction"/>
             </xpath>
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="analytic_account_id" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" readonly="invoice_count != 0 and state == 'sale'" groups="analytic.group_analytic_accounting" force_save="1"/>
