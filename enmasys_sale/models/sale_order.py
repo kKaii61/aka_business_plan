@@ -7,7 +7,7 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     x_architect_introduction = fields.Boolean(string="Kiến trúc sư giới thiệu")
-    x_architect_name = fields.Many2one('hr.employee', string="Kiến trúc sư",required=True)
+    x_architect_name = fields.Many2one('hr.employee', string="Kiến trúc sư")
     discount_percentage = fields.Float(string="Chiết khấu", compute="_compute_discount_percentage", store=True)
     x_architect_commission_percentage = fields.Float(string="Phần trăm hoa hồng KTS", compute="_get_commission_percentage", store=True)
     
