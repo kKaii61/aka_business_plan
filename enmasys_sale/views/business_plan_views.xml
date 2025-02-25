@@ -32,17 +32,17 @@
                     </div>
                     <group>
                         <field name="is_user" invisible="1"/>
-                        <field name="name" readonly="[('status', '=', 'confirm')]"/>
-                        <field name="year" options="{'format': false}" widget="char" readonly="[('status', '=', 'confirm')]"/>
+                        <field name="name" readonly="status == 'confirm'"/>
+                        <field name="year" options="{'format': false}" widget="char" readonly="status == 'confirm'"/>
                         <field name="actual_revenue" />
                         <field name="target_revenue" />
                         <field name="total_annual_revenue" />
-                        <field name="target_profit" readonly="[('status', '=', 'confirm')]"/>
+                        <field name="target_profit" readonly="status == 'confirm'"/>
                     </group>
                     <notebook>
                         <page name="sale_target" string="Sales target">
                             <!-- <button string="Cập nhật thực tế" name="action_update_actual_revenue_sale_target" type="object" class="oe_highlight"/> -->
-                            <field name="sale_target_ids" readonly="[('status', '=', 'confirm')]"
+                            <field name="sale_target_ids" readonly="status == 'confirm'"
                                             context="{'default_index_year': year}">
                                 <tree editable="bottom">
                                     <field name="month" required="parent.target_profit != 'by_month'" column_invisible="parent.target_profit != 'by_month'" />
