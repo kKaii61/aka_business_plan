@@ -4,6 +4,8 @@ from odoo.exceptions import ValidationError
 class ArchitectCommissionPercentage(models.Model):
     _name = 'architect.commission.percentage'
     _description = 'Phần trăm hoa hồng KTS'
+    _rec_name = 'x_name'
+
 
     x_code_name = fields.Char(string="Mã code", required=True)
     x_name = fields.Char(string="Tên", required=True)

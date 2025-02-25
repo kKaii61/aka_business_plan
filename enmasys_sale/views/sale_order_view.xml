@@ -64,7 +64,7 @@
                 <button name="action_confirm" string="Xác nhận"
                     context="{'validate_analytic': True}"
                     type="object"
-                    invisible="(state != 'bm_approved' and state != 'sent') or x_architect_introduction"/>
+                    invisible="(state != 'bm_approved' and x_architect_introduction) or (state != 'sent' and not x_architect_introduction)"/>
             </xpath>
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="analytic_account_id" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" readonly="invoice_count != 0 and state == 'sale'" groups="analytic.group_analytic_accounting" force_save="1"/>
