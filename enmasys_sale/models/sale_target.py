@@ -116,11 +116,10 @@ class SaleTarget(models.Model):
         string="Đến tháng",
     )
 
-    # so_invoiced = fields.One2many()
-
     target_profit = fields.Selection(
         related="business_plan_id.target_profit", string="Profit Target", readonly=True
     )
+    be_included = fields.Boolean(required=True, default=True)
 
     #
     #
@@ -152,32 +151,6 @@ class SaleTarget(models.Model):
             else:
                 rc.showroom_id = None
 
-    @api.onchange("user_id", "brand_id")
-    def _onchange_user_brand_id(self):
-        for rc in self:
-            if rc.user_id:
-                orders = self.env["sale.order"].search(
-                    [("user_id", "=", self.user_id.id)]
-                )
-                print("\n==========  Employee  =================")
-                print(orders.mapped("name"))
-                for order in orders:
-                    for line in order.order_line:
-                        product = line.product_id
-                        product_id = product.id
-                        product_name = product.name
-                        invoice_status = line.invoice_status
-                        unit_price = line.price_unit
-                        brand_name = (
-                            product.product_tmpl_id.x_brand_id.name
-                            if product.product_tmpl_id.x_brand_id
-                            else "No Brand"
-                        )
-                        print(
-                            f"({invoice_status}) Product: {product_name}: {product_id} - Price: {unit_price} - Brand: {brand_name} - Mem: {rc.user_id.name}"
-                        )
-                print("\n===========================")
-
     @api.onchange("month")
     def onchange_month_bymonth(self):
         if self.business_plan_id.target_profit == "by_month":
@@ -196,7 +169,7 @@ class SaleTarget(models.Model):
                 print(f"From month: {self.date_from} to {self.date_to}")
                 print("\n=================================================\n")
 
-    @api.onchange('index_year',"month_from")
+    @api.onchange("index_year", "month_from")
     def _onchange_monthfrom_byyear(self):
         if self.business_plan_id.target_profit == "by_year":
             if self.index_year:
@@ -232,7 +205,7 @@ class SaleTarget(models.Model):
                 else:
                     self.month_from = False
 
-    @api.onchange('index_year',"month_to")
+    @api.onchange("index_year", "month_to")
     def _onchange_monthto_byyear(self):
         if self.business_plan_id.target_profit == "by_year":
             if self.index_year:
@@ -261,25 +234,11 @@ class SaleTarget(models.Model):
                 else:
                     self.month_to = False
 
-    @api.depends("partner_id")
-    def _compute_partner_group_id(self):
-        for record in self:
-            if record.partner_id:
-                record.partner_group_id = record.partner_id.partner_group_id
-            else:
-                record.partner_id = None
-
-    @api.depends("partner_id")
-    def _compute_user_id(self):
-        for record in self:
-            if record.partner_id:
-                record.user_id = record.partner_id.user_id
-            else:
-                record.user_id = None
-
     #########################################
 
-    @api.depends('index_year','date_from', 'date_to', "user_id", "brand_id", "category_id")
+    @api.depends(
+        "index_year", "date_from", "date_to", "user_id", "brand_id", "category_id"
+    )
     def _compute_actual_revenue(self):
         for rc in self:
             if (
@@ -299,36 +258,32 @@ class SaleTarget(models.Model):
                         ("order_id.date_order", "<", rc.date_to),
                         ("order_id.user_id", "=", rc.user_id.id),
                         ("product_id.product_tmpl_id.x_brand_id", "=", rc.brand_id.id),
-                        ("product_id.product_tmpl_id.categ_id", "child_of", rc.category_id.id),
+                        (
+                            "product_id.product_tmpl_id.categ_id",
+                            "child_of",
+                            rc.category_id.id,
+                        ),
                         ("order_id.invoice_status", "=", "invoiced"),
                     ]
                 )
                 if so_invoiced:
                     for order in so_invoiced:
                         for line in order:
-                            # rc.actual_revenue = 0
-                            product = line.product_id
-                            product_id = product.id
-                            product_name = product.name
                             so_product_quantity = line.product_uom_qty
                             unit_price = line.price_unit
-                            categ = product.categ_id
-                            status = line.invoice_status
-                            brand_name = (
-                                product.product_tmpl_id.x_brand_id.name
-                                if product.product_tmpl_id.x_brand_id
-                                else "No Brand"
-                            )
-                            rc.actual_revenue += so_product_quantity * unit_price
+                            if rc.be_included:
+                                rc.actual_revenue += so_product_quantity * unit_price
                 else:
                     rc.actual_revenue = 0
                     so_invoiced = None
-            elif (rc.date_from
+            elif (
+                rc.date_from
                 and rc.date_to
                 and rc.category_id
                 and rc.brand_id
                 and rc.user_id
-                and rc.business_plan_id.target_profit == "by_year"):
+                and rc.business_plan_id.target_profit == "by_year"
+            ):
                 # reset search and actual revenue
                 so_invoiced = None
                 rc.actual_revenue = 0
@@ -338,7 +293,11 @@ class SaleTarget(models.Model):
                         ("order_id.date_order", "<", rc.date_to),
                         ("order_id.user_id", "=", rc.user_id.id),
                         ("product_id.product_tmpl_id.x_brand_id", "=", rc.brand_id.id),
-                        ("product_id.product_tmpl_id.categ_id", "child_of", rc.category_id.id),
+                        (
+                            "product_id.product_tmpl_id.categ_id",
+                            "child_of",
+                            rc.category_id.id,
+                        ),
                         ("order_id.invoice_status", "=", "invoiced"),
                     ]
                 )
@@ -347,19 +306,62 @@ class SaleTarget(models.Model):
                         for line in order:
                             so_product_quantity = line.product_uom_qty
                             unit_price = line.price_unit
-                            rc.actual_revenue += so_product_quantity * unit_price
+                            if rc.be_included:
+                                rc.actual_revenue += so_product_quantity * unit_price
                 else:
                     rc.actual_revenue = 0
                     so_invoiced = None
             else:
                 rc.actual_revenue = 0
 
-    # @api.constrains("date_from", "date_to", "category_id")
-    # def _constrains_target_so(self):
-    #     for rc in self:
-    #         if so_invoiced:
-    #                 for order in so_invoiced:
-    #                     for line in order:
+    @api.constrains("date_from", "date_to", "category_id")
+    def _check_date_and_category(self):
+        for record in self:
+            # Get all child_categories
+            child_categories = self.env["product.category"].search(
+                [("id", "child_of", record.category_id.id)]
+            )
+
+            # Check if date equal then category must not =
+            same_date_records = self.env["sale.target"].search(
+                [
+                    ("id", "!=", record.id),
+                    ("date_from", "=", record.date_from),
+                    ("date_to", "=", record.date_to),
+                    (
+                        "category_id",
+                        "in",
+                        child_categories.ids,
+                    ),
+                ]
+            )
+            if same_date_records:
+                record.be_included = False
+                raise UserError(
+                    "Nếu ngày bắt đầu và kết thúc giống nhau, danh mục (bao gồm danh mục con) phải khác!"
+                )
+
+            # Check if category_id equal than date must not =
+            same_category_records = self.env["sale.target"].search(
+                [
+                    ("id", "!=", record.id),
+                    ("category_id", "=", record.category_id.id),
+                ]
+            )
+            same_category_records = self.env["sale.target"].search(
+                [
+                    ("id", "!=", record.id),
+                    ("category_id", "in", child_categories.ids),
+                ]
+            )
+            if same_category_records and any(
+                r.date_from == record.date_from and r.date_to == record.date_to
+                for r in same_category_records
+            ):
+                record.be_included = False
+                raise UserError(
+                    "Nếu danh mục (bao gồm danh mục con) giống nhau, ngày bắt đầu và kết thúc không được giống nhau!"
+                )
 
     @api.constrains("date_from")
     def _constrains_date_from(self):
@@ -374,7 +376,6 @@ class SaleTarget(models.Model):
         for record in self:
             if record.date_to == False:
                 raise UserError("Nhập Đến tháng!")
-
 
     @api.constrains("month_from", "month_to")
     def _check_month_range(self):
