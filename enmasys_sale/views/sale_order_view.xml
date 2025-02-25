@@ -25,8 +25,9 @@
             <!-- Thêm nhóm 'architect_commission' -->
             <xpath expr="//group[@name='order_details']" position="after">
                 <group name="architect_commission">
-                    <field name="x_architect_introduction" string="Kiến trúc sư giới thiệu" readonly="id"/>
-                    <field name="x_architect_commission_percentage" invisible = "not x_architect_introduction"/>
+                    <field name="x_mail_sent" invisible="1"/>
+                    <field name="x_architect_introduction" string="Kiến trúc sư giới thiệu" readonly="state == 'sent' and x_mail_sent"/>
+                    <field name="x_architect_commission_percentage" invisible="not x_architect_introduction"/>
                     <field name="x_architect_name" string="Kiến trúc sư"/>
                 </group>
             </xpath>

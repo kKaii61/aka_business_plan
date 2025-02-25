@@ -12,6 +12,13 @@ class SaleOrder(models.Model):
     x_architect_commission_percentage = fields.Float(string="Phần trăm hoa hồng KTS", compute="_get_commission_percentage", store=True)
     
     x_sm_requested = fields.Boolean(string="SM đã nhận yêu cầu", default=False)
+    x_mail_sent = fields.Boolean(string="Email Sent", default=False)
+
+    def action_quotation_send(self):
+        """ Override action_quotation_send to mark x_mail_sent as True """
+        res = super(SaleOrder, self).action_quotation_send()
+        self.write({'x_mail_sent': True})
+        return res
 
 
     state = fields.Selection([
