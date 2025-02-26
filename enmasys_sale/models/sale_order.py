@@ -26,7 +26,7 @@ class SaleOrder(models.Model):
         ('sent', "Quotation Sent"),
         ('sent_sm_approved', "SM Sent"),
         ('sm_approved', "SM Approved"),
-        ('bm_approved', "BM Approved"),
+        # ('bm_approved', "BM Approved"),
         ('sale', "Sales Order"),
         ('cancel', "Cancelled")
     ], string="Status", tracking=True, default='draft')
@@ -79,14 +79,16 @@ class SaleOrder(models.Model):
 
     def _can_be_confirmed(self):
         self.ensure_one()
-        return self.state in {'draft', 'sent','bm_approved'}
+        return self.state in {'draft', 'sent','sm_approved'}
     #####################################################################################
     @api.depends('order_line.discount')
     def _compute_discount_percentage(self):
-        """ Lấy giá trị %CK từ dòng sản phẩm đầu tiên """
+        """ Lấy giá trị % chiết khấu lớn nhất từ các dòng sản phẩm """
         for order in self:
-            discount_value = order.order_line[:1].discount if order.order_line else 0.0
-            order.discount_percentage = discount_value
+            if order.order_line:
+                order.discount_percentage = max(order.order_line.mapped('discount'))
+            else:
+                order.discount_percentage = 0.0
     #####################################################################caculator architect commission percentage
     
     @api.depends('discount_percentage')

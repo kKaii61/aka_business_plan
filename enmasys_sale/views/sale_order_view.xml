@@ -44,7 +44,7 @@
                     groups="enmasys_sale.group_sm_approved"
                     sequence="20"
                     invisible="state != 'sent_sm_approved'"/>
-                <button name="action_bm_approve" string="BM Duyệt"
+                <button name="action_confirm" string="BM Duyệt"
                     class="btn-primary" type="object"
                     groups="enmasys_sale.group_bm_approved"
                     invisible="state != 'sm_approved'"/>
@@ -59,6 +59,7 @@
                     invisible="state != 'sm_approved' and state != 'sent_sm_approved'"/>
                 <button name="action_cancel_order" string="Hủy"
                     class="btn-danger" type="object" sequence="30"
+                    groups="enmasys_sale.group_sm_approved,enmasys_sale.group_bm_approved"
                     invisible="state != 'sm_approved' and state != 'sent_sm_approved'"/>
                 <field name="x_sm_requested" invisible='1'></field>
                 <!-- Nút hiển thị khi đã BM duyệt -->
